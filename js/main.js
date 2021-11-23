@@ -3,7 +3,8 @@ $(function () {
 });
 
 let films;
-
 async function readFilmInformation() {
   films = await $.getJSON('movieinfo.json');
 }
+
+
