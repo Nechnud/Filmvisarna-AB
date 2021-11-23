@@ -31,16 +31,6 @@ h1{
    padding-right: 6%;
 }
 
-.container-movieList {  
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-column-gap: 5%;
-  grid-row-gap: 5%;
-  padding-bottom: 5%;
-  padding-right: 10%;
-  padding-left: 10%;
-}
-
 .movieList img:hover {
   opacity: 0.5;
 }
