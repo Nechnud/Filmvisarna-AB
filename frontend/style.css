@@ -31,8 +31,7 @@ h1{
    padding-right: 6%;
 }
 
-.container-movieList {
-  background-color: blue;
+.container-movieList {  
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   grid-column-gap: 5%;
