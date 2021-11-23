@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "Title": "The Day After Tomorrow",
     "Year": "2004",
     "Rated": "PG-13 (Intense Situations of Peril)",
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": 2,
     "Title": "Joker",
     "Year": "2019",
     "Rated": "R (Disturbing Behavior|Brief Sexual Images|Language|Strong Bloody Violence) ",
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "id": "3",
+    "id": 3,
     "Title": "Aladdin",
     "Year": "1992",
     "Rated": "G ",
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "id": "4",
+    "id": 4,
     "Title": "My Neighbour Totoro",
     "Year": "2006",
     "Rated": "G ",
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "id": "5",
+    "id": 5,
     "Title": "Interstellar",
     "Year": "2019",
     "Rated": "PG-13 (Some Intense Perilous Action|Brief Strong Language) ",
