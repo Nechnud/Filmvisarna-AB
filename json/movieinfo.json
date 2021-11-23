@@ -118,5 +118,25 @@
       "https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/156001/aed5e266da7116563e1973591b6f77c9-interstellar1.jpg",
       "https://images.theconversation.com/files/64127/original/2mdvqkw8-1415620078.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop"
     ]
+  },
+  {
+    "id": 6,
+    "Title": "Spider-Man: No way home",
+    "Year": "2021",
+    "Rated": "50",
+    "Released": "Dec 17, 2021 Wide",
+    "Runtime": "2235m",
+    "Genre": "Sci-fi, Adventure, Action",
+    "Director": "Jon Watts",
+    "Writer": "Chris McKenna, Erik Sommers",
+    "Actors": "Tom Holland, Zendaya, Benedict Cumberbatch, Jon Favreuau",
+    "Plot": "For the first time in the cinematic history of Spider-Man, our friendly neighborhood hero is unmasked and no longer able to separate his normal life from the high-stakes of being a Super Hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+    "Original language": "English",
+    "Country": "USA",
+    "Poster": "https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/420344/large_22ddeb92be39c2eaf74e31e4360d46bd-spiderman_no_way_home_xxlg.jpeg",
+    "Distributor": "Sony Pictures Entertainment, Columbia Pictures",
+    "Sound Mix": "N/A",
+    "Trailer": "https://www.youtube.com/watch?v=ZYzbalQ6Lg8"
+    
   }
 ]
