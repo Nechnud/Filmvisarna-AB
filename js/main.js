@@ -1,5 +1,9 @@
-$(function () {
-  $("#datepicker").datepicker({ minDate: 0, maxDate: "30D" });
+$('.datepicker').datepicker({
+  format: "dd/mm/yyyy",
+  weekStart: 1,
+  startDate: "+0d",
+  endDate: "+30d",
+  todayHighlight: true
 });
 
 let films;
