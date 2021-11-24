@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
 
+body {
+  background: rgb(48,29,253);
+  background: linear-gradient(90deg, rgba(48,29,253,1) 0%, rgba(58,115,180,1) 40%, rgba(69,226,252,1) 100%); 
+}
+
 .container-date {
   display: inline-flex;
   padding-top: 10%;
