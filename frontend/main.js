@@ -8,7 +8,17 @@ $('.datepicker').datepicker({
 
 let films;
 async function readFilmInformation() {
-  films = await $.getJSON('movieinfo.json');
+  films = await $.getJSON('showing.json');
 }
 
 
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes()
+var dateTime = date + ' ' + time;
+
+
+$(datepicker).click(function (e) { 
+  e.preventDefault();
+  
+});
