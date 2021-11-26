@@ -103,66 +103,54 @@
     </div>
     <div id="FilmsScreening" class="form-group">
       <div class="row">
-        <div class="col" id="FS-item">
-          <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
-        </div>
 
         <div class="col" id="FS-item">
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option><a class="dropdown-item" href="#">All Films</a></option>
-            <option><a class="dropdown-item" href="#">The Day After Tomorrow</a></option>
-            <option><a class="dropdown-item" href="#">Joker</a></option>
-            <option><a class="dropdown-item" href="#">Aladdin</a></option>
-            <option><a class="dropdown-item" href="#">My Neighbour Totoro</a></option>
-            <option><a class="dropdown-item" href="#">Interstellar</a></option>
-            <option><a class="dropdown-item" href="#">Spider-Man: No Way Home</a></option>
+          <select class="form-control" id="filmsToShow">
+            <option><a class="dropdown-item" href="#" value="0">All Films</a></option>
+            <option><a class="dropdown-item" href="#" value="1">The Day After Tomorrow</a></option>
+            <option><a class="dropdown-item" href="#" value="2">Joker</a></option>
+            <option><a class="dropdown-item" href="#" value="3">Aladdin</a></option>
+            <option><a class="dropdown-item" href="#" value="4">My Neighbour Totoro</a></option>
+            <option><a class="dropdown-item" href="#" value="5">Interstellar</a></option>
+            <option><a class="dropdown-item" href="#" value="6">Spider-Man: No Way Home</a></option>
           </select>
         </div>
 
+        <div class="col">
+          <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
+        </div>
         <div class="col" id="FS-item">
 
-          <select class="form-control" id="exampleFormControlSelect1">
+          <select class="form-control" id="salong">
+            <option><a class="dropdown-item" href="#" value="0">All Salongs</a></option>
+            <option><a class="dropdown-item" href="#" value="Grande">Grande(big)</a></option>
+            <option><a class="dropdown-item" href="#" value="Cozy">Cozy(small)</a></option>
+
+          </select>
+        </div>
+        <div class="col" id="FS-item">
+
+          <select class="form-control" id="ageGroup">
             <option><a class="dropdown-item" href="#">All Age</a></option>
             <option><a class="dropdown-item" href="#">Children</a></option>
             <option><a class="dropdown-item" href="#">Adult</a></option>
 
           </select>
         </div>
-        <div class="col" id="FS-item">
 
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option><a class="dropdown-item" href="#">All Salongs</a></option>
-            <option><a class="dropdown-item" href="#">Grande(big)</a></option>
-            <option><a class="dropdown-item" href="#">Cozy(small)</a></option>
-
-          </select>
-        </div>
       </div>
       <div class="screening-list">
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Date</th>
               <th scope="col">Film Title</th>
+              <th scope="col">Date</th>
               <th scope="col">Salong</th>
               <th scope="col">Age Group</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row"></th>
-              <td></td>
+          <tbody class="screening-result">
 
-            </tr>
-            <tr>
-              <th scope="row"></th>
-              <td></td>
-
-            </tr>
-            <tr>
-              <th scope="row"></th>
-
-            </tr>
           </tbody>
         </table>
       </div>
