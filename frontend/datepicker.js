@@ -6,14 +6,11 @@ $(document).ready(function () {
     maxDate: "+1m",
     //Start date is always today, new Date() is current date object
     minDate: new Date(),
+    dateFormat: "dd-mm-yy"
   });
 });
 
 $(function () {
-  $("#datepicker").datepicker({
-    format: "dd/mm/yyyy",
-
-  });
   $("#datepicker").on("change", function () {
     let date = $(this).val();
     alert(date);
