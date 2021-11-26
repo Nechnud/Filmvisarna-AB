@@ -1,10 +1,3 @@
-$('.datepicker').datepicker({
-  format: "dd/mm/yyyy",
-  weekStart: 1,
-  startDate: "+0d",
-  endDate: "+30d",
-  todayHighlight: true
-});
 
 //Codes for showing the movie information when the user click on the movie poster ---------
 let films;
@@ -19,7 +12,7 @@ $('.movie').click(function () {
 
 async function readFilmsFromJson(movieID) {
   let html = '';
-  films = await $.getJSON('json/movieinfo.json');
+  films = await $.getJSON('/json/movieinfo.json');
   for (i = 0; i < films.length; i++) {
     if (films[i].id == movieID) {
 
@@ -35,6 +28,15 @@ async function readFilmsFromJson(movieID) {
 }
 readFilmsFromJson();
 //-------------------------------------------------------------
+/*
+
+$('.datepicker').datepicker({
+  format: "dd/mm/yyyy",
+  weekStart: 1,
+  startDate: "+0d",
+  endDate: "+30d",
+  todayHighlight: true
+});
 
 var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -46,3 +48,4 @@ $(datepicker).click(function (e) {
   e.preventDefault();
 
 });
+*/
