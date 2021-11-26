@@ -24,14 +24,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
-          <form class="d-flex">
-            <div class="navbar-buttons">
-              <button class="btn btn-light" type="button">My Bookings</button>
-            </div>
-            <div class="navbar-buttons">
-              <input type="text" id="datepicker">
-            </div>
-          </form>
+          <div class="navbar-buttons">
+            <button class="btn btn-light" type="button">My Bookings</button>
+          </div>
+          <div class="navbar-buttons">
+            <a href="#FilmsScreening"><button class="btn btn-light" type="button">Films & Screening</button></a>
+          </div>
         </div>
       </div>
     </nav>
@@ -103,6 +101,34 @@
 
       </div>
     </div>
+    <div id="FilmsScreening" class="form-group">
+      <div class="row">
+        <div class="col" id="FS-item">
+          <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
+        </div>
+
+        <div class="col" id="FS-item">
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option><a class="dropdown-item" href="#">All Films</a></option>
+            <option><a class="dropdown-item" href="#">The Day After Tomorrow</a></option>
+            <option><a class="dropdown-item" href="#">Joker</a></option>
+            <option><a class="dropdown-item" href="#">Aladdin</a></option>
+            <option><a class="dropdown-item" href="#">My Neighbour Totoro</a></option>
+            <option><a class="dropdown-item" href="#">Interstellar</a></option>
+            <option><a class="dropdown-item" href="#">Spider-Man: No Way Home</a></option>
+          </select>
+        </div>
+
+        <div class="col" id="FS-item">
+
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option><a class="dropdown-item" href="#">All Age</a></option>
+            <option><a class="dropdown-item" href="#">Children</a></option>
+            <option><a class="dropdown-item" href="#">Adult</a></option>
+
+          </select>
+        </div>
+      </div>
     </div>
 
   </main>
