@@ -5,7 +5,7 @@ $(document).ready(function () {
 $(function () {
   $("#datepicker").datepicker({ dateFormat: "yy-mm-dd" });
   $("#datepicker").on("change", function () {
-    var selected = $(this).val();
-    alert(selected);
+    let date = $(this).val();
+    alert(date);
   });
 });
