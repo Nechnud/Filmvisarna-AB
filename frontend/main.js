@@ -29,7 +29,4 @@ async function readFilmsFromJson(movieID) {
   $('.' + movieID).html(html);
 }
 readFilmsFromJson();
-<<<<<<< HEAD
 //-------------------------------------------------------------
-=======
->>>>>>> bed5573ea6eb594c317c53b9414393fb6d4065ff
