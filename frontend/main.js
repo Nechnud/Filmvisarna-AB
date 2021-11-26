@@ -28,25 +28,3 @@ async function readFilmsFromJson(movieID) {
   $('.' + movieID).html(html);
 }
 readFilmsFromJson();
-//-------------------------------------------------------------
-/*
-
-$('.datepicker').datepicker({
-  format: "dd/mm/yyyy",
-  weekStart: 1,
-  startDate: "+0d",
-  endDate: "+30d",
-  todayHighlight: true
-});
-
-var today = new Date();
-var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-var time = today.getHours() + ":" + today.getMinutes()
-var dateTime = date + ' ' + time;
-
-
-$(datepicker).click(function (e) {
-  e.preventDefault();
-
-});
-*/
