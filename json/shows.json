@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "The Day After Tomorrow",
+    "showRoom": "Grande",
+    "showTime": "20:35"
+  },
+  {
+    "id": 2,
+    "title": "Joker",
+    "showRoom": "Cozy",
+    "showTime": "19:17"
+  },
+  {
+    "id": 3,
+    "title": "Aladdin",
+    "showRoom": "Cozy",
+    "showTime": "17:37"
+  },
+  {
+    "id": 4,
+    "title": "My Neighbour Totoro",
+    "showRoom": "Cozy",
+    "showTime": "16:00"
+  },
+  {
+    "id": 5,
+    "title": "Interstellar",
+    "showRoom": "Grande",
+    "showTime": "18:40"
+  },
+  {
+    "id": 6,
+    "title": "Spider-Man: No way home",
+    "showRoom": "Grande",
+    "showTime": "16:00"
+  }
+]
