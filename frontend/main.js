@@ -1,5 +1,6 @@
 
 //Codes for showing the movie information when the user click on the movie poster ---------
+//Sana - I haven't fixed the toggle function, will try to fix it during the weekend.
 let films;
 let movieID;
 
