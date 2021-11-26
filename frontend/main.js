@@ -1,6 +1,7 @@
 
 //Codes for showing the movie information when the user click on the movie poster ---------
 //Sana - I haven't fixed the toggle function, will try to fix it during the weekend.
+//Sana - I am going to write the movieinfo.html code as well.....
 let films;
 let movieID;
 
@@ -19,7 +20,7 @@ async function readFilmsFromJson(movieID) {
 
       html += `
       <div class="movieInfo">
-      <h3>${films[i].title}</h3>
+      <h6>${films[i].title}</h6>
       <p><b>Year: </b>${films[i].year}</p>
       <p><b>Runtime: </b>${films[i].runtime}</p>
           `;
@@ -28,3 +29,4 @@ async function readFilmsFromJson(movieID) {
   $('.' + movieID).html(html);
 }
 readFilmsFromJson();
+//-------------------------------------------------------------
