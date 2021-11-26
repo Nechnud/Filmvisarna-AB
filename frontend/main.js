@@ -1,6 +1,7 @@
 
 //Codes for showing the movie information when the user click on the movie poster ---------
 //Sana - I haven't fixed the toggle function, will try to fix it during the weekend.
+//Sana - I am going to write the movieinfo.html code as well.....
 let films;
 let movieID;
 
@@ -19,7 +20,7 @@ async function readFilmsFromJson(movieID) {
 
       html += `
       <div class="movieInfo">
-      <h3>${films[i].title}</h3>
+      <h6>${films[i].title}</h6>
       <p><b>Year: </b>${films[i].year}</p>
       <p><b>Runtime: </b>${films[i].runtime}</p>
           `;
@@ -29,24 +30,3 @@ async function readFilmsFromJson(movieID) {
 }
 readFilmsFromJson();
 //-------------------------------------------------------------
-/*
-
-$('.datepicker').datepicker({
-  format: "dd/mm/yyyy",
-  weekStart: 1,
-  startDate: "+0d",
-  endDate: "+30d",
-  todayHighlight: true
-});
-
-var today = new Date();
-var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-var time = today.getHours() + ":" + today.getMinutes()
-var dateTime = date + ' ' + time;
-
-
-$(datepicker).click(function (e) {
-  e.preventDefault();
-
-});
-*/
