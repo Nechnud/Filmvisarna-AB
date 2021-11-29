@@ -122,9 +122,9 @@
         <div class="col" id="FS-item">
 
           <select class="form-control" id="salong">
-            <option><a class="dropdown-item" href="#" value="0">All Salongs</a></option>
-            <option><a class="dropdown-item" href="#" value="Grande">Grande(big)</a></option>
-            <option><a class="dropdown-item" href="#" value="Cozy">Cozy(small)</a></option>
+            <option><a class="dropdown-item" href="#" value="All Salongs">All Salongs</a></option>
+            <option><a class="dropdown-item" href="#" value="Grande">Grande</a></option>
+            <option><a class="dropdown-item" href="#" value="Cozy">Cozy</a></option>
 
           </select>
         </div>
@@ -137,8 +137,11 @@
 
           </select>
         </div>
-
+        <div class="col" id="FS-item">
+          <a><button class="form-control" id="select-film">Select</button></a>
+        </div>
       </div>
+
       <div class="screening-list">
         <table class="table">
           <thead>
@@ -146,6 +149,7 @@
               <th scope="col">Film Title</th>
               <th scope="col">Date</th>
               <th scope="col">Salong</th>
+              <th scope="col">Time</th>
               <th scope="col">Age Group</th>
             </tr>
           </thead>
@@ -171,6 +175,7 @@
 
   <script src="main.js"></script>
   <script src="datepicker.js"></script>
+  <script src="screening.js"></script>
 </body>
 
 </html>
