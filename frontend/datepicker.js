@@ -27,42 +27,14 @@ async function showTodaysFilms() {
       <th>${showJson[i].title}</th>
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
       <th>${showJson[i].showRoom}</th>
+      <th>${showJson[i].showTime}</th>
       <th>${showJson[i]}</th>
       </tr>
     `;
   }
   $('.screening-result').html(html);
-  console.log(html);
 }
 readShowJson();
-
-
-const filmsSelect = document.querySelector('#filmsToShow');
-filmsSelect.addEventListener('change', (event) => {
-  html = '';
-  filmNumber = event.target.value;
-  readShowJson();
-  if (event.target.value === 'All Films') {
-    for (i = 0; i < showJson.length; i++) {
-      html += `
-      <tr>
-      <th>${showJson[i].title}</th>
-      </tr>
-    `;
-    }
-  }
-  if (event.target.value != 'All Films') {
-
-    html += `
-      <tr class="table-result">
-      <th>${event.target.value}</th>   
-      </tr>
-      `;
-  }
-  //console.log(event.target.value);
-  $('.screening-result').html(html);
-  return filmNumber;
-});
 /*
 
 //These codes are not ready yet! ------------------------- Have a nice weekend!
