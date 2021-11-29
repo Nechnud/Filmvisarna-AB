@@ -8,8 +8,8 @@ let movieID;
 $('.movie').click(function () {
   movieID = $(this).attr('id');
   readFilmsFromJson(movieID);
-
   $(this).find('.movieInfo').toggle();
+  readTheID(movieID);
 });
 
 async function readFilmsFromJson(movieID) {
@@ -21,12 +21,12 @@ async function readFilmsFromJson(movieID) {
       html += `
       <div class="movieInfo">
       <h6>${films[i].title}</h6>
-      <p><b>Year: </b>${films[i].year}</p>
-      <p><b>Runtime: </b>${films[i].runtime}</p>
+      <a href= "filminfo.html" ><button class="more-info">More information</button></a>
           `;
     }
   }
   $('.' + movieID).html(html);
 }
 readFilmsFromJson();
+
 //-------------------------------------------------------------
