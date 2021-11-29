@@ -1,5 +1,9 @@
 body {
-  background-color: black;
+  background-color: black;  
+}
+
+.container-fluid > p {
+  color: white;
 }
 
 
