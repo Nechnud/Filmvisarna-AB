@@ -13,9 +13,19 @@ nav img {
 }
 
 .navbar-brand {
+  position: absolute;
   font-size: 60px;
   color: #fff;
   text-shadow: 0 0 20px #ff005b;
+}
+.navbar-brand:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0px;
+  z-index: -1;
+  color: #ff005b;
 }
 
 .container-date {
