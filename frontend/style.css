@@ -25,6 +25,7 @@ nav img {
   left: 0;
   padding: 0 0px;
   z-index: -1;
+  opacity: 50%;
   color: #ff005b;
 }
 
