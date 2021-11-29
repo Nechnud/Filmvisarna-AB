@@ -68,6 +68,7 @@ main {
     margin-bottom: 10px;
 }
 #FilmsScreening{
+  background-color: black;      
   padding-bottom: 15%;
   padding-left: 10%;
   padding-right: 10%;
