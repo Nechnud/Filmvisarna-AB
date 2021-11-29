@@ -14,62 +14,24 @@
 
 <body>
 
-  <div class=container-filminfo>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item"><img src="/images/dayAfterTomorrow.jpg" alt=""></li>
-          <li class="list-group-item">
-            <h1>The day after tomorrow</h1>
-          </li>
-          <li class="list-group-item"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ku_IseK3xTc"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe></li>
-        </ul>
-      </li>
-      <li class="list-group-item">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-      </li>
-      <li class="list-group-item">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-      </li>
-      <li class="list-group-item">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-      </li>
-      <li class="list-group-item">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-      </li>
-      <li class="list-group-item">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-      </li>
-    </ul>
+  <div class=container-fluid>
+    <div> <img id="movie-image" src="" alt=""></div>
+    <div>
+      <p id="movie-title"></p>
+    </div>
+    <div>
+      <iframe id="movie-link" src="" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+
   </div>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="filminfo.js"></script>
 
 </body>
 

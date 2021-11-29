@@ -2,6 +2,7 @@ body {
   background-color: black;
 }
 
-.list-group {
-  background-color: black;
+
+.container-fluid{
+  display: inline-flex;  
 }
