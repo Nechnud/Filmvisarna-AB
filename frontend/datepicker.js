@@ -9,18 +9,37 @@ $(document).ready(function () {
     dateFormat: "dd-mm-yy"
   });
 });
-
+let today = new Date();
 let showJson;
 let filmNumber;
-
+let html;
 
 async function readShowJson() {
   showJson = await $.getJSON('/json/shows.json');
+  showTodaysFilms();
 }
+
+async function showTodaysFilms() {
+  html = '';
+  for (i = 0; i < showJson.length; i++) {
+    html += `
+      <tr>
+      <th>${showJson[i].title}</th>
+      <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
+      <th>${showJson[i].showRoom}</th>
+      <th>${showJson[i]}</th>
+      </tr>
+    `;
+  }
+  $('.screening-result').html(html);
+  console.log(html);
+}
+readShowJson();
+
 
 const filmsSelect = document.querySelector('#filmsToShow');
 filmsSelect.addEventListener('change', (event) => {
-  let html = '';
+  html = '';
   filmNumber = event.target.value;
   readShowJson();
   if (event.target.value === 'All Films') {
@@ -44,36 +63,23 @@ filmsSelect.addEventListener('change', (event) => {
   $('.screening-result').html(html);
   return filmNumber;
 });
-
+/*
 
 //These codes are not ready yet! ------------------------- Have a nice weekend!
 let date, dateToShow;
 $(function () {
   $("#datepicker").on('change', function () {
     date = $(this).val();
-    console.log(date);
-    if (filmNumber === 'All Films') {
-      for (i = 0; i < showJson.length; i++) {
-        dateToShow = `
-          <td>${date}</td>   
-          `;
-      }
-    }
-    if (filmNumber != 'All Films') {
-      dateToShow += `
-      <td>${date}</td>   
-      `;
-    }
-    $('.table-result').html(date);
-  });
-});
-
-
-const salongSelect = document.querySelector('#salong');
-salongSelect.addEventListener('change', (event) => {
-  let date = '';
-  if (filmNumber === 'All Films') {
-
   }
-});
-//These codes are not ready yet! -------------------------
+  });
+
+
+  const salongSelect = document.querySelector('#salong');
+  salongSelect.addEventListener('change', (event) => {
+    let date = '';
+    if (filmNumber === 'All Films') {
+
+    }
+  });
+//These codes are not ready yet!
+*/
