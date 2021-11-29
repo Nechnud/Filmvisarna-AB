@@ -17,6 +17,9 @@ nav img {
   font-size: 60px;
   color: #fff;
   text-shadow: 0 0 20px #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
 }
 .navbar-brand:after {
   content: attr(data-text);
