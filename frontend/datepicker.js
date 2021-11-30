@@ -28,7 +28,6 @@ async function showTodaysFilms() {
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
       <th>${showJson[i].showRoom}</th>
       <th>${showJson[i].showTime}</th>
-      <th>${showJson[i]}</th>
       </tr>
     `;
   }
