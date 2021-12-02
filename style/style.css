@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
 
 body {
-  background-color: grey;
+  background-color: rgb(10, 10, 10);
 }
 
 header {
   background-color: #040924;
 }
 
-nav img {
+/*nav img {
   width: 200px;
-}
+}*/
 
 .navbar-brand {
   position: absolute;
