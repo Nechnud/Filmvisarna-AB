@@ -109,3 +109,23 @@ main {
 .screening-list {
   padding-top: 5%;
 }
+
+.button__text {
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: #009578;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-family: 500;
+  cursor: pointer;
+}
+
+/* This is so that when you hover over the button i changes color*/
+.navbar-buttons:hover {
+  background: #008168;
+}
