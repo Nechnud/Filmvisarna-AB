@@ -5,8 +5,34 @@ let movieID;
 //Get the id of the movie when the user clicks the movie poster
 $('.movie').click(function () {
   movieID = $(this).attr('id');
-  localStorage.setItem("ID", movieID);
+  check(movieID);
 });
+
+
+
+async function readFilmsFromJson(movieID) {
+  let html = '';
+  console.log(movieID);
+  films = await $.getJSON('/json/movieinfo.json');
+  for (i = 0; i < films.length; i++) {
+    if (films[i].id == movieID) {
+      html += `
+      <div class="movieInfo">
+      <h6>${films[i].title}</h6>
+          `;
+    }
+  }
+  $('#movieinfoFromJsonID').html(html);
+}
+
+function check(movieID) {
+  if (window.location.pathname.includes('filminfo')) {
+    readFilmsFromJson(movieID);
+  };
+}
+
+
+
 /*
 async function readFilmsFromJson(movieID) {
   let html = '';
