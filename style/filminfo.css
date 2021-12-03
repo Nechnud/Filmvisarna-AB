@@ -9,4 +9,34 @@ body {
 
 .container-fluid{
   display: inline-flex;  
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/*Padding for screening infomation on the filminfor.html */
+.screening-list {
+  padding-top: 5%;
+}
+/*Padding for screening infomation on the filminfor.html */
+#FilmsScreening{
+padding: 10% 10% 10% 10%
+}
+footer {
+  background-color: #040924;
+}
+/* Footers text color */
+.container-footer p {
+  color: white;
+}
+/* This is for sticky - footer, 
+so that the footer always 
+stays at the bottom part of the webpage */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* This is also for sticky footer */
+main {
+  flex: 1;
 }

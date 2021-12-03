@@ -13,13 +13,11 @@
 </head>
 
 <body>
-     
-  </button>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-      <!-- <a href="index.html"><img src="/Filmvisarna-logo-image/FilmvisarnaLogo.png"></a> -->
+      <a href="index.html"><img src="/Filmvisarna-logo-image/FilmvisarnaLogo.png"></a>
       <div class="container-fluid">
-        <a class="navbar-brand" data-text="Filmvisarna">Filmvisarna</a>
+        <a class="navbar-brand" data-text="Filmvisarna-AB">Filmvisarna-AB</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,12 +25,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
-          <div class="navbar-buttons">
-          <button type="button" class="button">
-          <span class="button__icon"></span>
-          <!-- this is the code to inport the icon img-->
-            <ion-icon name="ticket"></ion-icon> </button>
-          </div>
           <div class="navbar-buttons">
             <button class="btn btn-light" type="button">My Bookings</button>
           </div>
@@ -79,95 +71,37 @@
     <div class="container-movieList">
       <div class="row">
         <div class="col">
-          <a><img src="/images/dayAfterTomorrow.jpg" class="movie" id="1"></a>
+          <a><img src="/images/dayAfterTomorrowM.jpg" class="movie" id="1"></a>
           <div class="1"></div>
         </div>
 
         <div class="col">
-          <a><img src="/images/joker.jpg" class="movie" id="2"></a>
+          <a><img src="/images/jokerM.jpg" class="movie" id="2"></a>
           <div class="2"></div>
         </div>
 
         <div class="col">
-          <a><img src="/images/aladdin.jpg" class="movie" id="3"></a>
+          <a><img src="/images/aladdinM.jpg" class="movie" id="3"></a>
           <div class="3"></div>
         </div>
 
         <div class="col">
-          <a><img src="/images/totoro.jpg" class="movie" id="4"></a>
+          <a><img src="/images/totoroM.jpg" class="movie" id="4"></a>
           <div class="4"></div>
         </div>
 
         <div class="col">
-          <a><img src="/images/interstellar.jpg" class="movie" id="5"></a>
+          <a><img src="/images/interstellarM.jpg" class="movie" id="5"></a>
           <div class="5"></div>
         </div>
 
         <div class="col">
-          <a><img src="/images/spiderman.jpg" class="movie" id="6"></a>
+          <a><img src="/images/spidermanM.jpg" class="movie" id="6"></a>
           <div class="6"></div>
         </div>
 
       </div>
     </div>
-    <div id="FilmsScreening" class="form-group">
-      <div class="row">
-
-        <div class="col" id="FS-item">
-          <select class="form-control" id="filmsToShow">
-            <option><a class="dropdown-item" href="#" value="0">All Films</a></option>
-            <option><a class="dropdown-item" href="#" value="1">The Day After Tomorrow</a></option>
-            <option><a class="dropdown-item" href="#" value="2">Joker</a></option>
-            <option><a class="dropdown-item" href="#" value="3">Aladdin</a></option>
-            <option><a class="dropdown-item" href="#" value="4">My Neighbour Totoro</a></option>
-            <option><a class="dropdown-item" href="#" value="5">Interstellar</a></option>
-            <option><a class="dropdown-item" href="#" value="6">Spider-Man: No Way Home</a></option>
-          </select>
-        </div>
-
-        <div class="col">
-          <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
-        </div>
-        <div class="col" id="FS-item">
-
-          <select class="form-control" id="salong">
-            <option><a class="dropdown-item" href="#" value="All Salongs">All Salongs</a></option>
-            <option><a class="dropdown-item" href="#" value="Grande">Grande</a></option>
-            <option><a class="dropdown-item" href="#" value="Cozy">Cozy</a></option>
-
-          </select>
-        </div>
-        <div class="col" id="FS-item">
-
-          <select class="form-control" id="ageGroup">
-            <option><a class="dropdown-item" href="#">All Age</a></option>
-            <option><a class="dropdown-item" href="#">Children</a></option>
-            <option><a class="dropdown-item" href="#">Adult</a></option>
-
-          </select>
-        </div>
-        <div class="col" id="FS-item">
-          <a><button class="form-control" id="select-film">Select</button></a>
-        </div>
-      </div>
-
-      <div class="screening-list">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Film Title</th>
-              <th scope="col">Date</th>
-              <th scope="col">Salong</th>
-              <th scope="col">Time</th>
-              <th scope="col">Age Group</th>
-            </tr>
-          </thead>
-          <tbody class="screening-result">
-
-          </tbody>
-        </table>
-      </div>
-
 
   </main>
   <footer class="footer mt-auto py-3 sticky-bottom">
@@ -185,10 +119,6 @@
   <script src="/js/main.js"></script>
   <script src="/js/datepicker.js"></script>
   <script src="/js/screening.js"></script>
-
-  <!-- this is the script that needed to have icons on the buttons!-->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

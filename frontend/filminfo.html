@@ -13,25 +13,77 @@
 </head>
 
 <body>
-
-  <div class=container-fluid>
-    <div class=container-fluid> <img id="movie-image" src="" alt=""></div>
+  <main>
     <div class=container-fluid>
-      <p id="movie-title"></p>
-    </div>
-    <div class=container-fluid>
-      <iframe id="movie-link" src="" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+      <div class=container-fluid> <img id="movie-image" src="" alt=""></div>
+      <div class=container-fluid>
+        <p id="movie-title"></p>
+      </div>
+      <div class=container-fluid>
+        <iframe id="movie-link" src="" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
     </div>
 
-  </div>
+    <div id="FilmsScreening" class="form-group">
+      <div class="row">
+        <div class="col">
+          <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
+        </div>
+        <div class="col" id="FS-item">
 
+          <select class="form-control" id="salong">
+            <option><a class="dropdown-item" href="#" value="All Salongs">All Salongs</a></option>
+            <option><a class="dropdown-item" href="#" value="Grande">Grande</a></option>
+            <option><a class="dropdown-item" href="#" value="Cozy">Cozy</a></option>
+
+          </select>
+        </div>
+        <div class="col" id="FS-item">
+
+          <select class="form-control" id="ageGroup">
+            <option><a class="dropdown-item" href="#">All Age</a></option>
+            <option><a class="dropdown-item" href="#">Children</a></option>
+            <option><a class="dropdown-item" href="#">Adult</a></option>
+
+          </select>
+        </div>
+        <div class="col" id="FS-item">
+          <a><button class="form-control" id="select-film">Select</button></a>
+        </div>
+      </div>
+
+      <div class="screening-list">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Film Title</th>
+              <th scope="col">Date</th>
+              <th scope="col">Salong</th>
+              <th scope="col">Time</th>
+              <th scope="col">Age Group</th>
+            </tr>
+          </thead>
+          <tbody class="screening-result">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer class="footer mt-auto py-3 sticky-bottom">
+
+    <div class="container-footer">
+      <p>I am a footer!</p>
+    </div>
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="main.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/datepicker.js"></script>
   <script src="/js/filminfo.js"></script>
 
 </body>
