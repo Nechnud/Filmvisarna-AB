@@ -1,8 +1,22 @@
+
+//Date picker Jquery
+$(document).ready(function () {
+  $("#datepicker").datepicker({
+    //maximum 30days 
+    maxDate: "+1m",
+    //Start date is always today, new Date() is current date object
+    minDate: new Date(),
+    dateFormat: "dd-mm-yy"
+  });
+});
+//Different variables
+let today = new Date();
+let showJson;
+let filmNumber;
+let html;
 let date;
-//Read the json file
-async function readShowJson() {
-  showJson = await $.getJSON('/json/shows.json');
-}
+
+
 //Read the date from datepicker
 $(function () {
   $("#datepicker").on('change', function () {
@@ -10,86 +24,28 @@ $(function () {
   });
   return date;
 });
-//Read all the options that are made by the user and show the result on the screening list
-let filmsScreening, dateScreening, salongScreening;
-const selectFilm = document.querySelector('#select-film');
-//This method starts when the user click on the "select" button
-selectFilm.addEventListener('click', (event) => {
+
+//Read the json file
+async function readShowJson() {
+  showJson = await $.getJSON('/json/shows.json');
+  showTodaysFilms();
+}
+
+
+//This function is not finnshed yet.....
+async function showTodaysFilms() {
   html = '';
-  filmsScreening = $("#filmsToShow :selected").val();;
-  console.log(filmsScreening);
-  salongScreening = $("#salong :selected").val();
-  //There are four if statements to match the user's option
-  if (filmsScreening == 'All Films' && salongScreening == 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      html += `
+  for (i = 0; i < showJson.length; i++) {
+    html += `
       <tr>
       <th>${showJson[i].title}</th>
-      <th>${date}</th>
+      <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
       <th>${showJson[i].showRoom}</th>
       <th>${showJson[i].showTime}</th>
       </tr>
     `;
-    }
   }
-  if (filmsScreening == 'All Films' && salongScreening != 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      if (showJson[i].showRoom === salongScreening) {
-        html += `
-      <tr>
-      <th>${showJson[i].title}</th>
-      <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
-      </tr>
-    `;
-      }
-    }
-  }
-  if (filmsScreening !== 'All Films' && salongScreening === 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      if (filmsScreening == showJson[i].title) {
-        html += `
-      <tr class="table-result">
-      <th>${filmsScreening}</th>
-      <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
-      </tr>
-      `;
-      }
-    }
-  }
-  if (filmsScreening !== 'All Films' && salongScreening !== 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      if (filmsScreening == showJson[i].title && salongScreening == showJson[i].showRoom) {
-        html += `
-      <tr class="table-result">
-      <th>${filmsScreening}</th>
-      <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
-      </tr>
-      `;
-      }
-      //If there is no match the program alters a message to the user
-      else {
-        alert("No film matches! Choose again!");
-        html = '';
-        $('.screening-result').html(html);
-        return;
-      }
-    }
-  }
-  //If the user forget to choose the date, the program alters a message.
-  if (date == undefined) {
-    html = '';
-    alert("Please choose the date!");
-
-  }
-  //Show the selected result on the screening-list table
   $('.screening-result').html(html);
-});
-
-
-
+}
+readShowJson();
+//--------------------------------------

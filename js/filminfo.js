@@ -1,6 +1,24 @@
-let movieId = 6;
 
-let movieInfo;
+let rightID = localStorage.getItem("ID");
+
+
+async function readFilmsFromJson(rightID) {
+  let html = '';
+  console.log(rightID);
+  films = await $.getJSON('/json/movieinfo.json');
+  for (i = 0; i < films.length; i++) {
+    if (films[i].id == rightID) {
+      html += `
+      <div class="movieInfo">
+      <h6>${films[i].title}</h6>
+          `;
+    }
+  }
+  $('#movieinfoFromJsonID').html(html);
+}
+readFilmsFromJson();
+
+let movieId = 2;
 
 if (movieId === 1) {
   document.getElementById("movie-title").innerText = "The Day After Tomorrow";

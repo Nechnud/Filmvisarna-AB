@@ -1,5 +1,5 @@
 body {
-  background-color: black;  
+  background-color:black;  
 }
 
 .container-fluid > p {
@@ -21,6 +21,7 @@ body {
 #FilmsScreening{
 padding: 10% 10% 10% 10%
 }
+/* Footer */
 footer {
   background-color: #040924;
 }
