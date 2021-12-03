@@ -1,5 +1,3 @@
-let rightID = check();
-console.log(rightID);
 
 let movieId = 2;
 
