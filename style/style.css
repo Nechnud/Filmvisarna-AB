@@ -48,7 +48,11 @@ nav img {
 .container-movieList {
   padding: 10% 10% 10% 10%;
 }
-
+.container-movie{
+  padding-left: 10%;
+  padding-top: 10%;
+  padding-right: 10%;
+}
 /* Footer */
 footer {
   background-color: #040924;
