@@ -1,3 +1,4 @@
+//All the codes here are for checking the screening of movies -----------------
 
 //Date picker Jquery
 $(document).ready(function () {
@@ -13,7 +14,6 @@ $(document).ready(function () {
 let today = new Date();
 let showJson, html, date;
 
-
 //Read the date from datepicker
 $(function () {
   $("#datepicker").on('change', function () {
@@ -27,7 +27,6 @@ async function readShowJson() {
   showJson = await $.getJSON('json/shows.json');
   showTodaysFilms();
 }
-
 
 //This function is not finnshed yet.....
 //This is for the movie information
