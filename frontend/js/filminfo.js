@@ -1,31 +1,39 @@
 
-let movieId;
+let movieId = 1;
 let movies;
+let movieToShow;
 
 async function readJson() {
-  //Antonio, let rawData = await fetch('json/movieinfo.json') should work
   let rawData = await fetch('movieinfo.json');
   movies = await rawData.json();
 }
 
-function renderMovieInfo() {
-  document.querySelector('#movie-info').innerHTML =
-    movieInfo.map(function (movie) {
-      return `
-        <div id="movie-info">
-          <h4>${product.name}</h4>
-          <p>${product.description}</p>
-          <h5>Price: ${product.price}</h5>
-        </div>
-      `
-    }).join('');
+readJson();
+
+for (let i = 0; i < movies.length; i++) {
+  if (movies[i].id === movieID) {
+    movieToShow = movies[i];
+  }
 }
 
+function renderMovieInfo() {
+  `
+    <h1>${movieToShow.title}</h1>
+    <h2>${movieToShow.year}</h2>
+    <h2>${movieToShow.runtime}</h2>
+    <h2>${movieToShow.director}</h2>        
+  `
+}
 
-/* if (movieId === 1) {
-  document.getElementById("movie-info").innerText = "The Day After Tomorrow";
-  document.getElementById("movie-image").src = "images/dayAfterTomorrowM.jpg";
-  document.getElementById("movie-trailer").src = "https://www.youtube.com/embed/Ku_IseK3xTc";
+document.getElementById("movie-info").innerText = renderMovieInfo();
+document.getElementById("movie-image").src = movieToShow.image_portrait_m;
+document.getElementById("movie-trailer").src = movieToShow.trailer;
+
+
+/*if (movieId === 1) {
+  document.getElementById("movie-info").innerText = renderMovieInfo();
+  document.getElementById("movie-image").src = movieToShow.image_portrait_m;
+  document.getElementById("movie-trailer").src = movieToShow.trailer;
 }
 
 if (movieId === 2) {
@@ -58,4 +66,3 @@ if (movieId === 6) {
   document.getElementById("movie-trailer").src = "https://www.youtube.com/embed/JfVOs4VSpmA";
 }
 */
-
