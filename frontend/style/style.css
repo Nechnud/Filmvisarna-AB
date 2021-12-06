@@ -49,11 +49,12 @@ nav img {
   padding: 10% 10% 10% 10%;
 }
 /* This adds padding for movie carousel */
-.container-movie{
-  padding-left: 10%;
-  padding-top: 10%;
-  padding-right: 10%;
+.movie-carousel{
+  padding-left: 15%;
+  padding-top: 5%;
+  padding-right: 15%;
 }
+
 /* This adds padding for six movie posters*/
 .movie{
   margin: 5%;
