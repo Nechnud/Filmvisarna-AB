@@ -13,80 +13,83 @@
 </head>
 
 <body>
-  <main>
-    <div class="container-fluid">
-      <div class="container-fluid"> <img id="movie-image" src="" alt=""></div>
-      <div class="container-fluid" id="infoFromJson">
-        <div id="movie-info"></div>
-      </div>
+  <div class="bg-image">
+    <main>
       <div class="container-fluid">
-        <iframe id="movie-trailer" src="" title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div id="FilmsScreening" class="form-group">
-      <div class="row">
-        <div class="col">
-          <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
+        <div class="container-fluid"> <img id="movie-image" src="" alt=""></div>
+        <div class="container-fluid" id="infoFromJson">
+          <div id="movie-info"></div>
         </div>
-        <div class="col" id="FS-item">
-          <a><button class="form-control" id="select-film">Choose</button></a>
+        <div class="container-fluid">
+          <iframe id="movie-trailer" src="" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
         </div>
       </div>
 
-      <div class="screening-list">
-        <table class="table table-dark">
-          <thead>
-            <tr>
-              <th scope="col">Movie Title</th>
-              <th scope="col">Date</th>
-              <th scope="col">Salong</th>
-              <th scope="col">Time</th>
-              <th scope="col">Age Group</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="screening-result">
+      <div id="FilmsScreening" class="form-group">
+        <div class="row">
+          <div class="col">
+            <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
+          </div>
+          <div class="col" id="FS-item">
+            <a><button class="form-control" id="select-film">Choose</button></a>
+          </div>
+        </div>
+
+        <div class="screening-list">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Movie Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Salong</th>
+                <th scope="col">Time</th>
+                <th scope="col">Age Group</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="screening-result">
 
 
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <button id="trailer-button" type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#exampleModal">
-        Trailer
-      </button>
-      <!-- Modal -->
-      <div class="pop-upp">
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <iframe id="movieTrailer" src="" title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button id="trailer-button" type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          Trailer
+        </button>
+        <!-- Modal -->
+        <div class="pop-upp">
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <iframe id="movieTrailer" src="" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
 
 
-  </main>
-  <footer class="footer mt-auto py-3 sticky-bottom">
+    </main>
+    <footer class="footer mt-auto py-3 sticky-bottom">
 
-    <div class="container-footer">
-      <p>I am a footer!</p>
-    </div>
-  </footer>
+      <div class="container-footer">
+        <p>I am a footer!</p>
+      </div>
+    </footer>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

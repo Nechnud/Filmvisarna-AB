@@ -1,3 +1,6 @@
+.bg-image{
+  background-image: url("/frontend/images/filmvisarna.png");
+}
 body {
   background-color: white;
 }
@@ -8,6 +11,7 @@ body {
 
 
 .container-fluid{
+  background-color: black;
   display: inline-flex;  
   padding-left: 10%;
   padding-right: 10%;
