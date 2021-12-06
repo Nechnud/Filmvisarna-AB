@@ -16,12 +16,12 @@
     "distributor": "20th Century Fox",
     "sound_mix": "Surround, Dolby SR, DTS, SDDS",
     "trailer": "https://www.youtube.com/embed/Ku_IseK3xTc",
-    "image_portrait_s": "images/dateAfterTomorrow.jpg",
-    "image_portrait_m": "images/dateAfterTomorrowM.jpg",
-    "image_portrait_l": "images/dateAfterTomorrowL.jpg",
-    "image_landscape_s": "images/dateAfterTomorrowLandscapeS.jpg",
-    "image_landscape_m": "images/dateAfterTomorrowLandscapeM.jpg",
-    "image_landscape_l": "images/dateAfterTomorrowLandscapeL.jpg"
+    "image_portrait_s": "images/dayAfterTomorrow.jpg",
+    "image_portrait_m": "images/dayAfterTomorrowM.jpg",
+    "image_portrait_l": "images/dayAfterTomorrowL.jpg",
+    "image_landscape_s": "images/dayAfterTomorrowLandscapeS.jpg",
+    "image_landscape_m": "images/dayAfterTomorrowLandscapeM.jpg",
+    "image_landscape_l": "images/dayAfterTomorrowLandscapeL.jpg"
   },
   {
     "id": 2,

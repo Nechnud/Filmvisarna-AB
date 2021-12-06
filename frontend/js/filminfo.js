@@ -1,35 +1,49 @@
 
-let movieId = 1;
+
+
+let movieId = localStorage.getItem("ID");
+
 let movies;
 let movieToShow;
+let movieData;
 
 async function readJson() {
-  let rawData = await fetch('movieinfo.json');
+  let rawData = await fetch('json/movieinfo.json');
   movies = await rawData.json();
+  console.log(movies);
+  getMovieToShow(movies);
 }
 
 readJson();
 
-console.log(movies);
-
-for (let i = 0; i < movies.length; i++) {
-  if (movies[i].id === movieID) {
-    movieToShow = movies[i];
+function getMovieToShow() {
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].id === movieId) {
+      movieToShow = movies[i];
+    }
   }
+  renderMovieInfo(movieToShow);
 }
+
+
+
 
 function renderMovieInfo() {
-  `
-    <h1>${movieToShow.title}</h1>
-    <h2>${movieToShow.year}</h2>
-    <h2>${movieToShow.runtime}</h2>
-    <h2>${movieToShow.director}</h2>        
-  `
+  movieData =
+    `
+    ${movieToShow.title}
+    ${movieToShow.year}
+    ${movieToShow.runtime}
+    ${movieToShow.director}        
+  `;
+  document.getElementById("movie-info").innerText = movieData;
+  document.getElementById("movie-image").src = movieToShow.image_portrait_m;
+  document.getElementById("movie-trailer").src = movieToShow.trailer;
 }
 
-document.getElementById("movie-info").innerText = renderMovieInfo();
-document.getElementById("movie-image").src = movieToShow.image_portrait_m;
-document.getElementById("movie-trailer").src = movieToShow.trailer;
+
+
+
 
 
 /*if (movieId === 1) {
