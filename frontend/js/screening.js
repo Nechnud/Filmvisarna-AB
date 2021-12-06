@@ -22,30 +22,43 @@ $(function () {
   return date;
 });
 
-//Read the json file
+//Read the json file and store it into 'shows' variable
 async function readShowJson() {
   shows = await $.getJSON('json/shows.json');
-  showTodaysFilms();
+  showTodaysFilms(movieID);
 }
 
-//This function is not finnshed yet.....
 //This is for the movie information
+//And I used localStorage to store the clicked movie poster's ID
+//When the browser loads filminfo.html it fetchs the clicked movie poster's ID from localStorge.
+//and shows the right information on the webpage.
 async function showTodaysFilms() {
   html = '';
-  for (let show of shows) {
-    html += `
+  //When the webpage location is filminfo.html this function continues
+  if (location.pathname.includes('filminfo')) {
+    //Loop through the shows(all six films are in the shows)
+    for (let show of shows) {
+      //Fetch the movieID from localStorage with its key 'ID'
+      let rightOne = localStorage.getItem('ID');
+      //check which movie is clicked and get that movie's information
+      if (rightOne == show.id) {
+        html += `
       <tr>
-      <th>Not finished the code yet</th>
+      <th>${show.title}</th>
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
       </tr>
     `;
+      }
+    }
+    //Tell the html tag to show the information of the movie
+    $('.screening-result').html(html);
   }
-  $('.screening-result').html(html);
 }
+//Declare the function readShowJson();
 readShowJson();
-//--------------------------------------
+
 
 //Codes below are not finished yet....................
 //Part of them works, the parts that work are (salong button, date picker)
