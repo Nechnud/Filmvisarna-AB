@@ -1,7 +1,7 @@
 //All the codes here are for checking the screening of movies -----------------
 
 //Date picker Jquery
-$(document).ready(function () {
+$(function () {
   $("#datepicker").datepicker({
     //maximum 30days 
     maxDate: "+1m",
@@ -12,7 +12,7 @@ $(document).ready(function () {
 });
 //Different variables
 let today = new Date();
-let showJson, html, date;
+let shows, html, date;
 
 //Read the date from datepicker
 $(function () {
@@ -24,7 +24,7 @@ $(function () {
 
 //Read the json file
 async function readShowJson() {
-  showJson = await $.getJSON('json/shows.json');
+  shows = await $.getJSON('json/shows.json');
   showTodaysFilms();
 }
 
@@ -32,13 +32,13 @@ async function readShowJson() {
 //This is for the movie information
 async function showTodaysFilms() {
   html = '';
-  for (i = 0; i < showJson.length; i++) {
+  for (let show of shows) {
     html += `
       <tr>
       <th>Not finished the code yet</th>
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
+      <th>${shows[i].showRoom}</th>
+      <th>${shows[i].showTime}</th>
       </tr>
     `;
   }
@@ -57,26 +57,26 @@ selectFilm.addEventListener('click', (event) => {
   html = '';
   salongScreening = $("#salong :selected").val();
   if (salongScreening == 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
+    for (i = 0; i < shows.length; i++) {
       html += `
       <tr>
       <th>Not finished the code yet</th>
       <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
+      <th>${shows[i].showRoom}</th>
+      <th>${shows[i].showTime}</th>
       </tr>
     `;
     }
   }
   if (salongScreening != 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      if (showJson[i].showRoom === salongScreening) {
+    for (i = 0; i < shows.length; i++) {
+      if (shows[i].showRoom === salongScreening) {
         html += `
       <tr>
       <th>Not finished the code yet</th>
       <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
+      <th>${shows[i].showRoom}</th>
+      <th>${shows[i].showTime}</th>
       </tr>
     `;
       }
