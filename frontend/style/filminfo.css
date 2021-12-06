@@ -5,6 +5,11 @@
 body {
   background-color: black;
 }
+.sreening-info{
+  background-color: black;
+  margin-left: 28%;
+  margin-right: 28%;
+}
 
 .container-fluid > p {
   color: white;
@@ -14,8 +19,6 @@ body {
 .container-fluid{
   background-color: black;
   display: inline-flex;  
-  padding-left: 10%;
-  padding-right: 10%;
 }
 
 /*Padding for screening infomation on the filminfor.html */
@@ -24,15 +27,20 @@ body {
 }
 /*Padding for screening infomation on the filminfor.html */
 #FilmsScreening{
-padding: 10% 10% 10% 10%
+
+padding:5% 5% 5% 5%;
 }
+
 /* Footer */
 footer {
-  background-color: #040924;
+  background-color: black;
 }
 /* Footers text color */
 .container-footer p {
   color: white;
+}
+#trailer-button{
+  
 }
 
 /* This is for sticky - footer, 
@@ -47,9 +55,7 @@ body {
 main {
   flex: 1;
 }
-#trailer-button{
-float: right;
-}
+
 iframe{
   height:400px;
   width:600px
