@@ -1,5 +1,5 @@
 .bg-image{
-  background-image: url("/frontend/bgFilmvisarna.png");
+  background-image: url("bgFilmvisarna.png");
   height: 100vh;
 }
 body {
