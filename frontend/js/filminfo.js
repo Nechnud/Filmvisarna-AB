@@ -3,6 +3,7 @@ let movieId;
 let movies;
 
 async function readJson() {
+  //Antonio, let rawData = await fetch('json/movieinfo.json') should work
   let rawData = await fetch('movieinfo.json');
   movies = await rawData.json();
 }
