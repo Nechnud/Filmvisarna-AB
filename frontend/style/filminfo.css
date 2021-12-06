@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: black;
 }
 
 .container-fluid > p {
@@ -48,4 +48,7 @@ float: right;
 iframe{
   height:400px;
   width:600px
+}
+#movie-info{
+  color:white;
 }
