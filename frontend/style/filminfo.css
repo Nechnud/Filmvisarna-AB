@@ -1,5 +1,6 @@
 .bg-image{
   background-image: url("/frontend/images/bgFilmvisarna.png");
+  height: 100vh;
 }
 body {
   background-color: black;
