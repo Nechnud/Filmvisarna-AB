@@ -91,12 +91,13 @@ selectFilm.addEventListener('click', (event) => {
   showTrailer();
 });
 
-
+//read movieinfo.json file to 'movies'
 async function readMovieJson() {
   movies = await $.getJSON('json/movieinfo.json');
   showTrailer(movies);
 }
 
+//Function for movie trailer pop-up window
 function showTrailer() {
   for (let movie of movies) {
     let rightOne = localStorage.getItem('ID');
