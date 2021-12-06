@@ -34,15 +34,13 @@ async function readShowJson() {
 //and shows the right information on the webpage.
 async function showTodaysFilms() {
   html = '';
-  //When the webpage location is filminfo.html this function continues
-  if (location.pathname.includes('filminfo')) {
-    //Loop through the shows(all six films are in the shows)
-    for (let show of shows) {
-      //Fetch the movieID from localStorage with its key 'ID'
-      let rightOne = localStorage.getItem('ID');
-      //check which movie is clicked and get that movie's information
-      if (rightOne == show.id) {
-        html += `
+  //Loop through 'shows'(all six films are in 'shows')
+  for (let show of shows) {
+    //Fetch the movieID from localStorage with its key 'ID'
+    let rightOne = localStorage.getItem('ID');
+    //check which movie is clicked and get that movie's information
+    if (rightOne == show.id) {
+      html += `
       <tr>
       <th>${show.title}</th>
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
@@ -50,11 +48,11 @@ async function showTodaysFilms() {
       <th>${show.showTime}</th>
       </tr>
     `;
-      }
     }
-    //Tell the html tag to show the information of the movie
-    $('.screening-result').html(html);
   }
+  //Tell the html tag to show the information of the movie
+  $('.screening-result').html(html);
+
 }
 //Declare the function readShowJson();
 readShowJson();
@@ -64,7 +62,7 @@ readShowJson();
 //Part of them works, the parts that work are (salong button, date picker)
 //Read all the options that are made by the user and show the result on the screening list
 let dateScreening, salongScreening;
-//This method starts when the user click on the "select" button
+//This method starts when the user click on the "choose" button
 let selectFilm = document.querySelector('#select-film');
 selectFilm.addEventListener('click', (event) => {
   html = '';
