@@ -37,8 +37,8 @@ async function showTodaysFilms() {
       <tr>
       <th>Not finished the code yet</th>
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
-      <th>${shows[i].showRoom}</th>
-      <th>${shows[i].showTime}</th>
+      <th>${show.showRoom}</th>
+      <th>${show.showTime}</th>
       </tr>
     `;
   }
@@ -57,26 +57,26 @@ selectFilm.addEventListener('click', (event) => {
   html = '';
   salongScreening = $("#salong :selected").val();
   if (salongScreening == 'All Salongs') {
-    for (i = 0; i < shows.length; i++) {
+    for (let show of shows) {
       html += `
       <tr>
       <th>Not finished the code yet</th>
       <th>${date}</th>
-      <th>${shows[i].showRoom}</th>
-      <th>${shows[i].showTime}</th>
+      <th>${show.showRoom}</th>
+      <th>${show.showTime}</th>
       </tr>
     `;
     }
   }
   if (salongScreening != 'All Salongs') {
-    for (i = 0; i < shows.length; i++) {
-      if (shows[i].showRoom === salongScreening) {
+    for (let show of shows) {
+      if (show.showRoom === salongScreening) {
         html += `
       <tr>
       <th>Not finished the code yet</th>
       <th>${date}</th>
-      <th>${shows[i].showRoom}</th>
-      <th>${shows[i].showTime}</th>
+      <th>${show.showRoom}</th>
+      <th>${show.showTime}</th>
       </tr>
     `;
       }
