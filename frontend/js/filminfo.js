@@ -10,6 +10,8 @@ async function readJson() {
 
 readJson();
 
+console.log(movies);
+
 for (let i = 0; i < movies.length; i++) {
   if (movies[i].id === movieID) {
     movieToShow = movies[i];
