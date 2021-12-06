@@ -12,7 +12,7 @@ $(function () {
 });
 //Different variables
 let today = new Date();
-let shows, html, date;
+let shows, html, date, address;
 
 //Read the date from datepicker
 $(function () {
@@ -25,7 +25,8 @@ $(function () {
 //Read the json file and store it into 'shows' variable
 async function readShowJson() {
   shows = await $.getJSON('json/shows.json');
-  showTodaysFilms(movieID);
+  movies = await $.getJSON('json/movieinfo.json');
+  showTodaysFilms();
 }
 
 //This is for the movie information
@@ -41,18 +42,18 @@ async function showTodaysFilms() {
     //check which movie is clicked and get that movie's information
     if (rightOne == show.id) {
       html += `
-      <tr>
       <th>${show.title}</th>
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
-      </tr>
+      <th>Age group not defined</th>
+      
     `;
     }
   }
   //Tell the html tag to show the information of the movie
   $('.screening-result').html(html);
-
+  showTrailer();
 }
 //Declare the function readShowJson();
 readShowJson();
@@ -63,18 +64,21 @@ readShowJson();
 let selectFilm = document.querySelector('#select-film');
 selectFilm.addEventListener('click', (event) => {
   html = '';
+  address = '';
   for (let show of shows) {
     let rightOne = localStorage.getItem('ID');
     //check which movie is clicked and get that movie's information
     if (rightOne == show.id) {
       html += `
-      <tr>
+     
       <th>${show.title}</th>
       <th>${date}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
-      </tr>
+      <th>Age group not defined</th>
+      
     `;
+
     }
     //If the user forget to choose the date, the program alters a message.
     if (date == undefined) {
@@ -84,4 +88,23 @@ selectFilm.addEventListener('click', (event) => {
   }
   //Show the selected result on the screening-list table
   $('.screening-result').html(html);
+  showTrailer();
 });
+
+
+async function readMovieJson() {
+  movies = await $.getJSON('json/movieinfo.json');
+  showTrailer(movies);
+}
+
+function showTrailer() {
+  for (let movie of movies) {
+    let rightOne = localStorage.getItem('ID');
+    if (movie.id == rightOne) {
+      address = `${movie.trailer}`;
+    }
+  }
+  document.getElementById("movieTrailer").src = address;
+}
+
+
