@@ -1,5 +1,25 @@
 
-let movieId = 2;
+let movieId;
+let movies;
+
+async function readJson() {
+  let rawData = await fetch('movieinfo.json');
+  movies = await rawData.json();
+}
+
+function render() {
+  document.querySelector('.movies').innerHTML =
+    movieInfo.map(function (movie) {
+      return `
+        <div class="">
+          <h4>${product.name}</h4>
+          <p>${product.description}</p>
+          <h5>Price: ${product.price}</h5>
+        </div>
+      `
+    }).join('');
+}
+
 
 if (movieId === 1) {
   document.getElementById("movie-title").innerText = "The Day After Tomorrow";
