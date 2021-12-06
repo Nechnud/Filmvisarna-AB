@@ -58,45 +58,29 @@ async function showTodaysFilms() {
 readShowJson();
 
 
-//Codes below are not finished yet....................
-//Part of them works, the parts that work are (salong button, date picker)
-//Read all the options that are made by the user and show the result on the screening list
-let dateScreening, salongScreening;
+//If the user decides to choose a date on filminfo.html page 
 //This method starts when the user click on the "choose" button
 let selectFilm = document.querySelector('#select-film');
 selectFilm.addEventListener('click', (event) => {
   html = '';
-  salongScreening = $("#salong :selected").val();
-  if (salongScreening == 'All Salongs') {
-    for (let show of shows) {
+  for (let show of shows) {
+    let rightOne = localStorage.getItem('ID');
+    //check which movie is clicked and get that movie's information
+    if (rightOne == show.id) {
       html += `
       <tr>
-      <th>Not finished the code yet</th>
+      <th>${show.title}</th>
       <th>${date}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
       </tr>
     `;
     }
-  }
-  if (salongScreening != 'All Salongs') {
-    for (let show of shows) {
-      if (show.showRoom === salongScreening) {
-        html += `
-      <tr>
-      <th>Not finished the code yet</th>
-      <th>${date}</th>
-      <th>${show.showRoom}</th>
-      <th>${show.showTime}</th>
-      </tr>
-    `;
-      }
+    //If the user forget to choose the date, the program alters a message.
+    if (date == undefined) {
+      html = '';
+      alert("Please choose the date!");
     }
-  }
-  //If the user forget to choose the date, the program alters a message.
-  if (date == undefined) {
-    html = '';
-    alert("Please choose the date!");
   }
   //Show the selected result on the screening-list table
   $('.screening-result').html(html);
