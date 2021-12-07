@@ -15,10 +15,10 @@
 <body>
 
   <header>
+
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-      <a href="index.html"><img src="Filmvisarna-logo-image/FilmvisarnaLogo.png"></a>
       <div class="container-fluid">
-        <a class="navbar-brand" data-text="Filmvisarna-AB">Filmvisarna-AB</a>
+        <a class="navbar-brand" href="index.html" data-text="Filmvisarna AB">Filmvisarna AB</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,91 +27,91 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
           <div class="navbar-buttons">
-            <button class="btn btn-light" type="button">My Bookings</button>
+            <button class="btn btn-dark" type="button">My Bookings</button>
           </div>
           <div class="navbar-buttons">
-            <a href="#allFilms"><button class="btn btn-light" type="button">All Movies</button></a>
+            <a href="#allFilms"><button class="btn btn-dark" type="button">All Movies</button></a>
           </div>
 
         </div>
       </div>
     </nav>
   </header>
-  <div class="bg-image">
-    <main>
 
-      <div class="container" id="container-movie-info">
+
+  <main>
+
+    <div class="container" id="container-movie-info">
+      <div class="row">
+        <div class="col">
+          <img id="movie-image" src="" alt="">
+        </div>
+        <div class="col">
+          <div id="movie-info"></div>
+          <button id="trailer-button" type="button" class="btn btn-dark" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Play Trailer
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="screening-info">
+      <div id="FilmsScreening" class="form-group">
         <div class="row">
           <div class="col">
-            <img id="movie-image" src="" alt="">
+            <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
           </div>
-          <div class="col">
-            <div id="movie-info"></div>
-            <button id="trailer-button" type="button" class="btn btn-dark" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
-              Play Trailer
-            </button>
+          <div class="col" id="FS-item">
+            <a><button class="form-control" id="select-film">Choose</button></a>
+          </div>
+        </div>
+
+        <div class="screening-list">
+          <div class="table-responsive">
+            <table class="table table-light">
+              <thead>
+                <tr>
+                  <th scope="col">Movie</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Salong</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Age Group</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="screening-result">
+
+
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-
-
-      <div class="screening-info">
-        <div id="FilmsScreening" class="form-group">
-          <div class="row">
-            <div class="col">
-              <input type="text" id="datepicker" placeholder="Choose Date" readonly class="form-control">
-            </div>
-            <div class="col" id="FS-item">
-              <a><button class="form-control" id="select-film">Choose</button></a>
-            </div>
-          </div>
-
-          <div class="screening-list">
-            <div class="table-responsive">
-              <table class="table table-light">
-                <thead>
-                  <tr>
-                    <th scope="col">Movie</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Salong</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Age Group</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="screening-result">
-
-
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <a href="seatBooking.html"><button type="button" class="btn btn-light" id="bookTickets">Book
-            Tickets</button></a>
-        <div class="pop-upp">
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <iframe id="movieTrailer" src="" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                </div>
+      <a href="seatBooking.html"><button type="button" class="btn btn-light" id="bookTickets">Book
+          Tickets</button></a>
+      <div class="pop-upp">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <iframe id="movieTrailer" src="" title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-    </main>
-  </div>
+  </main>
+
 
   <footer class="footer mt-auto py-3 sticky-bottom">
 
