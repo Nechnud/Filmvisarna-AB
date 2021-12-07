@@ -1,78 +1,54 @@
 //Read all the options that are made by the user and show the result on the screening list
-let filmsScreening, dateScreening, salongScreening;
-//This method starts when the user click on the "select" button
-selectFilm.addEventListener('click', (event) => {
+
+
+let filmsScreening, ageGroup;
+let readJson2;
+let trailerSRC, video;
+async function readInfoJson() {
+  readJson2 = await $.getJSON('json/movieinfo.json');
+  showAllMovies();
+}
+
+async function showAllMovies() {
   html = '';
-  salongScreening = $("#salong :selected").val();
-
+  trailerSRC = '';
   //There are four if statements to match the user's option
-  if (filmsScreening == 'All Films' && salongScreening == 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      html += `
-      <tr>
-      <th>${showJson[i].title}</th>
-      <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
-      </tr>
+  for (i = 0; i < readJson2.length; i++) {
+    html = `
+    
+    <p class="name">${readJson2[i].title}</p>
+      <button id="${readJson2[i].title}" type="button" class="trailer-button" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+              Play Trailer
+            </button>
     `;
-    }
+    $('#screening-result' + `${readJson2[i].id}`).html(html);
   }
-  if (filmsScreening == 'All Films' && salongScreening != 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      if (showJson[i].showRoom === salongScreening) {
-        html += `
-      <tr>
-      <th>${showJson[i].title}</th>
-      <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
-      </tr>
-    `;
-      }
-    }
-  }
-  if (filmsScreening !== 'All Films' && salongScreening === 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      if (filmsScreening == showJson[i].title) {
-        html += `
-      <tr class="table-result">
-      <th>${filmsScreening}</th>
-      <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
-      </tr>
-      `;
-      }
-    }
-  }
-  if (filmsScreening !== 'All Films' && salongScreening !== 'All Salongs') {
-    for (i = 0; i < showJson.length; i++) {
-      if (filmsScreening == showJson[i].title && salongScreening == showJson[i].showRoom) {
-        html += `
-      <tr class="table-result">
-      <th>${filmsScreening}</th>
-      <th>${date}</th>
-      <th>${showJson[i].showRoom}</th>
-      <th>${showJson[i].showTime}</th>
-      </tr>
-      `;
-      }
-      //If there is no match the program alters a message to the user
-      else {
-        alert("No film matches! Choose again!");
-        html = '';
-        $('.screening-result').html(html);
-        return;
-      }
-    }
-  }
-  //If the user forget to choose the date, the program alters a message.
-  if (date == undefined) {
-    html = '';
-    alert("Please choose the date!");
 
-  }
-  //Show the selected result on the screening-list table
-  $('.screening-result').html(html);
+  $('.trailer-button').on('click', function () {
+    video = $(this).attr('id');
+    for (i = 0; i < readJson2.length; i++) {
+      if (readJson2[i].title == video) {
+        trailerSRC = `${readJson2[i].trailer}`;
+      }
+    }
+    $('#movieTrailer').attr('src', trailerSRC);
+  });
+}
+
+$('.movieAll').on('click', function () {
+  //Get the id of the clicked html tag
+  movieID = $(this).attr('id');
+  //Store the movie id to localStorage so that when we change the webpage 
+  //we could still get the movie id from localStorage
+  localStorage.setItem('ID', movieID);
+  //Call the function readShowJson(movieID)
+  //This function is in 'screening.js' file
+  readShowJson(movieID);
+
+  let check = localStorage.getItem('ID');
+  console.log(check);
 });
+
+readInfoJson();
+

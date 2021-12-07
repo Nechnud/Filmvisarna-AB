@@ -1,0 +1,92 @@
+#selectorMovie{
+  margin: 2% 28% 0% 30% ;
+  background-color: rgba(0, 0, 0, 0.5);  
+  width: 100vh;
+  padding: 5% 5% 5% 5%;
+}
+h3{
+  color: azure;
+}
+.movieAll{
+margin: 2% 2% 2% 2%;
+}
+.screening-list{
+  margin-top: 5%;
+}
+.name{
+  color:white;
+}
+.navbar-buttons {
+  margin-left: 10px !important;
+  margin-bottom: 10px;
+}
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+/* Footers text color */
+.container-footer p {
+  color: white;
+}
+/* This is for sticky - footer, 
+so that the footer always 
+stays at the bottom part of the webpage */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* This is also for sticky footer */
+main {
+  flex: 1;
+}
+body {
+  background-image: url("bgFilmvisarna.png");  
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+nav img {
+  width: 20%;
+}
+
+.navbar-brand {  
+  position: absolute;
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0 0 20px #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+}
+.navbar-brand:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  z-index: -1;
+  opacity: 60%;
+  color: #ff005b;
+  filter: blur(15px);
+}
+.navbar-brand::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -5;
+  opacity: 90%;
+  color: #155ffffd;
+  filter: blur(15px);
+}
+#bookTickets{
+  float: right;
+}
