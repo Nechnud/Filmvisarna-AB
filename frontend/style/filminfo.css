@@ -66,3 +66,39 @@ main {
 #movie-info{
   color:white;
 }
+
+nav img {
+  width: 150px;
+}
+
+.navbar-brand {
+  position: absolute;
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0 0 20px #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+}
+.navbar-brand:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  z-index: -1;
+  opacity: 60%;
+  color: #ff005b;
+  filter: blur(15px);
+}
+.navbar-brand::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -5;
+  opacity: 90%;
+  color: #155ffffd;
+  filter: blur(15px);
+}
