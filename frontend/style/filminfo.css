@@ -56,9 +56,15 @@ main {
   flex: 1;
 }
 
+/* This might influence bootstrap? */
 iframe{
   height:400px;
   width:600px
+}
+
+.container-movie-info {
+  margin-left: 28%;
+  margin-right: 28%;
 }
 #movie-info{
   color:white;

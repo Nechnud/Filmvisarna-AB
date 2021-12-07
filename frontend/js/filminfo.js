@@ -24,12 +24,12 @@ function getMovieToShow() {
 function renderMovieInfo() {
   movieData =
     `
-    ${movieToShow.title}
-    ${movieToShow.year}
-    ${movieToShow.runtime}
-    ${movieToShow.director}        
+    <p>${movieToShow.title}</p>
+    <p>${movieToShow.year}</p>
+    <p>${movieToShow.runtime}</p>
+    <p>${movieToShow.director}</p>       
   `;
-  document.getElementById("movie-info").innerText = movieData;
+  document.getElementById("movie-info").innerHTML = movieData;
   document.getElementById("movie-image").src = movieToShow.image_portrait_m;
   document.getElementById("movie-trailer").src = movieToShow.trailer;
 }
