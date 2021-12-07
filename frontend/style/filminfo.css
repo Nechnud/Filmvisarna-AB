@@ -5,10 +5,11 @@
 body {
   background-color: black;
 }
-.sreening-info{
-  background-color: black;
+.screening-info{
+  background-color: rgba(0, 0, 0, 0.5);
   margin-left: 28%;
   margin-right: 28%;
+  width: 100vh;
 }
 
 .container-fluid > p {
@@ -43,8 +44,8 @@ padding:5% 5% 5% 5%;
 }
 
 /* Footer */
-footer {
-  background-color: black;
+footer {  
+  background-color: rgba(0, 0, 0, 0.5);
 }
 /* Footers text color */
 .container-footer p {
