@@ -13,18 +13,17 @@ body {
   width: 100vh;
 }
 
-.container-fluid{
-  background-color: rgba(0, 0, 0, 0.5);
-  display: inline-flex;    
-}
-
 #container-movie-info{
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 1%;
   margin-left: 28%;
   margin-right: 28%;
   width: 100vh;
 }
 
-#container-movie-trailer{
+#container-movie-trailer{  
+  margin-top: 1%;
+  margin-bottom: 1%;
   margin-left: 28%;
   margin-right: 28%;
   width: 100vh;
