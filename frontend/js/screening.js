@@ -81,10 +81,10 @@ selectFilm.addEventListener('click', (event) => {
 
     }
     //If the user forget to choose the date, the program alters a message.
-    if (date == undefined) {
-      html = '';
-      alert("Please choose the date!");
-    }
+
+  } if (date == undefined) {
+    html = '';
+    alert("Please choose the date!");
   }
   //Show the selected result on the screening-list table
   $('.screening-result').html(html);

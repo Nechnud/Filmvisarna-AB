@@ -39,7 +39,6 @@ body {
 }
 /*Padding for screening infomation on the filminfor.html */
 #FilmsScreening{
-
 padding:5% 5% 5% 5%;
 }
 
@@ -51,9 +50,7 @@ footer {
 .container-footer p {
   color: white;
 }
-#trailer-button{
-  
-}
+
 
 /* This is for sticky - footer, 
 so that the footer always 
@@ -69,10 +66,6 @@ main {
 }
 
 /* This might influence bootstrap? */
-iframe{
-  height:400px;
-  width:600px
-}
 
 #movie-info{
   color:white;
