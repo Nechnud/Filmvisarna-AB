@@ -103,3 +103,6 @@ nav img {
   color: #155ffffd;
   filter: blur(15px);
 }
+#bookTickets{
+  float: right;
+}
