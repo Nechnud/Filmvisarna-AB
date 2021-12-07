@@ -18,7 +18,19 @@ body {
 
 .container-fluid{
   background-color: rgba(0, 0, 0, 0.5);
-  display: inline-flex;  
+  display: inline-flex;    
+}
+
+#container-movie-info{
+  margin-left: 28%;
+  margin-right: 28%;
+  width: 100vh;
+}
+
+#container-movie-trailer{
+  margin-left: 28%;
+  margin-right: 28%;
+  width: 100vh;
 }
 
 /*Padding for screening infomation on the filminfor.html */
@@ -62,10 +74,6 @@ iframe{
   width:600px
 }
 
-.container-movie-info {
-  margin-left: 28%;
-  margin-right: 28%;
-}
 #movie-info{
   color:white;
 }
