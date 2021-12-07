@@ -26,9 +26,11 @@ function renderMovieInfo() {
     `
     <p>${movieToShow.title}</p>
     <p>Year: ${movieToShow.year}</p>
+    <p>Director: ${movieToShow.director}</p>
     <p>Rated: ${movieToShow.rated}</p>
     <p>Runtime: ${movieToShow.runtime}</p>
-    <p>${movieToShow.director}</p>       
+    <p>Cast: ${movieToShow.actors}</p>
+           
   `;
   document.getElementById("movie-info").innerHTML = movieData;
   document.getElementById("movie-image").src = movieToShow.image_portrait_m;
