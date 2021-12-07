@@ -25,8 +25,9 @@ function renderMovieInfo() {
   movieData =
     `
     <p>${movieToShow.title}</p>
-    <p>${movieToShow.year}</p>
-    <p>${movieToShow.runtime}</p>
+    <p>Year: ${movieToShow.year}</p>
+    <p>Rated: ${movieToShow.rated}</p>
+    <p>Runtime: ${movieToShow.runtime}</p>
     <p>${movieToShow.director}</p>       
   `;
   document.getElementById("movie-info").innerHTML = movieData;
