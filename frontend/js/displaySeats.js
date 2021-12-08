@@ -25,7 +25,8 @@ function showSeats() {
   // moviehalls[0] is 'Grande', moviehalls[0].seatsPerRow is the total row of seats
   for (i = 0; i < moviehalls[salongID].seatsPerRow.length; i++) {
     //Add div tag with class row in this loop to create the total row of seats
-    seats += `<div class="row">`;
+    let idForRow = "row" + (1 + i).toString();
+    seats += `<div class="row" id="${idForRow}">`;
 
     //moviehalls[0].seatsPerRow[i] is chair 
     for (j = 0; j < moviehalls[salongID].seatsPerRow[i]; j++) {
