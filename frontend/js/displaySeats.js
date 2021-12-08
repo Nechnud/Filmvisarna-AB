@@ -28,10 +28,10 @@ function showSeats() {
     seats += `<div class="row">`;
 
     //moviehalls[0].seatsPerRow[i] is chair 
-    for (x = 0; x < moviehalls[salongID].seatsPerRow[i]; x++) {
+    for (j = 0; j < moviehalls[salongID].seatsPerRow[i]; j++) {
       //get a variable which creates a id for every seat, 
       //so that it become easier to know which seats are choosen by the user 
-      let idForSeat = i.toString() + x.toString();
+      let idForSeat = (1 + i).toString() + (j + 1).toString();
       // assign a div tag with class col in this loop to create the seats
       seats += `
       <div class="seat" id="${idForSeat}"></div>
