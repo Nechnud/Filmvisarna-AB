@@ -1,5 +1,12 @@
+/* Font copied, not imported, as it is not found on google fonts.*/
+@font-face {
+  font-family: neon;
+  src: url(/frontend/fonts/neon.ttf);
+}
+
 #selectorMovie{
-  margin: 2% 28% 0% 30% ;
+  border-radius: 2%;
+  margin: 2% 28% 2% 30% ;
   background-color: rgba(0, 0, 0, 0.5);  
   width: 100vh;
   padding: 5% 5% 5% 5%;
@@ -52,18 +59,25 @@ header {
   padding-bottom: 1%;
 }
 
-nav img {
-  width: 20%;
-}
-
-.navbar-brand {  
-  position: absolute;
-  font-size: 60px;
+.navbar-brand {
+  border-radius: 5%;  
+  font-family: neon;
+  background-color: rgba(0, 0, 0, 0.2);    
+  padding-left: 1%;
+  padding-right: 1%;  
+  position: absolute;    
+  left: 40%;
+  margin-left: -50px !important;
+  display: block;
+  font-size: 250%;
   color: #fff;
-  text-shadow: 0 0 20px #ff005b;
+  text-shadow: 0 0 70% #ff005b;
   -webkit-text-stroke: initial;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+}
+.navbar-brand:hover {
+  background-color: rgba(238, 30, 210, 0.2);
 }
 .navbar-brand:after {
   content: attr(data-text);
@@ -87,6 +101,45 @@ nav img {
   color: #155ffffd;
   filter: blur(15px);
 }
+
+.btn{
+  font-family: neon; 
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-color: transparent;
+}
+
+.btn:hover{
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 70% #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+}
+
+.modal-content{  
+  background-color: rgba(0, 0, 0, 0.3);  
+}
+
+.trailer-button {
+  font-family: neon; 
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-color: transparent;
+}
+
+.trailer-button:hover {
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 70% #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+}
+
+
+
 #bookTickets{
   float: right;
 }
