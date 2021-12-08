@@ -197,7 +197,7 @@ p.text span {
   margin-top: 10px;
 }
 
-/*hur sidan anpassar sig om skärmen blir mindre än 576px*/
+/*hur sidan anpassar sig om skärmen blir mindre än 576px*/ /*
 @media (max-width: 576px) {
   body {
     padding-top: 30px;
@@ -242,4 +242,6 @@ p.text span {
   #total {
     font-size: 18px;
   }
+  
 }
+/*
