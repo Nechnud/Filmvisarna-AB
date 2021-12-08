@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
-/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap'); */
+@font-face {
+  font-family: neon;
+  src: url(/frontend/fonts/neon.ttf);
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "neon";
 
   background: linear-gradient(rgba(0, 18, 50, 0.479), rgba(0, 0, 0, 0.95)),
     url(IMG-20211205-WA0007.jpg) left;
@@ -26,7 +28,7 @@ body {
 
 .movie-container select {
   background-color: #fff;
-  font-family: "Lato", sans-serif;
+  font-family: "neon";
   border: 0;
   border-radius: 5px;
   font-size: 18px;
