@@ -39,8 +39,6 @@ body {
 }
 
 .container {
-  /*  it simply enables a 3D-space for children elements. */
-
   display: flex;
   flex-direction: column;
   justify-content: center;
