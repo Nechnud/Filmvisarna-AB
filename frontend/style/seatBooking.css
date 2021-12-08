@@ -198,8 +198,20 @@ main {
 }
 
 /*Sätena i rows istället för column*/
-.row {
-  display: flex;
+#row1 {
+  margin-left: 17%;
+}
+#row2 {
+  margin-left: 17%;
+}
+#row3 {
+  margin-left: 7%;
+}
+#row4 {
+  margin-left: 7%;
+}
+#row5 {
+  margin-left: 7%;
 }
 
 .screen {
