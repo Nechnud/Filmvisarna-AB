@@ -87,15 +87,9 @@ body {
   background-image: url("bgFilmvisarna.png");
 }
 
-<<<<<<< HEAD
 
-=======
-/* 
-header {
-  background-color: #040924;
-}
-*/
->>>>>>> d011f574f215180896feda11709b48940273e7a4
+
+
 
 nav img {
   width: 150px;
@@ -153,7 +147,7 @@ nav img {
 
 .movie {
   margin: 5%;
->>>>>>> d011f574f215180896feda11709b48940273e7a4
+
 }
 /* Footer */
 footer {
