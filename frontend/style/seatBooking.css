@@ -11,7 +11,7 @@ body {
   font-family: "neon";
 
   background: linear-gradient(rgba(0, 18, 50, 0.479), rgba(0, 0, 0, 0.95)),
-    url(IMG-20211205-WA0007.jpg) left;
+    url(/frontend/style/bgFilmvisarna.png) left;
   background-size: cover;
   color: #fff;
   display: flex;
