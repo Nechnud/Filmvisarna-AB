@@ -136,24 +136,8 @@ nav img {
 /* Paddings for six movie posters */
 
 /* This adds padding for movie carousel */
-<<<<<<< HEAD
-.movie-carousel{
-  margin-left: 30%;
-  margin-top: 1%;
-  margin-right: 26%;
-}
 
-/* This adds padding for six movie posters*/
-.container-movieList{
-  margin-left: 22%;
-  margin-top: 1%;
-  margin-right: 10%;
-  padding: 5% 5% 5% 5%;
-}
 
-.movie{
-  margin: 1%;
-=======
 .movie-carousel {
   margin-left: 28%;
   margin-top: 5%;
