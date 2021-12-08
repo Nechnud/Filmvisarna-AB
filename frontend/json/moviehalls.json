@@ -1,0 +1,30 @@
+[
+  {
+    "id": "G1",
+    "name": "Grande",
+    "seats": 66,
+    "seatsPerRow": [
+      6,
+      6,
+      8,
+      8,
+      8,
+      10,
+      10,
+      10
+    ]
+  },
+  {
+    "id": "C1",
+    "name": "Cozy",
+    "seats": 48,
+    "seatsPerRow": [
+      6,
+      6,
+      8,
+      8,
+      8,
+      10
+    ]
+  }
+]

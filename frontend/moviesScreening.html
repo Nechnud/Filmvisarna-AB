@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style/allMovies.css">
+
+  <title>Films&Tickets</title>
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" data-text="Filmvisarna AB">Filmvisarna AB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
+
+          <div class="navbar-buttons">
+            <button class="btn btn-dark" type="button">My Bookings</button>
+          </div>
+          <div class="navbar-buttons">
+            <a href="#allFilms"><button class="btn btn-dark" type="button">All Movies</button></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="row" id="selectorMovie">
+
+      <div>
+        <h3>All Movies</h3>
+      </div>
+      <!---------------------------     
+      <div class="col" id="FS-item">
+     
+        <select class="form-control" id="moviesToChoose">
+          <option><a class="dropdown-item" href="#" value="All Movies">All Movies</a></option>
+          <option><a class="dropdown-item" href="#" value="The Day After Tomorrow">The Day After Tomorrow</a></option>
+          <option><a class="dropdown-item" href="#" value="Joker">Joker</a></option>
+          <option><a class="dropdown-item" href="#" value="Aladdin">Aladdin</a></option>
+          <option><a class="dropdown-item" href="#" value="My Neighbour Totoro">My Neighbour Totoro</a></option>
+          <option><a class="dropdown-item" href="#" value="Interstellar">Interstellar</a></option>
+          <option><a class="dropdown-item" href="#" value="Spider-Man: No way home">Spider-Man: No way home</a></option>
+        </select>
+      </div>
+
+      <div class="col" id="FS-item">
+
+        <select class="form-control" id="ageGroupToChoose">
+          <option><a class="dropdown-item" href="#" value="All Age">All Age</a></option>
+          <option><a class="dropdown-item" href="#" value="Children">Children</a></option>
+          <option><a class="dropdown-item" href="#" value="Adult">Adult</a></option>
+
+        </select>
+      </div>
+
+      <div class="col" id="FS-item">
+        <a><button class="form-control" id="select-movie">Choose</button></a>
+      </div>
+
+----------------->
+      <div class="screening-list">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <a href="filminfo.html"><img src="images/dayAfterTomorrow.jpg" id="1" class="movieAll"></a>
+            </div>
+            <div class="col">
+              <div id="screening-result1" class="col"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <a href="filminfo.html"><img src="images/joker.jpg" id="1" class="movieAll"></a>
+            </div>
+            <div class="col">
+              <div id="screening-result2" class="col"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <a href="filminfo.html"><img src="images/aladdin.jpg" id="1" class="movieAll"></a>
+            </div>
+            <div class="col">
+              <div id="screening-result3" class="col"></div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col">
+              <a href="filminfo.html"><img src="images/totoro.jpg" id="4" class="movieAll"></a>
+            </div>
+            <div class="col">
+              <div id="screening-result4" class="col "></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <a href="filminfo.html"><img src="images/interstellar.jpg" id="5" class="movieAll"></a>
+            </div>
+            <div class="col">
+              <div id="screening-result5" class="col "></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <a href="filminfo.html"><img src="images/spiderman.jpg" id="6" class="movieAll"></a>
+            </div>
+            <div class="col">
+              <div id="screening-result6" class="col "></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="pop-upp">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <iframe id="movieTrailer" src="" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer mt-auto py-3 sticky-bottom">
+
+    <div class="container-footer">
+      <p>I am a footer!</p>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/chooseFilms.js"></script>
+
+
+</body>
+
+</html>
