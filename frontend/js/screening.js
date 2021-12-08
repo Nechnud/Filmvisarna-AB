@@ -47,7 +47,7 @@ async function showTodaysFilms() {
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
-      <th>Age group not defined</th>
+      
       
     `;
     }
@@ -77,7 +77,7 @@ selectFilm.addEventListener('click', (event) => {
       <th>${date}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
-      <th>Age group not defined</th>
+      
       
     `;
 
