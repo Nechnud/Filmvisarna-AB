@@ -17,14 +17,14 @@ header {
 
 /* BUTTOMS. Found in the header and other elements of the page. */
 
-.btn{
-  font-family: neon; 
+.btn {
+  font-family: neon;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border-color: transparent;
 }
 
-.btn:hover{
+.btn:hover {
   border-color: transparent;
   background-color: rgba(0, 0, 0, 0.7);
   text-shadow: 0 0 70% #ff005b;
@@ -37,17 +37,15 @@ header {
   padding: 0.5%;
 }
 
-
-
 /* FILMVISARNA LOGO*/
 
 .navbar-brand {
-  border-radius: 5%;  
+  border-radius: 5%;
   font-family: neon;
-  background-color: rgba(0, 0, 0, 0.2);    
+  background-color: rgba(0, 0, 0, 0.2);
   padding-left: 1%;
-  padding-right: 1%;  
-  position: absolute;    
+  padding-right: 1%;
+  position: absolute;
   left: 40%;
   margin-left: -50px !important;
   display: block;
@@ -89,7 +87,15 @@ body {
   background-image: url("bgFilmvisarna.png");
 }
 
+<<<<<<< HEAD
 
+=======
+/* 
+header {
+  background-color: #040924;
+}
+*/
+>>>>>>> d011f574f215180896feda11709b48940273e7a4
 
 nav img {
   width: 150px;
@@ -130,6 +136,7 @@ nav img {
 /* Paddings for six movie posters */
 
 /* This adds padding for movie carousel */
+<<<<<<< HEAD
 .movie-carousel{
   margin-left: 30%;
   margin-top: 1%;
@@ -146,6 +153,23 @@ nav img {
 
 .movie{
   margin: 1%;
+=======
+.movie-carousel {
+  margin-left: 28%;
+  margin-top: 5%;
+  margin-right: 28%;
+}
+
+/* This adds padding for six movie posters*/
+.container-movieList {
+  margin-left: 28%;
+  margin-top: 5%;
+  margin-right: 28%;
+}
+
+.movie {
+  margin: 5%;
+>>>>>>> d011f574f215180896feda11709b48940273e7a4
 }
 /* Footer */
 footer {
@@ -187,4 +211,3 @@ main {
   font-family: 500;
   cursor: pointer;
 }
-
