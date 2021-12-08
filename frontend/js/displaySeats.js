@@ -38,7 +38,7 @@ function showSeats() {
       <div class="seat" id="${idForSeat}"></div>
       `;
     }
-    console.log(seats);
+
     //here add a div close tag for the row that we got in the first loop
     seats += `</div>`;
 
