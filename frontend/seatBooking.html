@@ -41,35 +41,28 @@
 
     </header>
     <main>
-        <div class="movie-container">
-            <label>Number of adults:</label>
-            <select id="movie">
-                <option value="20">1</option>
-                <option value="40">2</option>
-                <option value="60">3</option>
-                <option value="80">4</option>
-                <option value="90">5</option>
-                <option value="100">6</option>
-                <option value="120">7</option>
-            </select>
-        </div>
-        <div class="movie-container">
-            <label>Number of children:</label>
-            <select id="movie">
-                <option value="10">1</option>
-                <option value="20">2</option>
-                <option value="30">3</option>
-                <option value="40">4</option>
-                <option value="50">5</option>
-                <option value="60">6</option>
-                <option value="70">7</option>
-            </select>
-        </div>
+
+    
+        <!-- This is buttons to select the amount of tickets the customer wants-->
+        <button id='amount' class="pensioner-" type="button">-</button>
+        <button id='amount' class="pensioner+" type="button">+</button>
+
+        <button id='amount' class="adult-" type="button">-</button>
+        <button id='amount' class="adult+" type="button">+</button>
+
+        <button id='amount' class="child-" type="button">-</button>
+        <button id='amount' class="child+" type="button">+</button>
+    
+    
+    
+      
+
+        
         <div class="text-wrapper">
             <p class="text">Selected Seats <span id='count'>0</span>
-            <p class="text">Total Price <span id="total">0</span></p>
+            <p class="text">Total Price <span id='amount'>0</span></p>
         </div>
-
+        <!-- Rör ej detta, annars blir Filip arg, ajabaja-->
         <ul class="showcase">
             <li>
                 <div class="seat"></div>
@@ -106,7 +99,7 @@
         </div>
     </main>
 
-
+    <script src="js/price.js"></script>
     <script src="js/displaySeats.js"></script>
     <script src='js/seatBooking.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
