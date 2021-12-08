@@ -87,6 +87,7 @@ header {
 body {
   background-image: url("bgFilmvisarna.png");
 }
+
 header {
   background-color: #040924;
 }
@@ -133,12 +134,18 @@ nav img {
 }
 /* This adds padding for movie carousel */
 .movie-carousel{
-  padding-left: 15%;
-  padding-top: 5%;
-  padding-right: 15%;
+  margin-left: 28%;
+  margin-top: 5%;
+  margin-right: 28%;
 }
 
 /* This adds padding for six movie posters*/
+.container-movieList{
+  margin-left: 28%;
+  margin-top: 5%;
+  margin-right: 28%;
+}
+
 .movie{
   margin: 5%;
 }
@@ -183,7 +190,3 @@ main {
   cursor: pointer;
 }
 
-/* This is so that when you hover over the button i changes color*/
-.navbar-buttons:hover {
-  background: #008168;
-}
