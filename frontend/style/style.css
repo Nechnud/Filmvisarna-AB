@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
-
 /* Font copied, not imported, as it is not found on google fonts.*/
 @font-face {
   font-family: neon;
@@ -40,12 +38,12 @@ header {
 /* FILMVISARNA LOGO*/
 
 .navbar-brand {
-  border-radius: 5%;
+  border-radius: 5%;  
   font-family: neon;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);    
   padding-left: 1%;
-  padding-right: 1%;
-  position: absolute;
+  padding-right: 1%;  
+  position: absolute;    
   left: 40%;
   margin-left: -50px !important;
   display: block;
@@ -56,6 +54,7 @@ header {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
 }
+
 .navbar-brand:hover {
   background-color: rgba(238, 30, 210, 0.2);
 }
@@ -88,61 +87,40 @@ body {
 }
 
 
-
-
-
-nav img {
-  width: 150px;
-}
-
-.navbar-brand {
-  position: absolute;
-  font-size: 60px;
-  color: #fff;
-  text-shadow: 0 0 20px #ff005b;
-  -webkit-text-stroke: initial;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
-}
-.navbar-brand:after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0 10px;
-  z-index: -1;
-  opacity: 60%;
-  color: #ff005b;
-  filter: blur(15px);
-}
-.navbar-brand::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0 20px;
-  z-index: -5;
-  opacity: 90%;
-  color: #155ffffd;
-  filter: blur(15px);
-}
-
 /* Paddings for six movie posters */
 
 /* This adds padding for movie carousel */
 
 
 .movie-carousel {
-  margin-left: 28%;
-  margin-top: 5%;
-  margin-right: 28%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 1%;
+  padding-bottom: 3%;  
+  margin-left: 26%;
+  margin-right: 26%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  
 }
+
+
 
 /* This adds padding for six movie posters*/
 .container-movieList {
-  margin-left: 28%;
-  margin-top: 5%;
-  margin-right: 28%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 1%;
+  padding-bottom: 3%;  
+  margin-left: 24%;
+  margin-right: 24%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  
 }
 
 .movie {
@@ -150,8 +128,8 @@ nav img {
 
 }
 /* Footer */
-footer {
-  background-color: #040924;
+footer {  
+  background-color: rgba(0, 0, 0, 0.2);
 }
 /* Footers text color */
 .container-footer p {
