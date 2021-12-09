@@ -109,6 +109,7 @@ main {
 }
 
 .container {
+  /* Sätes container */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,6 +193,7 @@ main {
 }
 
 .showcase {
+  /* Available, selected, occupied.*/
   background-color: rgba(0, 0, 0, 0.1);
   padding: 5px 10px;
   border-radius: 5px;
@@ -202,17 +204,11 @@ main {
 }
 
 .showcase li {
-  display: flex;
+  /*Available selected occupied text position*/
+  display: center;
   align-items: center;
   justify-content: center;
   margin: 0 10px;
-}
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
 }
 
 /*Sätena i rows istället för column*/
