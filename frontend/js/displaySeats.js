@@ -56,7 +56,7 @@ function checkSelectedSeats() {
   for (let salongSeat of salongSeats) {
     salongSeat.addEventListener('click', function () {
       if ($(this).css("background-color") == 'rgb(1, 22, 62)') {
-        $(this).css({ backgroundColor: "#6feaf6" });
+        $(this).css({ backgroundColor: "#31d7a9" });
       }
       if ($(this).css("background-color") == 'rgb(111, 234, 246)')
         $(this).css({ backgroundColor: '#01163e' });
