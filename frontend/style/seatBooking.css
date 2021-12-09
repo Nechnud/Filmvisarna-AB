@@ -18,7 +18,7 @@ header {
 /* BUTTOMS. Found in the header and other elements of the page. */
 
 .btn {
-  font-family: neon; 
+  font-family: neon;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   border-color: transparent;
@@ -132,7 +132,7 @@ main {
 }
 
 .seat {
- height: 22px;
+  height: 22px;
   width: 25px;
   margin: 5px;
   border-top-left-radius: 12px;
@@ -157,7 +157,7 @@ main {
   border: 2px solid #81316d;
   transition: all 0.2s ease;
 }
-.seat-notOccupied{
+.seat-notOccupied {
   height: 22px;
   width: 25px;
   margin: 5px;
@@ -171,7 +171,7 @@ main {
   transition: all 0.2s ease;
 }
 .seat-occupied {
-  background-color: gray;
+  background-color: #fff;
   height: 22px;
   width: 25px;
   margin: 5px;
@@ -182,11 +182,32 @@ main {
   border: 2px solid #81316d;
   transition: all 0.2s ease;
 }
+.seat:nth-of-type(2) {
+  /*Skapar margin mellan andra sätesraden (:nth) och den nya raden till höger*/
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  /*Skapar margin mellan andra raden till höger och raden innan*/
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  /* Selecting seats that do not have "occupied" class */
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
 .showcase {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 5px 10px;
   border-radius: 5px;
-  color:white;
+  color: white;
   list-style-type: none;
   display: flex;
   justify-content: space-between;
@@ -199,11 +220,11 @@ main {
   margin: 0 10px;
 }
 p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 /*Sätena i rows istället för column*/
