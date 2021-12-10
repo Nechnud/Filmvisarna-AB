@@ -1,86 +1,67 @@
-const seats = document.querySelectorAll(".row .seat:not(.occupied)");
-const seatContainer = document.querySelector(".row-container");
-const count = document.getElementById("count");
-const total = document.getElementById("total");
-const movieSelect = document.getElementById("movie");
+//Declare a variable for json;
+let moviehalls;
+let salongID;
+let salongSeats;
+//Get the Salong information from localStorage which was stored in filminfo.html
+let rightSalong = localStorage.getItem('salong');
 
-// Another Approach
+//Function that reads the json file
+async function readMovieHall() {
+  let rawData = await fetch('json/moviehalls.json');
+  moviehalls = await rawData.json();
 
-// seats.forEach(function(seat) {
-//   seat.addEventListener("click", function(e) {
-//     seat.classList.add("selected");
-//     const selectedSeats = document.querySelectorAll(".container .selected");
-//     selectedSeathLength = selectedSeats.length;
-//     count.textContent = selectedSeathLength;
-//     let ticketPrice = +movieSelect.value;
-//     total.textContent = ticketPrice * selectedSeathLength;
-//   });
-// });
-
-// localStorage.clear();
-
-populateUI();
-
-let ticketPrice = +movieSelect.value;
-
-// Save selected movie index and price
-function setMovieData(movieIndex, moviePrice) {
-  localStorage.setItem("selectedMovieIndex", movieIndex);
-  localStorage.setItem("selectedMoviePrice", moviePrice);
+  //Call the functions with matching salong
+  showSeats(moviehalls);
 }
+let seats = '';
+function showSeats() {
 
-function updateSelectedCount() {
-  const selectedSeats = document.querySelectorAll(".container .selected");
+  if (rightSalong == 'Grande') {
+    salongID = 0;
+  }
+  if (rightSalong == 'Cozy') {
+    salongID = 1;
+  }
 
-  seatsIndex = [...selectedSeats].map(function(seat) {
-    return [...seats].indexOf(seat);
-  });
+  // moviehalls[0] is 'Grande', moviehalls[0].seatsPerRow is the total row of seats
+  for (i = 0; i < moviehalls[salongID].seatsPerRow.length; i++) {
+    //Add div tag with class row in this loop to create the total row of seats
+    let idForRow = "row" + (1 + i).toString();
+    seats += `<div class="row" id="${idForRow}">`;
 
-  localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+    //moviehalls[0].seatsPerRow[i] is chair 
+    for (j = 0; j < moviehalls[salongID].seatsPerRow[i]; j++) {
+      //get a variable which creates a id for every seat, 
+      //so that it become easier to know which seats are choosen by the user 
+      let idForSeat = (1 + i).toString() + (j + 1).toString();
+      // assign a div tag with class col in this loop to create the seats
+      seats += `
+      <div class="seat" id="${idForSeat}"></div>
+      `;
+    }
 
-  let selectedSeatsCount = selectedSeats.length;
-  count.textContent = selectedSeatsCount;
-  total.textContent = selectedSeatsCount * ticketPrice;
+    //here add a div close tag for the row that we got in the first loop
+    seats += `</div>`;
+
+    if (seats !== undefined) {
+      document.getElementById("rowForSeats").innerHTML = seats;
+    }
+  }
+  salongSeats = document.querySelectorAll(".seat");
+  checkSelectedSeats(salongSeats);
 }
+readMovieHall();
 
-// Get data from localstorage and populate
-function populateUI() {
-  const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
-
-  if (selectedSeats !== null && selectedSeats.length > 0) {
-    seats.forEach(function(seat, index) {
-      if (selectedSeats.indexOf(index) > -1) {
-        seat.classList.add("selected");
+function checkSelectedSeats() {
+  for (let salongSeat of salongSeats) {
+    salongSeat.addEventListener('click', function () {
+      if ($(this).css("background-color") == 'rgb(1, 22, 62)') {
+        $(this).css({ backgroundColor: "#31d7a9" });
       }
-    });
+      if ($(this).css("background-color") == 'rgb(49, 215, 169)')
+        $(this).css({ backgroundColor: "#01163e" });
+    })
   }
 
-  const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
-
-  if (selectedMovieIndex !== null) {
-    movieSelect.selectedIndex = selectedMovieIndex;
-  }
+  console.log(salongSeats);
 }
-
-// Movie select event
-
-movieSelect.addEventListener("change", function(e) {
-  ticketPrice = +movieSelect.value;
-  setMovieData(e.target.selectedIndex, e.target.value);
-  updateSelectedCount();
-});
-
-// Adding selected class to only non-occupied seats on 'click'
-
-seatContainer.addEventListener("click", function(e) {
-  if (
-    e.target.classList.contains("seat") &&
-    !e.target.classList.contains("occupied")
-  ) {
-    e.target.classList.toggle("selected");
-    updateSelectedCount();
-  }
-});
-
-// Initial count and total rendering
-updateSelectedCount();
