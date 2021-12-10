@@ -1,6 +1,6 @@
 @font-face {
   font-family: neon;
-  src: url(/frontend/fonts/neon.ttf);
+  src: url("neon.ttf");
 }
 
 * {

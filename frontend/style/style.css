@@ -1,7 +1,7 @@
 /* Font copied, not imported, as it is not found on google fonts.*/
 @font-face {
   font-family: neon;
-  src: url(/frontend/fonts/neon.ttf);
+  src: url("neon.ttf");
 }
 
 /* HEADER ELEMENTS */
