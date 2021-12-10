@@ -65,3 +65,24 @@ function checkSelectedSeats() {
 
   console.log(salongSeats);
 }
+//Jsonflex code for ticket-----------------------------------------
+let tickets;
+async function readTickets() {
+  tickets = await JSON._load('ticket');
+  await addTicket();
+  // await removePerson();
+}
+async function addTicket() {
+
+  let newTicket = {
+    "movieName": localStorage.getItem('movieTitle'),
+    "date": localStorage.getItem('date'),
+    "salong": localStorage.getItem('salong')
+  };
+
+  tickets.push(newTicket);
+
+  await JSON._save('ticket', tickets);
+  console.log(tickets);
+}
+readTickets();
