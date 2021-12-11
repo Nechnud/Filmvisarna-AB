@@ -41,7 +41,10 @@ async function showTodaysFilms() {
     let rightOne = localStorage.getItem('ID');
     //check which movie is clicked and get that movie's information
     if (rightOne == show.id) {
+      let dataToday = today.getDate().toString() + "-" + today.getMonth().toString() + "-" + today.getFullYear().toString();
       localStorage.setItem('salong', show.showRoom);
+      localStorage.setItem('date', dataToday);
+      localStorage.setItem('movieTitle', show.title);
       html += `
       <th>${show.title}</th>
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
@@ -71,6 +74,8 @@ selectFilm.addEventListener('click', (event) => {
     //check which movie is clicked and get that movie's information
     if (rightOne == show.id) {
       localStorage.setItem('salong', show.showRoom);
+      localStorage.setItem('date', date);
+      localStorage.setItem('movieTitle', show.title);
       html += `
      
       <th>${show.title}</th>
