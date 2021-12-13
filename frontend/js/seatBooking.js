@@ -55,8 +55,8 @@ readMovieHall();
 //Create two variables
 let listOfSeats = []; //this array stores the selected seats
 let selectSeatNumber; //read the id number of the selected seats
-let selectedSeatsToShow;
-let seatsToShowList = [];
+let selectedSeatsToShow; //variable for each selected seat
+let seatsToShowList = []; //array for all the selected seats
 
 
 async function checkSelectedSeats() {
@@ -67,6 +67,7 @@ async function checkSelectedSeats() {
       if ($(this).css("background-color") == 'rgb(1, 22, 62)') { //check the seat color
         $(this).css({ backgroundColor: "#31d7a9" }); //change the selected seat's number
         listOfSeats.push(selectSeatNumber);
+        //Make the seat number into HTML and show them on the webpage
         seatsToShowList.push(selectedSeatsToShow = `
         <p class="seat${selectSeatNumber}">
        Row ${selectSeatNumber.charAt(0)} 
@@ -75,17 +76,15 @@ async function checkSelectedSeats() {
 
       if ($(this).css("background-color") == 'rgb(49, 215, 169)') { //if the user click again the same seat
         $(this).css({ backgroundColor: "#01163e" }); //change the seat color 
-        listOfSeats.pop(selectSeatNumber); //remove the selected seat from the seat array
+        listOfSeats.pop(selectSeatNumber); //remove the selected seat from the seat array, screen
         $('.seat' + `${selectSeatNumber}`).remove();
-        seatsToShowList.pop(`<p class="seat${selectSeatNumber}">
+        //Make the seat number into HTML and show them on the webpage
+        seatsToShowList.pop(`<p class="seat${selectSeatNumber}">    
           Row ${selectSeatNumber.charAt(0)}
           Chair ${selectSeatNumber.substring(1)}</p> `);
       }
-      $('.seatsNumber').html(seatsToShowList);
-      localStorage.setItem('selectedSeats', listOfSeats);
-      //changeSeatsForTicket();
-      console.log(localStorage.getItem('selectedSeats'))
-    });
+      $('.seatsNumber').html(seatsToShowList); //assign the seatsToShowList into HTML page
+    }); changeSeatsForTicket(listOfSeats); //call the function
   }
 }
 
@@ -108,28 +107,23 @@ async function ticketNumberGenerator() {
 }
 
 let tickets;
+//Jsonflex for tickets -------------------------------------------
 async function readTickets() {
   tickets = await JSON._load('ticket');
   await ticketNumberGenerator();
-  // await removePerson();
 }
-/*
-
-let row;
-let number;
+//create a variable for reading the seats' number to the ticket
 let seatsOnTicket = ' ';
 
 function changeSeatsForTicket() {
-  let listOfChairs = localStorage.getItem('selectedSeats');
-  console.log(listOfChairs);
-  for (let i = 0; i < listOfChairs.length; i++) {
-    seatsOnTicket += "row " + listOfChairs[i].charAt(0) + " seat " + listOfChairs[i].substring(1);
+  for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
+    seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1); //store the seats nummber/id
   }
 }
-*/
 
-async function checkTicketNumber() {
-  //changeSeatsForTicket();          //Creates a function that allows us to check ticket number
+
+async function checkTicketNumber() {//Creates a function that allows us to check ticket number
+  changeSeatsForTicket();     //call the function that check all the selected seats' number     
   let newTicket;                               //Declare variable new ticket
   if (tickets.length == 0) {                   //If tickets array is empty, proceed
     newTicket = {                              //Gets id from json file and creates an object in the tickets array
@@ -137,7 +131,7 @@ async function checkTicketNumber() {
       "date": localStorage.getItem('date'),
       "salong": localStorage.getItem('salong'),
       "ticketNumber": randomTicketNumber,
-      //"seat": seatsOnTicket
+      "seat": seatsOnTicket
     }
 
   } else {                                      //If the ticket array is not empty, check all the ticket numbers and create new rnd ticket number
@@ -152,15 +146,20 @@ async function checkTicketNumber() {
           "date": localStorage.getItem('date'),
           "salong": localStorage.getItem('salong'),
           "ticketNumber": randomTicketNumber,
-          // "seat": seatsOnTicket
+          "seat": seatsOnTicket
         }
       }
     }
   }
   addTicket(newTicket);
 }
-async function addTicket(newTicket) {              //Creates method addTicket that pushes the object/ticket item into the json file
+async function addTicket(newTicket) {    //Creates method addTicket that pushes the object/ticket item into the json file
   tickets.push(newTicket);
+  $('.modal-body').html( //Show the ticket information on the pop-window
+    `<h4>${newTicket.movieName}</h4>
+    <h4>${newTicket.date}</h4>
+    <h4>${newTicket.salong}</h4>
+    <h4>${newTicket.seat}</h4>`);
   await JSON._save('ticket', tickets);
   console.log(tickets);
 }

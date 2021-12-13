@@ -27,6 +27,7 @@ function renderMovieInfo() {
 
 
 $('#book').on('click', function () {
-  readTickets();   //When the user clicks the book button on seatBooking.html
+  readTickets();
+  //When the user clicks the book button on seatBooking.html
 });               //The program creates the new ticket for the user 
 

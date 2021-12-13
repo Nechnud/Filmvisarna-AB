@@ -2,7 +2,10 @@
   font-family: neon;
   src: url("neon.ttf");
 }
-
+/* CSS style for modal pop-up window */ 
+.modal-content{  
+  background-color: rgba(0, 0, 0, 0.3);  
+}
 * {
   box-sizing: border-box;
 }

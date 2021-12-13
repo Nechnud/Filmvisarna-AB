@@ -52,19 +52,19 @@
         <!-- This is buttons to select the amount of tickets the customer wants-->
 
         <div class="container">
-            <div class="plusButtons">     
+            <div class="plusButtons">
                 <button id='amount' type="button" class="rounded-circle">+</button>
                 <button id='amount' type="button" class="rounded-circle">+</button>
                 <button id='amount' type="button" class="rounded-circle">+</button>
             </div>
-            
+
             <div class="minusButtons">
                 <button id='amount' type="button" class="rounded-circle">-</button>
                 <button id='amount' type="button" calss="rounded-circle">-</button>
                 <button id='amount' type="button" class="rounded-circle">-</button>
             </div>
-            
-      </div>
+
+        </div>
 
 
 
@@ -102,14 +102,39 @@
                 <div class="seatsNumber">
 
                 </div>
-                <button type="button" class="btn btn-dark" id="book">BOOK</button>
+                <button type="button" class="btn btn-primary" id="book" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Book
+                </button>
+
             </div>
 
             <div class="row-container" id="rowForSeats">
 
 
             </div>
+            <!-- Modal Bootstrap Pop-up window, do not delete them! -------------------------------------->
+            <div class="pop-up">
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Your Ticket</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
 
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Bootstrap Pop-up window, do not delete them! -------------------------------------->
     </main>
 
 
