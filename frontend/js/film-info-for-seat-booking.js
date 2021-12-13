@@ -25,21 +25,8 @@ function renderMovieInfo() {
   document.getElementById("film-info-booking").innerHTML = movieData;
 }
 
-let seatID;
-let selectedSeatsToShow;
-async function readSelectedSeats() {
-  let seatList = localStorage.getItem('selectedSeats');
-  console.log(seatList);
-  for (let i = 0; i < seatList.length; i++) {
-    seatID = seatList[i];
-    selectedSeatsToShow += `
-  <p>Row ${seatID.charAt(0)} Chair ${seatID.substring(1)}</p>
-  `;
-  }
-  $('.seatsNumber').html(selectedSeatsToShow);
-}
 
 $('#book').on('click', function () {
-
-});
+  readTickets();   //When the user clicks the book button on seatBooking.html
+});               //The program creates the new ticket for the user 
 

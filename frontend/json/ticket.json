@@ -15,7 +15,6 @@
     "movieName": "My Neighbour Totoro",
     "date": "13-11-2021",
     "salong": "Cozy",
-<<<<<<< HEAD
     "ticketNumber": "KL8QVHS4CK"
   },
   {
@@ -107,74 +106,5 @@
     "date": "13-11-2021",
     "salong": "Grande",
     "ticketNumber": "9ARO60A8TR"
-=======
-    "ticketNumber": "F44KSQF3FS"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "C34RPIHS2R"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "FWC4GM6VIB"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "7GT2DUH7D3"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "T98PBA0JBM"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "NLAQJIB6L4"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "KW7YMTA2DM"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "W9I86EX9UG"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "R6CBIT1T2T"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "3OJ15Q9ITK"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "JWBTRD0QQV"
-  },
-  {
-    "movieName": "My Neighbour Totoro",
-    "date": "13-11-2021",
-    "salong": "Cozy",
-    "ticketNumber": "6JYEGLEAY9"
->>>>>>> fefe7a9050ff8ca173721c22cd9a580ba9f76c72
   }
 ]

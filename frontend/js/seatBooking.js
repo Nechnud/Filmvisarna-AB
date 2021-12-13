@@ -55,25 +55,38 @@ readMovieHall();
 //Create two variables
 let listOfSeats = []; //this array stores the selected seats
 let selectSeatNumber; //read the id number of the selected seats
+let selectedSeatsToShow;
+let seatsToShowList = [];
 
 
 async function checkSelectedSeats() {
+  selectedSeatsToShow = '';
   for (let salongSeat of salongSeats) { //Loop throuh all the seats
     await salongSeat.addEventListener('click', function () { //click function when the user clicks the seat
       selectSeatNumber = $(this).attr('id'); //get the id of the selected seat
       if ($(this).css("background-color") == 'rgb(1, 22, 62)') { //check the seat color
         $(this).css({ backgroundColor: "#31d7a9" }); //change the selected seat's number
-        listOfSeats.push(selectSeatNumber);//add the selected seat to the arrayList
+        listOfSeats.push(selectSeatNumber);
+        seatsToShowList.push(selectedSeatsToShow = `
+        <p class="seat${selectSeatNumber}">
+       Row ${selectSeatNumber.charAt(0)} 
+       Chair ${selectSeatNumber.substring(1)}</p>`);
       }
+
       if ($(this).css("background-color") == 'rgb(49, 215, 169)') { //if the user click again the same seat
         $(this).css({ backgroundColor: "#01163e" }); //change the seat color 
         listOfSeats.pop(selectSeatNumber); //remove the selected seat from the seat array
-
-      } localStorage.setItem('selectedSeats', listOfSeats);
-      console.log(localStorage.getItem('selectedSeats'));
-
+        $('.seat' + `${selectSeatNumber}`).remove();
+        seatsToShowList.pop(`<p class="seat${selectSeatNumber}">
+          Row ${selectSeatNumber.charAt(0)}
+          Chair ${selectSeatNumber.substring(1)}</p> `);
+      }
+      $('.seatsNumber').html(seatsToShowList);
+      localStorage.setItem('selectedSeats', listOfSeats);
+      //changeSeatsForTicket();
+      console.log(localStorage.getItem('selectedSeats'))
     });
-  } readSelectedSeats();
+  }
 }
 
 //Jsonflex code for ticket-----------------------------------------
@@ -100,15 +113,31 @@ async function readTickets() {
   await ticketNumberGenerator();
   // await removePerson();
 }
+/*
 
-async function checkTicketNumber() {           //Creates a function that allows us to check ticket number
+let row;
+let number;
+let seatsOnTicket = ' ';
+
+function changeSeatsForTicket() {
+  let listOfChairs = localStorage.getItem('selectedSeats');
+  console.log(listOfChairs);
+  for (let i = 0; i < listOfChairs.length; i++) {
+    seatsOnTicket += "row " + listOfChairs[i].charAt(0) + " seat " + listOfChairs[i].substring(1);
+  }
+}
+*/
+
+async function checkTicketNumber() {
+  //changeSeatsForTicket();          //Creates a function that allows us to check ticket number
   let newTicket;                               //Declare variable new ticket
   if (tickets.length == 0) {                   //If tickets array is empty, proceed
     newTicket = {                              //Gets id from json file and creates an object in the tickets array
       "movieName": localStorage.getItem('movieTitle'),
       "date": localStorage.getItem('date'),
       "salong": localStorage.getItem('salong'),
-      "ticketNumber": randomTicketNumber
+      "ticketNumber": randomTicketNumber,
+      //"seat": seatsOnTicket
     }
 
   } else {                                      //If the ticket array is not empty, check all the ticket numbers and create new rnd ticket number
@@ -122,7 +151,8 @@ async function checkTicketNumber() {           //Creates a function that allows 
           "movieName": localStorage.getItem('movieTitle'),
           "date": localStorage.getItem('date'),
           "salong": localStorage.getItem('salong'),
-          "ticketNumber": randomTicketNumber
+          "ticketNumber": randomTicketNumber,
+          // "seat": seatsOnTicket
         }
       }
     }
@@ -134,5 +164,5 @@ async function addTicket(newTicket) {              //Creates method addTicket th
   await JSON._save('ticket', tickets);
   console.log(tickets);
 }
-readTickets();                                     //Call the method
+
 
