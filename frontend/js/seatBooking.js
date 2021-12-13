@@ -81,48 +81,44 @@ function ticketNumberGenerator() {
   }
   randomTicketNumber = arrayOfCharacters.join(''); // We join the 10 characters to get our ticket number.
 
-
+}
 let tickets;
 async function readTickets() {
   tickets = await JSON._load('ticket');
   await addTicket();
   // await removePerson();
 }
-  async function checkTicketNumber() {
-    if (tickets.length == 0) {
-      let newTicket = {
-        "movieName": localStorage.getItem('movieTitle'),
-        "date": localStorage.getItem('date'),
-        "salong": localStorage.getItem('salong'),
-        "ticketNumber": randomTicketNumber
-      }
-      
-    } else {
-      for (let i = 0; i < tickets.length; i++) {
-        if (tickets[i].ticketNumber == randomTicketNumber) {
-          randomTicketNumber = ticketNumberGenerator();
-          i = 0;
-        
-        } else {
-          let newTicket = {
-            "movieName": localStorage.getItem('movieTitle'),
-            "date": localStorage.getItem('date'),
-            "salong": localStorage.getItem('salong'),
-            "ticketNumber": randomTicketNumber
-          }
+async function checkTicketNumber() {
+  if (tickets.length == 0) {
+    let newTicket = {
+      "movieName": localStorage.getItem('movieTitle'),
+      "date": localStorage.getItem('date'),
+      "salong": localStorage.getItem('salong'),
+      "ticketNumber": randomTicketNumber
+    }
+
+  } else {
+    for (let i = 0; i < tickets.length; i++) {
+      if (tickets[i].ticketNumber == randomTicketNumber) {
+        randomTicketNumber = ticketNumberGenerator();
+        i = 0;
+
+      } else {
+        let newTicket = {
+          "movieName": localStorage.getItem('movieTitle'),
+          "date": localStorage.getItem('date'),
+          "salong": localStorage.getItem('salong'),
+          "ticketNumber": randomTicketNumber
         }
       }
     }
   }
+}
 async function addTicket() {
   checkTicketNumber();
-
-
-
-
   tickets.push(newTicket);
 
   await JSON._save('ticket', tickets);
   console.log(tickets);
 }
-  readTickets(); 
+readTickets();
