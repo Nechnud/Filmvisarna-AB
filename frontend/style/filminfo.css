@@ -142,8 +142,16 @@ body {
   -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
 }
 
+.embed-responsive-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
 .modal-content{  
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   
 }
 

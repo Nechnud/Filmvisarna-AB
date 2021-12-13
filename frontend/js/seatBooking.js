@@ -52,19 +52,30 @@ function showSeats() {
 }
 readMovieHall();
 
-function checkSelectedSeats() {
-  for (let salongSeat of salongSeats) {
-    salongSeat.addEventListener('click', function () {
-      if ($(this).css("background-color") == 'rgb(1, 22, 62)') {
-        $(this).css({ backgroundColor: "#31d7a9" });
-      }
-      if ($(this).css("background-color") == 'rgb(49, 215, 169)')
-        $(this).css({ backgroundColor: "#01163e" });
-    })
-  }
+//Create two variables
+let listOfSeats = []; //this array stores the selected seats
+let selectSeatNumber; //read the id number of the selected seats
 
-  console.log(salongSeats);
+
+async function checkSelectedSeats() {
+  for (let salongSeat of salongSeats) { //Loop throuh all the seats
+    await salongSeat.addEventListener('click', function () { //click function when the user clicks the seat
+      selectSeatNumber = $(this).attr('id'); //get the id of the selected seat
+      if ($(this).css("background-color") == 'rgb(1, 22, 62)') { //check the seat color
+        $(this).css({ backgroundColor: "#31d7a9" }); //change the selected seat's number
+        listOfSeats.push(selectSeatNumber);//add the selected seat to the arrayList
+      }
+      if ($(this).css("background-color") == 'rgb(49, 215, 169)') { //if the user click again the same seat
+        $(this).css({ backgroundColor: "#01163e" }); //change the seat color 
+        listOfSeats.pop(selectSeatNumber); //remove the selected seat from the seat array
+
+      } localStorage.setItem('selectedSeats', listOfSeats);
+      console.log(localStorage.getItem('selectedSeats'));
+
+    });
+  } readSelectedSeats();
 }
+
 //Jsonflex code for ticket-----------------------------------------
 let randomTicketNumber;
 
@@ -101,12 +112,12 @@ async function checkTicketNumber() {           //Creates a function that allows 
     }
 
   } else {                                      //If the ticket array is not empty, check all the ticket numbers and create new rnd ticket number
-    for (let i = 0; i < tickets.length; i++) {  
+    for (let i = 0; i < tickets.length; i++) {
       if (tickets[i].ticketNumber == randomTicketNumber) {
         randomTicketNumber = ticketNumberGenerator();
         i = 0;
 
-      } else {                                 
+      } else {
         newTicket = {
           "movieName": localStorage.getItem('movieTitle'),
           "date": localStorage.getItem('date'),
@@ -118,10 +129,10 @@ async function checkTicketNumber() {           //Creates a function that allows 
   }
   addTicket(newTicket);
 }
-
 async function addTicket(newTicket) {              //Creates method addTicket that pushes the object/ticket item into the json file
   tickets.push(newTicket);
   await JSON._save('ticket', tickets);
   console.log(tickets);
 }
 readTickets();                                     //Call the method
+
