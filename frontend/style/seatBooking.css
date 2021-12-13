@@ -89,6 +89,7 @@ body {
   background: linear-gradient(rgba(0, 18, 50, 0.479), rgba(0, 0, 0, 0.95)),
     url("bgFilmvisarna.png");
 }
+
 main {
   font-family: "neon";
 
@@ -102,6 +103,14 @@ main {
   background-color: rgb(0, 18, 50, 0.3);
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.minusButtons{
+  background-color: #FF10F0;
+  color: #FF10F0;
+
+  border-color: #FF10F0;
+  
 }
 
 .movie-container {
