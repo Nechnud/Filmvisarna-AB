@@ -6,7 +6,7 @@ let readJson2;
 let trailerSRC, video;
 async function readInfoJson() {
   readJson2 = await $.getJSON('json/movieinfo.json');
-  showAllMovies();
+  showAllMovies(readJson2);
 }
 
 async function showAllMovies() {
@@ -44,8 +44,6 @@ $('.movieAll').on('click', function () {
   localStorage.setItem('ID', movieID);
   //Call the function readShowJson(movieID)
   //This function is in 'screening.js' file
-  readShowJson(movieID);
-
   let check = localStorage.getItem('ID');
   console.log(check);
 });

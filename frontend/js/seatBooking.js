@@ -69,7 +69,7 @@ function checkSelectedSeats() {
 let randomTicketNumber;
 
 // Generates a random ticket number using the ASCII-code. The numbers used range from 48 to 57 (equivalent to "0" to "9") and  // from 65 to 90 (equivalent to "A" to "Z" in upper case).
-function ticketNumberGenerator() {
+async function ticketNumberGenerator() {
   let arrayOfCharacters = [];
   while (arrayOfCharacters.length < 10) {
     let randomASCII = Math.floor(Math.random() * (90 - 48) + 48); // Generates a random integer between 48 and 90;
@@ -80,17 +80,20 @@ function ticketNumberGenerator() {
     }
   }
   randomTicketNumber = arrayOfCharacters.join(''); // We join the 10 characters to get our ticket number.
-
+  checkTicketNumber(randomTicketNumber);
 }
+
 let tickets;
 async function readTickets() {
   tickets = await JSON._load('ticket');
-  await addTicket();
+  await ticketNumberGenerator();
   // await removePerson();
 }
+
 async function checkTicketNumber() {
+  let newTicket;
   if (tickets.length == 0) {
-    let newTicket = {
+    newTicket = {
       "movieName": localStorage.getItem('movieTitle'),
       "date": localStorage.getItem('date'),
       "salong": localStorage.getItem('salong'),
@@ -104,7 +107,7 @@ async function checkTicketNumber() {
         i = 0;
 
       } else {
-        let newTicket = {
+        newTicket = {
           "movieName": localStorage.getItem('movieTitle'),
           "date": localStorage.getItem('date'),
           "salong": localStorage.getItem('salong'),
@@ -113,11 +116,11 @@ async function checkTicketNumber() {
       }
     }
   }
+  addTicket(newTicket);
 }
-async function addTicket() {
-  checkTicketNumber();
-  tickets.push(newTicket);
 
+async function addTicket(newTicket) {
+  tickets.push(newTicket);
   await JSON._save('ticket', tickets);
   console.log(tickets);
 }
