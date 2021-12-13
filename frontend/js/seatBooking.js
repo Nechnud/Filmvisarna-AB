@@ -90,23 +90,23 @@ async function readTickets() {
   // await removePerson();
 }
 
-async function checkTicketNumber() {
-  let newTicket;
-  if (tickets.length == 0) {
-    newTicket = {
+async function checkTicketNumber() {           //Creates a function that allows us to check ticket number
+  let newTicket;                               //Declare variable new ticket
+  if (tickets.length == 0) {                   //If tickets array is empty, proceed
+    newTicket = {                              //Gets id from json file and creates an object in the tickets array
       "movieName": localStorage.getItem('movieTitle'),
       "date": localStorage.getItem('date'),
       "salong": localStorage.getItem('salong'),
       "ticketNumber": randomTicketNumber
     }
 
-  } else {
-    for (let i = 0; i < tickets.length; i++) {
+  } else {                                      //If the ticket array is not empty, check all the ticket numbers and create new rnd ticket number
+    for (let i = 0; i < tickets.length; i++) {  
       if (tickets[i].ticketNumber == randomTicketNumber) {
         randomTicketNumber = ticketNumberGenerator();
         i = 0;
 
-      } else {
+      } else {                                 
         newTicket = {
           "movieName": localStorage.getItem('movieTitle'),
           "date": localStorage.getItem('date'),
@@ -119,9 +119,9 @@ async function checkTicketNumber() {
   addTicket(newTicket);
 }
 
-async function addTicket(newTicket) {
+async function addTicket(newTicket) {              //Creates method addTicket that pushes the object/ticket item into the json file
   tickets.push(newTicket);
   await JSON._save('ticket', tickets);
   console.log(tickets);
 }
-readTickets();
+readTickets();                                     //Call the method
