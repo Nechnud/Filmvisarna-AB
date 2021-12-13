@@ -66,23 +66,63 @@ function checkSelectedSeats() {
   console.log(salongSeats);
 }
 //Jsonflex code for ticket-----------------------------------------
+let randomTicketNumber;
+
+// Generates a random ticket number using the ASCII-code. The numbers used range from 48 to 57 (equivalent to "0" to "9") and  // from 65 to 90 (equivalent to "A" to "Z" in upper case).
+function ticketNumberGenerator() {
+  let arrayOfCharacters = [];
+  while (arrayOfCharacters.length < 10) {
+    let randomASCII = Math.floor(Math.random() * (90 - 48) + 48); // Generates a random integer between 48 and 90;
+    // We do not want to use the characters between 58 and 64 (they are neither numbers nor letters)
+    if (randomASCII < 58 || randomASCII > 64) {
+      let stringFromASCII = String.fromCharCode(randomASCII); // We obtain the characters using their values in ASCII-code.
+      arrayOfCharacters.push(stringFromASCII); // We save the characters to an array until we have 10.
+    }
+  }
+  randomTicketNumber = arrayOfCharacters.join(''); // We join the 10 characters to get our ticket number.
+
+
 let tickets;
 async function readTickets() {
   tickets = await JSON._load('ticket');
   await addTicket();
   // await removePerson();
 }
+  async function checkTicketNumber() {
+    if (tickets.length == 0) {
+      let newTicket = {
+        "movieName": localStorage.getItem('movieTitle'),
+        "date": localStorage.getItem('date'),
+        "salong": localStorage.getItem('salong'),
+        "ticketNumber": randomTicketNumber
+      }
+      
+    } else {
+      for (let i = 0; i < tickets.length; i++) {
+        if (tickets[i].ticketNumber == randomTicketNumber) {
+          randomTicketNumber = ticketNumberGenerator();
+          i = 0;
+        
+        } else {
+          let newTicket = {
+            "movieName": localStorage.getItem('movieTitle'),
+            "date": localStorage.getItem('date'),
+            "salong": localStorage.getItem('salong'),
+            "ticketNumber": randomTicketNumber
+          }
+        }
+      }
+    }
+  }
 async function addTicket() {
+  checkTicketNumber();
 
-  let newTicket = {
-    "movieName": localStorage.getItem('movieTitle'),
-    "date": localStorage.getItem('date'),
-    "salong": localStorage.getItem('salong')
-  };
+
+
 
   tickets.push(newTicket);
 
   await JSON._save('ticket', tickets);
   console.log(tickets);
 }
-readTickets();
+  readTickets(); 
