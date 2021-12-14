@@ -12,7 +12,7 @@ async function readInfoJson() {
 async function showAllMovies() {
   html = '';
   trailerSRC = '';
-  //There are four if statements to match the user's option
+
   for (i = 0; i < readJson2.length; i++) {
     html = `
     
@@ -42,10 +42,7 @@ $('.movieAll').on('click', function () {
   //Store the movie id to localStorage so that when we change the webpage 
   //we could still get the movie id from localStorage
   localStorage.setItem('ID', movieID);
-  //Call the function readShowJson(movieID)
-  //This function is in 'screening.js' file
-  let check = localStorage.getItem('ID');
-  console.log(check);
+
 });
 
 readInfoJson();
