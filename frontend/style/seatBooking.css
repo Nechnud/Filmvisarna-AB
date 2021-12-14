@@ -2,9 +2,9 @@
   font-family: neon;
   src: url("neon.ttf");
 }
-/* CSS style for modal pop-up window */ 
-.modal-content{  
-  background-color: rgba(0, 0, 0, 0.3);  
+/* CSS style for modal pop-up window */
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 * {
   box-sizing: border-box;
@@ -92,6 +92,20 @@ body {
   background: linear-gradient(rgba(0, 18, 50, 0.479), rgba(0, 0, 0, 0.95)),
     url("bgFilmvisarna.png");
 }
+/* Css for movie info side */
+.containerMovieInfo {
+  /*Using 0 opacity for now, gonna have box later on.*/
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 60%;
+  padding-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
 
 main {
   font-family: "neon";
@@ -108,12 +122,11 @@ main {
   padding-bottom: 25px;
 }
 
-.minusButtons{
-  background-color: #FF10F0;
-  color: #FF10F0;
+.minusButtons {
+  background-color: #ff10f0;
+  color: #ff10f0;
 
-  border-color: #FF10F0;
-  
+  border-color: #ff10f0;
 }
 
 .movie-container {
