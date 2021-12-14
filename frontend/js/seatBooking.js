@@ -156,7 +156,8 @@ async function checkTicketNumber() {//Creates a function that allows us to check
 async function addTicket(newTicket) {    //Creates method addTicket that pushes the object/ticket item into the json file
   tickets.push(newTicket);
   $('.modal-body').html( //Show the ticket information on the pop-window
-    `<h4>${newTicket.movieName}</h4>
+    `<h4>${newTicket.ticketNumber}</h4>
+    <h4>${newTicket.movieName}</h4>
     <h4>${newTicket.date}</h4>
     <h4>${newTicket.salong}</h4>
     <h4>${newTicket.seat}</h4>`);
