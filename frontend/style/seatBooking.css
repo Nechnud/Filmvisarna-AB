@@ -122,12 +122,20 @@ main {
   padding-bottom: 25px;
 }
 
-.minusButtons {
+.rounded-circle {
   background-color: #ff10f0;
-  color: #ff10f0;
+  border: none;
+  margin: 20px;
 
-  border-color: #ff10f0;
 }
+
+.minusButtons {
+  padding-right: 40%;
+  
+
+}
+
+
 
 .movie-container {
   margin: 100px 0;
