@@ -24,7 +24,7 @@ async function showAllMovies() {
            
     <p class="name">${readJson2[i].title}</p>
       <button id="${readJson2[i].title}" type="button" class="trailer-button" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
+              data-bs-target="#trailerModal">
               PLAY TRAILER
             </button>
             </div>
