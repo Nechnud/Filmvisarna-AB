@@ -14,14 +14,6 @@ $(function () {
 let today = new Date();
 let shows, html, date, address;
 
-//Read the date from datepicker
-$(function () {
-  $("#datepicker").on('change', function () {
-    date = $(this).val();
-  });
-  return date;
-});
-
 //Read the json file and store it into 'shows' variable
 async function readShowJson() {
   shows = await $.getJSON('json/shows.json');
@@ -50,8 +42,6 @@ async function showTodaysFilms() {
       <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
-      
-      
     `;
     }
   }
@@ -61,41 +51,28 @@ async function showTodaysFilms() {
 }
 //Declare the function readShowJson();
 readShowJson();
-
-
-//If the user decides to choose a date on filminfo.html page 
-//This method starts when the user click on the "choose" button
-let selectFilm = document.querySelector('#select-film');
-selectFilm.addEventListener('click', (event) => {
+$(function () {
   html = '';
-  address = '';
-  for (let show of shows) {
-    let rightOne = localStorage.getItem('ID');
-    //check which movie is clicked and get that movie's information
-    if (rightOne == show.id) {
-      localStorage.setItem('salong', show.showRoom);
-      localStorage.setItem('date', date);
-      localStorage.setItem('movieTitle', show.title);
-      html += `
-     
+  $("#datepicker").on('change', function () {
+    date = $(this).val();
+    for (let show of shows) {
+      let rightOne = localStorage.getItem('ID');
+
+      //check which movie is clicked and get that movie's information
+      if (rightOne == show.id) {
+        localStorage.setItem('salong', show.showRoom);
+        localStorage.setItem('date', date);
+        localStorage.setItem('movieTitle', show.title);
+        html = `
       <th>${show.title}</th>
       <th>${date}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
-      
-      
     `;
-
+      }
+      $('.screening-result').html(html);
     }
-    //If the user forget to choose the date, the program alters a message.
-
-  } if (date == undefined) {
-    html = '';
-    alert("Please choose the date!");
-  }
-  //Show the selected result on the screening-list table
-  $('.screening-result').html(html);
-  showTrailer();
+  });
 });
 
 //read movieinfo.json file to 'movies'
