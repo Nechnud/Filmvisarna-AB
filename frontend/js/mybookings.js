@@ -3,7 +3,8 @@ let ticketData;
 let thisTicketNumber = localStorage.getItem("myTicketNumber");
 async function readTicketJson (){
     let rawData = await fetch('json/ticket.json');
-    myTickets = await rawData.json()
+    myTickets = await rawData.json();
+    renderTicketInfo();
 }
 
 function renderTicketInfo(){
@@ -18,5 +19,7 @@ function renderTicketInfo(){
     `;
     }
 }
+console.log(ticketData);
     document.getElementById("ticketsinfo").innerHTML = ticketData;
 }
+readTicketJson();
