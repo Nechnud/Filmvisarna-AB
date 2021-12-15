@@ -30,6 +30,7 @@ function renderMovieInfo() {
     <p>Rated: ${movieToShow.rated}</p>
     <p>Runtime: ${movieToShow.runtime}</p>
     <p>Cast: ${movieToShow.actors}</p>
+    <p>Plot: ${movieToShow.plot}</p>
            
   `;
   document.getElementById("movie-info").innerHTML = movieData;
