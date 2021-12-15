@@ -36,7 +36,7 @@ function showSeats() {
       let idForSeat = (1 + i).toString() + (j + 1).toString();
       // assign a div tag with class col in this loop to create the seats
       seats += `
-      <div class="seat" id="${idForSeat}"></div>
+      <button class="seat" id="${idForSeat}"></button>
       `;
     }
 
@@ -48,7 +48,9 @@ function showSeats() {
     }
   }
   salongSeats = document.querySelectorAll(".seat");
+  checkIfSeatsAreTaken();
   checkSelectedSeats(salongSeats);
+
 }
 readMovieHall();
 
@@ -118,9 +120,13 @@ let seatsOnTicket = ' ';
 function changeSeatsForTicket() {
   for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
     seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1); //store the seats nummber/id
+
   }
 }
 
+let currentTickets;
+let movieTitle = localStorage.getItem('movieTitle');
+let movieDate = localStorage.getItem('date');
 
 async function checkTicketNumber() {//Creates a function that allows us to check ticket number
   changeSeatsForTicket();     //call the function that check all the selected seats' number     
@@ -131,7 +137,8 @@ async function checkTicketNumber() {//Creates a function that allows us to check
       "date": localStorage.getItem('date'),
       "salong": localStorage.getItem('salong'),
       "ticketNumber": randomTicketNumber,
-      "seat": seatsOnTicket
+      "seat": seatsOnTicket,
+      "seatID": listOfSeats
     }
 
   } else {                                      //If the ticket array is not empty, check all the ticket numbers and create new rnd ticket number
@@ -146,7 +153,8 @@ async function checkTicketNumber() {//Creates a function that allows us to check
           "date": localStorage.getItem('date'),
           "salong": localStorage.getItem('salong'),
           "ticketNumber": randomTicketNumber,
-          "seat": seatsOnTicket
+          "seat": seatsOnTicket,
+          "seatID": listOfSeats
         }
       }
     }
@@ -163,5 +171,21 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
     <h4>${newTicket.salong}</h4>
     <h4>${newTicket.seat}</h4>`);
   localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
+  console.log(newTicket);
   await JSON._save('ticket', tickets);
+}
+
+async function checkIfSeatsAreTaken() {
+  let rawData = await fetch('json/ticket.json');
+  currentTickets = await rawData.json();
+  console.log(currentTickets);
+  for (let i = 0; i < currentTickets.length; i++) {
+    if (currentTickets[i].movieName == movieTitle && currentTickets[i].date == movieDate) {
+      for (let j = 0; j < currentTickets[i].seatID.length; j++) {
+        let takenSeat = currentTickets[i].seatID[j];
+        console.log(currentTickets[i].seatID[j]);
+        document.getElementById(`${takenSeat}`).disabled = true;
+      }
+    }
+  }
 }
