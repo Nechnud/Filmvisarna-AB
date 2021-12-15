@@ -5,5 +5,19 @@
     "salong": "Cozy",
     "ticketNumber": "N6LW6YTF6F",
     "seat": "  Row 1 Seat 1 Row 1 Seat 2"
+  },
+  {
+    "movieName": "Aladdin",
+    "date": "15-11-2021",
+    "salong": "Cozy",
+    "ticketNumber": "05XGOL1QE7",
+    "seat": "  Row 1 Seat 2 Row 1 Seat 1"
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "15-11-2021",
+    "salong": "Grande",
+    "ticketNumber": "PCY6IMMESL",
+    "seat": "  Row 1 Seat 1 Row 1 Seat 2"
   }
 ]
