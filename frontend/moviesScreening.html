@@ -39,38 +39,25 @@
   <main>
     <div class="row" id="selectorMovie">
       <div class="col" id="FS-item">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Movies
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" id="ageGroupToChoose">
-            <li><button id="chooseMovies" class="dropdown-item" type="button" value="1">All Moives</button>
-            </li>
-            <li><button id="chooseMovies" class="dropdown-item" type="button" value="1">The Day After Tomorrow</button>
-            </li>
-            <li><button id="chooseMovies" class="dropdown-item" type="button" value="2">Joker</button></li>
-            <li><button id="chooseMovies" class="dropdown-item" type="button" value="3">Aladdin</button></li>
-            <li><button id="chooseMovies" class="dropdown-item" type="button" value="4">My Neighbour Totoro</button>
-            </li>
-            <li><button id="chooseMovies" class="dropdown-item" type="button" value="5">Interstellar</button></li>
-            <li><button id="chooseMovies" class="dropdown-item" type="button" value="6">Spider-Man: No way home</button>
-            </li>
-          </ul>
-        </div>
+
+        <select class="form-select" id="chooseMovies">
+          <option selected id="chooseMovies" value="0">All Moives</option>
+          <option id="chooseMovies" value="1">The Day After Tomorrow</option>
+          <option id="chooseMovies" value="2">Joker</option>
+          <option id="chooseMovies" value="3">Aladdin</option>
+          <option id="chooseMovies" value="4">My Neighbour Totoro</option>
+          <option id="chooseMovies" value="5">Interstellar</option>
+          <option id="chooseMovies" value="6">Spider-Man: No way home</option>
+
+        </select>
       </div>
+
       <div class="col" id="FS-item">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Age Group
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" id="ageGroupToChoose">
-            <li><button id="chooseAge" class="dropdown-item" type="button" value="allAge">All Age</button></li>
-            <li><button id="chooseAge" class="dropdown-item" type="button" value="children">Children</button></li>
-            <li><button id="chooseAge" class="dropdown-item" type="button" value="adult">Adult</button></li>
-          </ul>
-        </div>
+        <select class="form-select" id="chooseAge">
+          <option selected id="chooseAge" value="allAge">All Age</option>
+          <option id="chooseAge" value="children">Children</option>
+          <option id="chooseAge" value="adult">Adult</option>
+        </select>
       </div>
       <!--Don't move or change this part below!-->
       <div class="screening-list">
