@@ -1,9 +1,5 @@
-//Read all the options that are made by the user and show the result on the screening list
-
-
-let filmsScreening, ageGroup;
 let jsonMovies;
-let trailerSRC, video;
+let trailerSRC, trialerID;
 async function readInfoJson() {
   jsonMovies = await $.getJSON('json/movieinfo.json');
   showAllMovies(jsonMovies);
@@ -92,7 +88,6 @@ function getMovieID() {
     //Store the movie id to localStorage so that when we change the webpage 
     //we could still get the movie id from localStorage
     localStorage.setItem('ID', movieID);
-
   });
 }
 readInfoJson();
