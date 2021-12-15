@@ -36,7 +36,7 @@ function showSeats() {
       let idForSeat = (1 + i).toString() + (j + 1).toString();
       // assign a div tag with class col in this loop to create the seats
       seats += `
-      <div class="seat" id="${idForSeat}"></div>
+      <button class="seat" id="${idForSeat}"></button>
       `;
     }
 
@@ -118,6 +118,7 @@ let seatsOnTicket = ' ';
 function changeSeatsForTicket() {
   for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
     seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1); //store the seats nummber/id
+
   }
 }
 
@@ -131,7 +132,8 @@ async function checkTicketNumber() {//Creates a function that allows us to check
       "date": localStorage.getItem('date'),
       "salong": localStorage.getItem('salong'),
       "ticketNumber": randomTicketNumber,
-      "seat": seatsOnTicket
+      "seat": seatsOnTicket,
+      "seatID": listOfSeats
     }
 
   } else {                                      //If the ticket array is not empty, check all the ticket numbers and create new rnd ticket number
@@ -146,7 +148,8 @@ async function checkTicketNumber() {//Creates a function that allows us to check
           "date": localStorage.getItem('date'),
           "salong": localStorage.getItem('salong'),
           "ticketNumber": randomTicketNumber,
-          "seat": seatsOnTicket
+          "seat": seatsOnTicket,
+          "seatID": listOfSeats
         }
       }
     }
@@ -163,5 +166,6 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
     <h4>${newTicket.salong}</h4>
     <h4>${newTicket.seat}</h4>`);
   localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
+  console.log(newTicket);
   await JSON._save('ticket', tickets);
 }
