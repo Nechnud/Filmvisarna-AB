@@ -11,6 +11,7 @@ function renderTicketInfo(){
     for(let i = 0; i< myTickets.length; i++){
  if (thisTicketNumber === myTickets[i].ticketNumber){
     ticketData = `
+    <p>MY TICKET: </p>
     <p>Movie: ${myTickets[i].movieName}</p>
     <p>Date: ${myTickets[i].date}</p>
     <p>Salon: ${myTickets[i].salong}</p>
