@@ -60,23 +60,36 @@
         <!-- This is buttons to select the amount of tickets the customer wants-->
 
         <div class="container">
-            <div class="plusButtons">
-                <ul>
-                <li><button id='amount' type="button" class="rounded-circle child-price-plus">+</button></li>
-                <li><button id='amount' type="button" class="rounded-circle adult-price-plus">+</button></li>
-                <li><button id='amount' type="button" class="rounded-circle pensioner-price-plus">+</button></li>
-                </ul>
-            </div>
+            <div class=row>
+                <div id="priceText" class="col-lg-4 col-md-4">
+                    <ul>
+                        <li><h5>Child: 3,5 $</h5></li>
+                        <li><h5>Adult: 8,5 $</h5></li>
+                        <li><h5>Pensioner: 7,5 $</h5></li>
 
-            <div class="minusButtons">
-                <ul>
-                <li><button id='amount' type="button" class="rounded-circle child-amount-minus">-</button></li>
-                <li><button id='amount' type="button" class="rounded-circle adult-amount-minus">-</button></li>
-                <li><button id='amount' type="button" class="rounded-circle pensioner-amount-minus">-</button></li>
-                
-                </ul>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                            <div class="plusButtons">
+                                <ul>
+                                    <li><button id='amount' type="button" class="rounded-circle child-amount-minus">-</button></li>
+                                    <li><button id='amount' type="button" class="rounded-circle adult-amount-minus">-</button></li>
+                                    <li><button id='amount' type="button" class="rounded-circle pensioner-amount-minus">-</button></li>
+                                </ul>
+                            </div>
+                </div>        
+                    
+                    <div class="col-lg-4 col-md-4">
+                        <div class="minusButtons">
+                            <ul>
+                                <li><button id='amount' type="button" class="rounded-circle child-price-plus">+</button></li>
+                                <li><button id='amount' type="button" class="rounded-circle adult-price-plus">+</button></li>
+                                <li><button id='amount' type="button" class="rounded-circle pensioner-price-plus">+</button></li>
+                            </ul>
+                         </div>         
 
-            </div>
+                    </div>
+            </div>    
 
         </div>
 
