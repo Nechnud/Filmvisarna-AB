@@ -1,7 +1,17 @@
-let jsonMovies;
+let jsonMovies, jsonShows;
 let trailerSRC, trialerID;
+$(function () {
+  $("#datepicker").datepicker({
+    //maximum 30days 
+    maxDate: "+1m",
+    //Start date is always today, new Date() is current date object
+    minDate: new Date(),
+    dateFormat: "dd-mm-yy"
+  });
+});
 async function readInfoJson() {
   jsonMovies = await $.getJSON('json/movieinfo.json');
+  jsonShows = await $.getJSON('json/shows.json');
   showAllMovies(jsonMovies);
 }
 
@@ -19,6 +29,8 @@ async function showAllMovies() {
               <div id="screening-result${jsonMovies[i].id}" class="col "></div>
            
     <p class="name">${jsonMovies[i].title}</p>
+    <p class="name">Salon: ${jsonShows[i].showRoom}</p>
+    <p class="name">Time: ${jsonShows[i].showTime}</p>
       <button id="${jsonMovies[i].id}" type="button" class="trailer-button" data-bs-toggle="modal"
               data-bs-target="#trailerModal">
               PLAY TRAILER
@@ -56,6 +68,13 @@ moviesSelect.addEventListener('change', (event) => {
   checkTrialer();
 });
 
+$(function () {
+  $("#datepicker").on('change', function () {
+    date = $(this).val();
+    showAllMovies();
+  });
+});
+
 async function switchMovie() {
   for (i = 0; i < jsonMovies.length; i++) {
     if (movie == jsonMovies[i].id) {
@@ -68,6 +87,7 @@ async function switchMovie() {
               <div id="screening-result${jsonMovies[i].id}" class="col "></div>
            
     <p class="name">${jsonMovies[i].title}</p>
+    <p class="name">${date}</p>
       <button id="${jsonMovies[i].id}" type="button" class="trailer-button" data-bs-toggle="modal"
               data-bs-target="#trailerModal">
               PLAY TRAILER
@@ -80,6 +100,7 @@ async function switchMovie() {
   }
   getMovieID();
 }
+
 
 function getMovieID() {
   $('.movieAll').on('click', function () {
