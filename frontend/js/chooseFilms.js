@@ -1,6 +1,7 @@
 let jsonMovies, jsonShows;
 let trailerSRC, trialerID;
-
+let today = new Date();
+let date = today.getDate().toString() + "-" + (today.getMonth() + 1).toString() + "-" + today.getFullYear().toString();
 $(function () {
   $("#datepicker").datepicker({
     //maximum 30days 
@@ -10,6 +11,7 @@ $(function () {
     dateFormat: "dd-mm-yy"
   });
 });
+
 async function readInfoJson() {
   jsonMovies = await $.getJSON('json/movieinfo.json');
   jsonShows = await $.getJSON('json/shows.json');
@@ -19,7 +21,6 @@ async function readInfoJson() {
 async function showAllMovies() {
   html = '';
   trailerSRC = '';
-
   for (i = 0; i < jsonMovies.length; i++) {
     html += `
     <div class="row">
@@ -69,10 +70,17 @@ moviesSelect.addEventListener('change', (event) => {
   checkTrialer();
 });
 
-let date;
+
 $(function () {
   $("#datepicker").on('change', function () {
     date = $(this).val();
+    movie = $("#chooseMovies :selected").val();
+    if (movie == 0) {
+      showAllMovies();
+    }
+    else {
+      switchMovie(movie);
+    }
   });
 });
 

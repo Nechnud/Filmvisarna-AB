@@ -33,13 +33,13 @@ async function showTodaysFilms() {
     let rightOne = localStorage.getItem('ID');
     //check which movie is clicked and get that movie's information
     if (rightOne == show.id) {
-      let dataToday = today.getDate().toString() + "-" + today.getMonth().toString() + "-" + today.getFullYear().toString();
+      let dataToday = today.getDate().toString() + "-" + (today.getMonth() + 1).toString() + "-" + today.getFullYear().toString();
       localStorage.setItem('salong', show.showRoom);
       localStorage.setItem('date', dataToday);
       localStorage.setItem('movieTitle', show.title);
       html += `
       <th>${show.title}</th>
-      <th>${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}</th>
+      <th>${dataToday}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
     `;
