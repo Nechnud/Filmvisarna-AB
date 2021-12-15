@@ -48,7 +48,9 @@ function showSeats() {
     }
   }
   salongSeats = document.querySelectorAll(".seat");
+  checkIfSeatsAreTaken();
   checkSelectedSeats(salongSeats);
+
 }
 readMovieHall();
 
@@ -122,6 +124,9 @@ function changeSeatsForTicket() {
   }
 }
 
+let currentTickets;
+let movieTitle = localStorage.getItem('movieTitle');
+let movieDate = localStorage.getItem('date');
 
 async function checkTicketNumber() {//Creates a function that allows us to check ticket number
   changeSeatsForTicket();     //call the function that check all the selected seats' number     
@@ -168,4 +173,19 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
   localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
   console.log(newTicket);
   await JSON._save('ticket', tickets);
+}
+
+async function checkIfSeatsAreTaken() {
+  let rawData = await fetch('json/ticket.json');
+  currentTickets = await rawData.json();
+  console.log(currentTickets);
+  for (let i = 0; i < currentTickets.length; i++) {
+    if (currentTickets[i].movieName == movieTitle && currentTickets[i].date == movieDate) {
+      for (let j = 0; j < currentTickets[i].seatID.length; j++) {
+        let takenSeat = currentTickets[i].seatID[j];
+        console.log(currentTickets[i].seatID[j]);
+        document.getElementById(`${takenSeat}`).disabled = true;
+      }
+    }
+  }
 }
