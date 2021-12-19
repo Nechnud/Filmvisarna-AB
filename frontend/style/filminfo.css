@@ -16,11 +16,17 @@ header {
 
 /* BUTTOMS. Found in the header and other elements of the page. */
 
+
+
+
+
+
 .btn{
   font-family: neon; 
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  border-color: transparent;
+  border-color: transparent;  
+  size: auto;
 }
 
 .btn:hover{
