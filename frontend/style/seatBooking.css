@@ -328,6 +328,9 @@ Jag lämnar koden här så länge.*/
   .movie-container select {
     font-size: 14px;
   }
+  .bookedSeats{
+    float: right;
+  }
 
   .seat {
     height: 21px;
