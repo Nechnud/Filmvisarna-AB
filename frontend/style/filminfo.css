@@ -6,13 +6,7 @@
 
 /* HEADER ELEMENTS */
 
-/* TEST
-#movie-image {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-*/
+
 
 header {
   background-color: rgba(0, 0, 0, 0.3);
@@ -26,7 +20,8 @@ header {
   font-family: neon; 
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  border-color: transparent;
+  border-color: transparent;  
+  size: auto;
 }
 
 .btn:hover{
@@ -53,7 +48,7 @@ header {
   padding-left: 1%;
   padding-right: 1%;  
   position: absolute;    
-  left: 40%;
+  left: 35%;
   margin-left: -50px !important;
   display: block;
   font-size: 250%;
@@ -62,6 +57,7 @@ header {
   -webkit-text-stroke: initial;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+  
 }
 .navbar-brand:hover {
   background-color: rgba(238, 30, 210, 0.2);
@@ -97,14 +93,14 @@ body {
 }
   
 
-#container-movie-info{
-
+#container-movie-info {
   border-radius: 2%;
   background-color: rgba(0, 0, 0, 0.3);
-  margin-top: 1%;  
+  margin-top: 1%;
+  margin-bottom: 1%;  
   margin-left: 28%;
-  margin-right: 28%;
-  width: 100vh;
+  margin-right: 20%;
+  width: auto;
 }
 
 #container-movie-info > div{
@@ -121,9 +117,9 @@ body {
   margin-top: 1%;
   background-color: rgba(0, 0, 0, 0.3);  
   margin-left: 28%;
-  margin-right: 28%;
+  margin-right: 20%;
   margin-bottom: 20%;
-  width: 100vh;
+  width: auto;
 }
 
 .form-control {

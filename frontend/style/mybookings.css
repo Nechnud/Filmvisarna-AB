@@ -41,7 +41,7 @@
     padding-left: 1%;
     padding-right: 1%;  
     position: absolute;    
-    left: 40%;
+    left: 35%;
     margin-left: -50px !important;
     display: block;
     font-size: 250%;
@@ -78,7 +78,27 @@
     filter: blur(15px);
   }
   
-  
+  /* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* Footers text color */
+.container-footer p {
+  color: white;
+}
+/* This is for sticky - footer, 
+so that the footer always 
+stays at the bottom part of the webpage */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* This is also for sticky footer */
+main {
+  flex: 1;
+}
+
   body {
     background-image: url("bgFilmvisarna.png");
     background-position: center;
@@ -86,9 +106,13 @@
     background-size: cover;
     position: relative;
   }
+  
+
   #ticketsinfo {    
     background-color: rgba(0, 0, 0, 0.3);    
     color: white;  
+    position: absolute;    
+  left: 40%;
   }
 
   

@@ -25,7 +25,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
                     <div class="navbar-buttons">
-                       <a href="mybookings.html"> <button class="btn btn-dark" type="button">MY BOOKINGS</button></a>
+                        <a href="mybookings.html"> <button class="btn btn-dark" type="button">MY BOOKINGS</button></a>
                     </div>
                     <div class="navbar-buttons">
                         <a href="moviesScreening.html"><button class="btn btn-dark" type="button">MOVIES AND
@@ -38,7 +38,9 @@
     </header>
 
     <main>
-
+        <!--"fixed-top" does not work with other buttons on seatBooking.html -->
+        <!--when there is "fixed-top", all the buttons on seatBooking stop working, that's why I took away the "fixed-top"-->
+        <!--Perhaps we need to find a better solution for fixed top part-->
         <div class="container-fluid">
             <!-- Here are the container for the movie info "side bar"-->
             
@@ -62,6 +64,7 @@
             <div class=row>
                 <div id="priceText" class="col align-items-start">
                     <ul>
+<<<<<<< HEAD
                         <li><p>Child: 3,5 $</p></li>
                         <li><p>Adult: 8,5 $</p></li>
                         <li><p>Pensioner: 7,5 $</p></li>
@@ -86,9 +89,47 @@
                                 <li><button id='amount' type="button" class="rounded-circle pensioner-price-plus">+</button></li>
                             </ul>
                          </div>         
+=======
+                        <li>
+                            <h5>Child: 3,5 $</h5>
+                        </li>
+                        <li>
+                            <h5>Adult: 8,5 $</h5>
+                        </li>
+                        <li>
+                            <h5>Pensioner: 7,5 $</h5>
+                        </li>
 
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="plusButtons">
+                        <ul>
+                            <li><button id='amount' type="button" class="rounded-circle child-amount-minus">-</button>
+                            </li>
+                            <li><button id='amount' type="button" class="rounded-circle adult-amount-minus">-</button>
+                            </li>
+                            <li><button id='amount' type="button"
+                                    class="rounded-circle pensioner-amount-minus">-</button></li>
+                        </ul>
                     </div>
-            </div>    
+                </div>
+>>>>>>> 3f8e7b5d78200153fab8a6dbb71394c3aab37728
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="minusButtons">
+                        <ul>
+                            <li><button id='amount' type="button" class="rounded-circle child-price-plus">+</button>
+                            </li>
+                            <li><button id='amount' type="button" class="rounded-circle adult-price-plus">+</button>
+                            </li>
+                            <li><button id='amount' type="button" class="rounded-circle pensioner-price-plus">+</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
 
@@ -128,39 +169,18 @@
                 <div class="seatsNumber">
 
                 </div>
-                <button type="button" class="btn btn-primary" id="book" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">
-                    Book
-                </button>
+                <a href="" id="linkToBooking"><button type="button" class="btn btn-primary" id="book">
+                        Book
+                    </button></a>
 
             </div>
 
-            <div class="row-container" id="rowForSeats">
+            <div class=" row-container" id="rowForSeats">
 
 
-            </div>
-            <!-- Modal Bootstrap Pop-up window, do not delete them! -------------------------------------->
-            <div class="pop-up">
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Your Ticket</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Confirm</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- Modal Bootstrap Pop-up window, do not delete them! -------------------------------------->
+
     </main>
 
 

@@ -63,6 +63,7 @@ let seatsToShowList = []; //array for all the selected seats
 
 async function checkSelectedSeats() {
   selectedSeatsToShow = '';
+  listOfSeats = [];
   for (let salongSeat of salongSeats) { //Loop throuh all the seats
     await salongSeat.addEventListener('click', function () { //click function when the user clicks the seat
       selectSeatNumber = $(this).attr('id'); //get the id of the selected seat
@@ -164,26 +165,30 @@ async function checkTicketNumber() {//Creates a function that allows us to check
 
 async function addTicket(newTicket) {//Creates method addTicket that pushes the object/ticket item into the json file
   tickets.push(newTicket);
-  $('.modal-body').html( //Show the ticket information on the pop-window
-    `<h4>${newTicket.ticketNumber}</h4>
-    <h4>${newTicket.movieName}</h4>
-    <h4>${newTicket.date}</h4>
-    <h4>${newTicket.salong}</h4>
-    <h4>${newTicket.seat}</h4>`);
   localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
-  console.log(newTicket);
   await JSON._save('ticket', tickets);
+
 }
+//Function for button "Book" on seatBooking.html
+$('#book').on('click', function () {
+  console.log(listOfSeats);
+  if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
+    alert("Please choose your seats!"); // the program will alert the user to choose seats
+    $("#linkToBooking").attr("href", "seatBooking.html");
+  }
+  if (listOfSeats.length != 0) { //if there are seats are choose by the user
+    alert("Your tickets are ready!"); // this button will link the webpage to mybooking.html
+    $("#linkToBooking").attr("href", "myBookings.html");
+  }
+});
 
 async function checkIfSeatsAreTaken() {
   let rawData = await fetch('json/ticket.json');
   currentTickets = await rawData.json();
-  console.log(currentTickets);
   for (let i = 0; i < currentTickets.length; i++) {
     if (currentTickets[i].movieName == movieTitle && currentTickets[i].date == movieDate) {
       for (let j = 0; j < currentTickets[i].seatID.length; j++) {
         let takenSeat = currentTickets[i].seatID[j];
-        console.log(currentTickets[i].seatID[j]);
         document.getElementById(`${takenSeat}`).disabled = true;
       }
     }

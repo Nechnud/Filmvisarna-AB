@@ -15,24 +15,24 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html" data-text="Filmvisarna-AB">FILMVISARNA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          </ul>
-          <div class="navbar-buttons">
-            <button class="btn btn-dark" type="button">MY BOOKINGS</button>
-          </div>
-          <div class="navbar-buttons">
-            <a href="moviesScreening.html"><button class="btn btn-dark" type="button">MOVIES AND SCREENING</button></a>
-          </div>
 
+      <a class="navbar-brand" href="index.html" data-text="Filmvisarna-AB">FILMVISARNA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <div class="navbar-buttons">
+          <button class="btn btn-dark" type="button">MY BOOKINGS</button>
         </div>
+        <div class="navbar-buttons">
+          <a href="moviesScreening.html"><button class="btn btn-dark" type="button">MOVIES AND SCREENING</button></a>
+        </div>
+
       </div>
+
     </nav>
 
   </header>
@@ -43,7 +43,7 @@
     <div class="container-fluid" id="container-movie-info">
       <div class="row">
         <div class="col">
-          <img id="movie-image" src="" alt="">
+          <img class="img-fluid" id="movie-image" src="" alt="picture from the chosen movie">
         </div>
         <div class="col">
           <div id="movie-info"></div>
@@ -63,8 +63,8 @@
               <input type="text" id="datepicker" placeholder="CHOOSE DATE" readonly class="form-control">
             </div>
             <div class="col" id="FS-item">
-
             </div>
+
           </div>
 
           <div class="screening-list">
@@ -86,11 +86,10 @@
                   </tr>
                 </tbody>
               </table>
+              <a href="seatBooking.html"><button type="button" class="btn btn-dark" id="bookTickets">BOOK
+                  TICKETS</button></a>
             </div>
           </div>
-          <a href="seatBooking.html"><button type="button" class="btn btn-dark" id="bookTickets">BOOK
-              TICKETS</button></a>
-
         </div>
 
         <div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
