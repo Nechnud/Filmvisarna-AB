@@ -131,6 +131,10 @@ body {
 .movie {
   margin: 5%;
 }
+
+.container-movieList > div :hover {
+  background-color: rgba(238, 30, 210, 0.2);
+}
 /* Footer */
 footer {
   background-color: rgba(0, 0, 0, 0.3);
