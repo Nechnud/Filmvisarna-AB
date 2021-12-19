@@ -96,15 +96,9 @@ body {
 .containerMovieInfo {
   /*Using 0 opacity for now, gonna have box later on.*/
   background-color: rgba(0, 0, 0, 0);
-  border-radius: 2%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 60%;
-  padding-bottom: 5%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  position: relative;
+  left: auto;
+  position: static;
 }
 
 main {
@@ -124,20 +118,26 @@ main {
 .rounded-circle {
   background-color: #ff10f0;
   border: none;
-  margin: 20px;
 }
 
-#priceText {
-  padding-right: 10%;
+.plusButtons > ul > li {
+  margin-bottom: 30px;
+  font-size: x-large;
+}
+.minusButtons > ul > li {
+  margin-bottom: 30px;
+  font-size: x-large;
+}
+
+#priceText li {
+  width: 15rem;
+  font-size: x-large;
+  margin-bottom: 15%;
 }
 
 ul {
   list-style-type: none;
   padding: 0 0 0 0;
-}
-
-.minusButtons {
-  padding-right: 40%;
 }
 
 .movie-container {
@@ -170,7 +170,7 @@ ul {
   transition: all 0.2s ease;
 }
 
-.seat:disabled{
+.seat:disabled {
   background-color: #fff;
   height: 22px;
   width: 25px;
