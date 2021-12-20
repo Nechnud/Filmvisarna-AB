@@ -23,12 +23,20 @@ function checkTicketData() {
     }
 }
 
+let ticketNumberToCheck;
+
+document.getElementById('searchTicket').addEventListener("click", (event) => {
+    ticketNumberToCheck = document.getElementById('ticketNumber').value;
+    thisTicketNumber = ticketNumberToCheck;
+    renderTicketInfo();
+});
+
 function renderTicketInfo() {
-    let ticketFound = false;
+
+
     for (let i = 0; i < myTickets.length; i++) {
 
         if (thisTicketNumber === myTickets[i].ticketNumber) {
-            ticketFound = true;
             ticketData = `
             <p>MY TICKET: </p>
             <p>Movie: ${myTickets[i].movieName}</p>
@@ -36,21 +44,30 @@ function renderTicketInfo() {
             <p>Salon: ${myTickets[i].salong}</p>
             <p>Seat: ${myTickets[i].seat}</p>
             <p>Ticket Number: ${myTickets[i].ticketNumber}</p>
+            <button class="btn" type="button" id="cancelTicket">Cancel Ticket</button>
             `;
         }
 
     }
-    if (!ticketFound) {
-        alert("Ticket not found!");
-    }
+    $("#ticketsinfo").css('background-color', 'rgba(0, 0, 0, 0.5)');
     document.getElementById("ticketsinfo").innerHTML = ticketData;
+    cancelTicket();
 }
 
-document.getElementById('searchTicket').addEventListener("click", (event) => {
-    let ticketNumberToCheck = document.getElementById('ticketNumber').value;
-    thisTicketNumber = ticketNumberToCheck;
-    renderTicketInfo();
-});
+function cancelTicket() {
+    document.getElementById('cancelTicket').addEventListener("click", (event) => {
+
+        if (confirm("Click \"yes\" to cancel the ticket") == true) {
+
+        }
+        ticketNumberToCheck = document.getElementById('ticketNumber').value;
+        thisTicketNumber = ticketNumberToCheck;
+        renderTicketInfo();
+    });
+}
+
+
+
 
 
 readTicketJson();
