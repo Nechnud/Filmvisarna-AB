@@ -22,23 +22,38 @@ function checkTicketData() {
 
     }
 }
+
 function renderTicketInfo() {
-
+    let ticketFound = false;
     for (let i = 0; i < myTickets.length; i++) {
-        if (thisTicketNumber === myTickets[i].ticketNumber) {
-            ticketData = `
-    <p>MY TICKET: </p>
-    <p>Movie: ${myTickets[i].movieName}</p>
-    <p>Date: ${myTickets[i].date}</p>
-    <p>Salon: ${myTickets[i].salong}</p>
-    <p>Seat: ${myTickets[i].seat}</p>
-    <p>Ticket Number: ${myTickets[i].ticketNumber}</p>
-    `;
-        }
-    }
 
+        if (thisTicketNumber === myTickets[i].ticketNumber) {
+            ticketFound = true;
+            ticketData = `
+            <p>MY TICKET: </p>
+            <p>Movie: ${myTickets[i].movieName}</p>
+            <p>Date: ${myTickets[i].date}</p>
+            <p>Salon: ${myTickets[i].salong}</p>
+            <p>Seat: ${myTickets[i].seat}</p>
+            <p>Ticket Number: ${myTickets[i].ticketNumber}</p>
+            `;
+        }
+
+    }
+    if (!ticketFound) {
+        alert("Ticket not found!");
+    }
     document.getElementById("ticketsinfo").innerHTML = ticketData;
 }
 
+document.getElementById('searchTicket').addEventListener("click", (event) => {
+    let ticketNumberToCheck = document.getElementById('ticketNumber').value;
+    thisTicketNumber = ticketNumberToCheck;
+    renderTicketInfo();
+});
+
+
 readTicketJson();
 localStorage.setItem('myTicketNumber', ' ');
+
+
