@@ -41,40 +41,50 @@
         <!--"fixed-top" does not work with other buttons on seatBooking.html -->
         <!--when there is "fixed-top", all the buttons on seatBooking stop working, that's why I took away the "fixed-top"-->
         <!--Perhaps we need to find a better solution for fixed top part-->
-        <div class="container-fluid">
-            <!-- Here are the container for the movie info "side bar"-->
+        <div class="container-fluid" id="priceAndMovie">
 
+            <div class="row">
 
-
-            <div class="ml-auto col-auto">
-                <div class="containerMovieInfo">
-                    <div id="film-info-booking"></div> <!-- The info from movieInfo and image-->
+                <div class="col">
+                    <div class="containerMovieInfo">
+                        <div id="film-info-booking"></div>
+                    </div>
                 </div>
-            </div>
+                <div class="col">
+                    <ul class="list-group list-group-horizontal" id="priceText">
 
 
-
-        </div>
-
-
-
-        <!-- This is buttons to select the amount of tickets the customer wants-->
-
-        <div class="container">
-            <div class=row>
-                <div id="priceText" class="col align-items-start">
-                    <ul>
-                        <li>
+                        <li class="list-group-item">
                             <h5>Child: 3,5 $</h5>
                         </li>
-                        <li>
+
+                        <li class="list-group-item"><button id='amount' type="button"
+                                class="rounded-circle child-amount-minus">-</button>
+                            <button id='amount' type="button" class="rounded-circle child-price-plus">+</button>
+                        </li>
+                    </ul>
+
+                    <ul class="list-group list-group-horizontal" id="priceText">
+                        <li class="list-group-item">
                             <h5>Adult: 8,5 $</h5>
                         </li>
-                        <li>
+                        <li class="list-group-item">
+                            <button id='amount' type="button" class="rounded-circle adult-amount-minus">-</button>
+                            <button id='amount' type="button" class="rounded-circle adult-price-plus">+</button>
+                        </li>
+                    </ul>
+                    </li>
+                    <ul class="list-group list-group-horizontal" id="priceText">
+                        <li class="list-group-item">
                             <h5>Pensioner: 7,5 $</h5>
                         </li>
+                        <li class="list-group-item">
+                            <button id='amount' type="button" class="rounded-circle pensioner-amount-minus">-</button>
+                            <button id='amount' type="button" class="rounded-circle pensioner-price-plus">+</button>
 
+                        </li>
                     </ul>
+<<<<<<< HEAD
                 </div>
                 <div class="col align-items-center">
                     <div class="minusButtons">
@@ -100,12 +110,19 @@
                             </li>
                         </ul>
                     </div>
+=======
+>>>>>>> 5dca4b14dc72fb68709ea150ab6ca01baa50561e
 
                 </div>
+
+
+
+
+
             </div>
 
-        </div>
 
+        </div>
 
 
 
@@ -142,9 +159,10 @@
                 <div class="seatsNumber">
 
                 </div>
-                <a href="" id="linkToBooking"><button type="button" class="btn btn-primary" id="book">
-                        Book
-                    </button></a>
+                <button type="button" class="btn btn-primary" id="book" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Book
+                </button>
 
             </div>
 
@@ -153,8 +171,36 @@
 
             </div>
             <!-- Modal Bootstrap Pop-up window, do not delete them! -------------------------------------->
+            <div class="pop-up">
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Your Ticket</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Bootstrap Pop-up window, do not delete them! -------------------------------------->
 
     </main>
+
+    <footer class="footer mt-auto py-3 sticky-bottom">
+
+        <div class="container-footer">
+            <p>Filmvisarna AB</p>
+        </div>
+    </footer>
 
 
 

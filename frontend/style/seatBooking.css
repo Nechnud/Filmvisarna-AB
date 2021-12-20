@@ -121,6 +121,7 @@ main {
   width: 50px;
 }
 
+<<<<<<< HEAD
 
 .rounded-circle:hover {
   background-color: #a7109c;
@@ -142,11 +143,23 @@ main {
   width: 15rem;
   font-size: x-large;
   margin-bottom: 28%;
+=======
+ul > li {
+  margin-bottom: 20%;
+  font-size: x-large;
 }
 
+#priceAndMovie {
+  padding-left: 18%;
+  padding-right: 18%;
+>>>>>>> 5dca4b14dc72fb68709ea150ab6ca01baa50561e
+}
+
+
+
+
 ul {
-  list-style-type: none;
-  padding: 0 0 0 0;
+  list-style-type: none;  
 }
 
 .movie-container {

@@ -1,23 +1,13 @@
 [
   {
-    "movieName": "Aladdin",
-    "date": "24-12-2021",
+    "movieName": "Joker",
+    "date": "20-12-2021",
     "salong": "Cozy",
-    "ticketNumber": "XW9YYVIFQL",
-    "seat": "  Row 1 Seat 1 Row 1 Seat 6",
+    "ticketNumber": "CKNQ712EF6",
+    "seat": "  Row 1 Seat 1 Row 1 Seat 2",
     "seatID": [
       "11",
-      "16"
-    ]
-  },
-  {
-    "movieName": "The Day After Tomorrow",
-    "date": "20-12-2021",
-    "salong": "Grande",
-    "ticketNumber": "SRWF3EG7GG",
-    "seat": "  Row 1 Seat 1",
-    "seatID": [
-      "11"
+      "12"
     ]
   }
 ]
