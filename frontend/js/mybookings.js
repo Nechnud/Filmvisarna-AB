@@ -47,8 +47,8 @@ function renderTicketInfo() {
             <button class="btn" type="button" id="cancelTicket">Cancel Ticket</button>
             `;
         }
-
     }
+
     $("#ticketsinfo").css('background-color', 'rgba(0, 0, 0, 0.5)');
     document.getElementById("ticketsinfo").innerHTML = ticketData;
     cancelTicket();
@@ -56,19 +56,22 @@ function renderTicketInfo() {
 
 function cancelTicket() {
     document.getElementById('cancelTicket').addEventListener("click", (event) => {
-
         if (confirm("Click \"yes\" to cancel the ticket") == true) {
-
+            ticketFromJson();
         }
-        ticketNumberToCheck = document.getElementById('ticketNumber').value;
-        thisTicketNumber = ticketNumberToCheck;
-        renderTicketInfo();
     });
 }
 
-
-
-
+let tickets;
+async function ticketFromJson() {
+    tickets = await JSON._load('ticket');
+    let ticketToRemove = document.getElementById('ticketNumber').value;
+    console.log(ticketToRemove);
+    tickets = tickets.filter(function (ticket) {
+        return ticket.ticketNumber !== ticketToRemove;
+    });
+    await JSON._save('ticket', tickets);
+}
 
 readTicketJson();
 localStorage.setItem('myTicketNumber', ' ');
