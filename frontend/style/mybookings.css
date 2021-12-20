@@ -114,6 +114,24 @@ main {
     position: absolute;    
   left: 40%;
   }
+  #searchbar{
+    width: 100%;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px  solid snow;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+#searchwrapper{
+    position: relative;
+}
+#searchwrapper::after{
+    content:icon;
+    position: absolute;
+    top: 2px;
+    right: 15px;
+
+}
 
   
   
