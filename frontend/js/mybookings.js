@@ -26,4 +26,4 @@ function renderTicketInfo() {
 }
 
 readTicketJson();
-
+localStorage.setItem('myTicketNumber', ' ');
