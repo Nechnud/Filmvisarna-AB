@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "movieName": "Aladdin",
+    "date": "20-12-2021",
+    "salong": "Cozy",
+    "ticketNumber": "N8FDW0YE9T",
+    "seat": "  Row 1 Seat 3 Row 1 Seat 4",
+    "seatID": [
+      "13",
+      "14"
+    ]
+  }
+]
