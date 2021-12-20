@@ -41,28 +41,17 @@
         <!--"fixed-top" does not work with other buttons on seatBooking.html -->
         <!--when there is "fixed-top", all the buttons on seatBooking stop working, that's why I took away the "fixed-top"-->
         <!--Perhaps we need to find a better solution for fixed top part-->
-        <div class="container-fluid">
-            <!-- Here are the container for the movie info "side bar"-->
+        <div class="container-fluid" id="priceAndMovie">
 
+            <div class="row">
 
-
-            <div class="ml-auto col-auto">
-                <div class="containerMovieInfo">
-                    <div id="film-info-booking"></div> <!-- The info from movieInfo and image-->
+                <div class="col">
+                    <div class="containerMovieInfo">
+                        <div id="film-info-booking"></div>
+                    </div>
                 </div>
-            </div>
 
-
-
-        </div>
-
-
-
-        <!-- This is buttons to select the amount of tickets the customer wants-->
-
-        <div class="container">
-            <div class=row>
-                <div id="priceText" class="col align-items-start">
+                <div class="col" id="priceText">
                     <ul>
                         <li>
                             <h5>Child: 3,5 $</h5>
@@ -76,36 +65,38 @@
 
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="plusButtons">
-                        <ul>
-                            <li><button id='amount' type="button" class="rounded-circle child-amount-minus">-</button>
-                            </li>
-                            <li><button id='amount' type="button" class="rounded-circle adult-amount-minus">-</button>
-                            </li>
-                            <li><button id='amount' type="button"
-                                    class="rounded-circle pensioner-amount-minus">-</button></li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="col">
 
-                <div class="col-lg-4 col-md-4">
-                    <div class="minusButtons">
-                        <ul>
-                            <li><button id='amount' type="button" class="rounded-circle child-price-plus">+</button>
-                            </li>
-                            <li><button id='amount' type="button" class="rounded-circle adult-price-plus">+</button>
-                            </li>
-                            <li><button id='amount' type="button" class="rounded-circle pensioner-price-plus">+</button>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul>
+                        <li><button id='amount' type="button" class="rounded-circle child-amount-minus">-</button>
+                        </li>
+                        <li><button id='amount' type="button" class="rounded-circle adult-amount-minus">-</button>
+                        </li>
+                        <li><button id='amount' type="button" class="rounded-circle pensioner-amount-minus">-</button>
+                        </li>
+                    </ul>
 
                 </div>
+
+                <div class="col">
+
+                    <ul>
+                        <li><button id='amount' type="button" class="rounded-circle child-price-plus">+</button>
+                        </li>
+                        <li><button id='amount' type="button" class="rounded-circle adult-price-plus">+</button>
+                        </li>
+                        <li><button id='amount' type="button" class="rounded-circle pensioner-price-plus">+</button>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+
             </div>
 
-        </div>
 
+        </div>
 
 
 
@@ -177,6 +168,13 @@
             <!-- Modal Bootstrap Pop-up window, do not delete them! -------------------------------------->
 
     </main>
+
+    <footer class="footer mt-auto py-3 sticky-bottom">
+
+        <div class="container-footer">
+            <p>Filmvisarna AB</p>
+        </div>
+    </footer>
 
 
 
