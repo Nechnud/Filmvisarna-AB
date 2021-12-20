@@ -1,6 +1,6 @@
-const Pprice = 4;
-const Aprice = 5;
-const Cprice = 3;
+const Pprice = 7.5;
+const Aprice = 8.5;
+const Cprice = 3.5;
 
 let amount = 0;
 // Not finnished yet with the pricing!
@@ -11,41 +11,43 @@ for (let button of buttons) {
 
     if (amount )
 
-      if (className == "pensioner-") {
+      if (className == "rounded-circle pensioner-price-Minus") {
         amount -= Pprice;
-        if (amount >= 0) {
-          document.getElementsByClassName('pensioner-').disable = true;
+        if (amount < 0) {
+          amount = 0
         }
     }
     
-    if (className == "pensioner+") {
+    if (className == "rounded-circle pensioner-price-Plus") {
       amount += Pprice;
       
     }
-    if (className == "adult-") {
+    if (className == "rounded-circle adult-price-Minus") {
       amount -= Aprice;
-      if (amount >= 0) {
-        document.getElementsByClassName('adult-').disable = true;
+      if (amount < 0) {
+        amount = 0
       }
     }
 
     
 
-    if (className == "adult+") {
+    if (className == "rounded-circle adult-price-Plus") {
       amount += Aprice;
     }
 
-    if (className == "child-") {
+    if (className == "rounded-circle child-price-Minus") {
       amount -= Cprice;
-      if (amount >= 0) {
-        document.getElementsByClassName('child-').disable = true;
+      if (amount < 0) {
+        amount = 0
       }
+      
     }
-    if (className == "child+") {
+    if (className == "rounded-circle child-price-Plus") {
       amount += Cprice;
     }
 
-    
+    $('#amountReplace').html(amount)
+
     console.log(amount);
     console.log(className);
   })

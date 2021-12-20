@@ -118,21 +118,30 @@ main {
 .rounded-circle {
   background-color: #ff10f0;
   border: none;
+  width: 50px;
 }
+
+
+.rounded-circle:hover {
+  background-color: #a7109c;
+}
+
+
 
 .plusButtons > ul > li {
   margin-bottom: 30px;
-  font-size: x-large;
+  font-size: xx-large;
 }
 .minusButtons > ul > li {
   margin-bottom: 30px;
-  font-size: x-large;
+  font-size: xx-large;
+  padding-right: 30px;
 }
 
 #priceText li {
   width: 15rem;
   font-size: x-large;
-  margin-bottom: 15%;
+  margin-bottom: 28%;
 }
 
 ul {
