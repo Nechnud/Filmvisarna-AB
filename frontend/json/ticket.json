@@ -42,5 +42,49 @@
       "22",
       "12"
     ]
+  },
+  {
+    "movieName": "Joker",
+    "date": "20-12-2021",
+    "salong": "Cozy",
+    "ticketNumber": "6D9B6G1K76",
+    "seat": "  Row 1 Seat 3 Row 1 Seat 4",
+    "seatID": [
+      "13",
+      "14"
+    ]
+  },
+  {
+    "movieName": "Joker",
+    "date": "20-12-2021",
+    "salong": "Cozy",
+    "ticketNumber": "MRSP0I9TNO",
+    "seat": "  Row 2 Seat 4 Row 2 Seat 5",
+    "seatID": [
+      "24",
+      "25"
+    ]
+  },
+  {
+    "movieName": "Joker",
+    "date": "20-12-2021",
+    "salong": "Cozy",
+    "ticketNumber": "GB2MKESNFJ",
+    "seat": "  Row 1 Seat 5 Row 1 Seat 6",
+    "seatID": [
+      "15",
+      "16"
+    ]
+  },
+  {
+    "movieName": "Interstellar",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "P73Y60QF0J",
+    "seat": "  Row 4 Seat 4 Row 4 Seat 5",
+    "seatID": [
+      "44",
+      "45"
+    ]
   }
 ]

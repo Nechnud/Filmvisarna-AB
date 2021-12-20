@@ -1,28 +1,29 @@
 let myTickets;
 let ticketData;
 let thisTicketNumber = localStorage.getItem("myTicketNumber");
-
+console.log(localStorage.getItem("myTicketNumber"));
 async function readTicketJson() {
     let rawData = await fetch('json/ticket.json');
     myTickets = await rawData.json();
-    renderTicketInfo();
+    checkTicketData();
 }
 
 
 
 function checkTicketData() {
-    if (ticketData == undefined) {
+    if (thisTicketNumber == ' ') {
         ticketData = '';
         document.getElementById("ticketsinfo").innerHTML = ticketData;
-        document.getElementById("ticketsinfo").style.backgroundColor = rgba(0, 0, 0, 0);
+        $("#ticketsinfo").css("background-color") == 'rgb(0, 0, 0, 0)';
     }
     else {
-        document.getElementById("ticketsinfo").style.backgroundColor = rgba(0, 0, 0, 0.5);
+        $("#ticketsinfo").css("background-color") == 'rgb(0, 0, 0, 0.5)';
+        renderTicketInfo();
 
     }
 }
 function renderTicketInfo() {
-    checkTicketData();
+
     for (let i = 0; i < myTickets.length; i++) {
         if (thisTicketNumber === myTickets[i].ticketNumber) {
             ticketData = `
