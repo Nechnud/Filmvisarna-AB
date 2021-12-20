@@ -63,7 +63,6 @@ let seatsToShowList = []; //array for all the selected seats
 
 async function checkSelectedSeats() {
   selectedSeatsToShow = '';
-  listOfSeats = [];
   for (let salongSeat of salongSeats) { //Loop throuh all the seats
     await salongSeat.addEventListener('click', function () { //click function when the user clicks the seat
       selectSeatNumber = $(this).attr('id'); //get the id of the selected seat
@@ -87,10 +86,18 @@ async function checkSelectedSeats() {
           Chair ${selectSeatNumber.substring(1)}</p> `);
       }
       $('.seatsNumber').html(seatsToShowList); //assign the seatsToShowList into HTML page
-    }); changeSeatsForTicket(listOfSeats); //call the function
+    }); changeSeatsForTicket(listOfSeats);
   }
 }
 
+
+
+let tickets;
+//Jsonflex for tickets -------------------------------------------
+async function readTickets() {
+  tickets = await JSON._load('ticket');
+  await ticketNumberGenerator();
+}
 //Jsonflex code for ticket-----------------------------------------
 let randomTicketNumber;
 
@@ -109,19 +116,14 @@ async function ticketNumberGenerator() {
   checkTicketNumber(randomTicketNumber);
 }
 
-let tickets;
-//Jsonflex for tickets -------------------------------------------
-async function readTickets() {
-  tickets = await JSON._load('ticket');
-  await ticketNumberGenerator();
-}
+
 //create a variable for reading the seats' number to the ticket
 let seatsOnTicket = ' ';
 
-function changeSeatsForTicket() {
+async function changeSeatsForTicket() {
   for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
+    console.log(1);
     seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1); //store the seats nummber/id
-
   }
 }
 
@@ -129,8 +131,7 @@ let currentTickets;
 let movieTitle = localStorage.getItem('movieTitle');
 let movieDate = localStorage.getItem('date');
 
-async function checkTicketNumber() {//Creates a function that allows us to check ticket number
-  changeSeatsForTicket();     //call the function that check all the selected seats' number     
+async function checkTicketNumber() {//Creates a function that allows us to check ticket number  
   let newTicket;                               //Declare variable new ticket
   if (tickets.length == 0) {                   //If tickets array is empty, proceed
     newTicket = {                              //Gets id from json file and creates an object in the tickets array
@@ -171,7 +172,6 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
 }
 //Function for button "Book" on seatBooking.html
 $('#book').on('click', function () {
-  addTicket();
   console.log(listOfSeats);
   if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
     alert("Please choose your seats!"); // the program will alert the user to choose seats
@@ -195,3 +195,4 @@ async function checkIfSeatsAreTaken() {
     }
   }
 }
+readTickets();
