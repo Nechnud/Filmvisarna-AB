@@ -86,18 +86,10 @@ async function checkSelectedSeats() {
           Chair ${selectSeatNumber.substring(1)}</p> `);
       }
       $('.seatsNumber').html(seatsToShowList); //assign the seatsToShowList into HTML page
-    }); changeSeatsForTicket(listOfSeats);
+    }); changeSeatsForTicket(listOfSeats); //call the function
   }
 }
 
-
-
-let tickets;
-//Jsonflex for tickets -------------------------------------------
-async function readTickets() {
-  tickets = await JSON._load('ticket');
-  await ticketNumberGenerator();
-}
 //Jsonflex code for ticket-----------------------------------------
 let randomTicketNumber;
 
@@ -116,14 +108,19 @@ async function ticketNumberGenerator() {
   checkTicketNumber(randomTicketNumber);
 }
 
-
+let tickets;
+//Jsonflex for tickets -------------------------------------------
+async function readTickets() {
+  tickets = await JSON._load('ticket');
+  await ticketNumberGenerator();
+}
 //create a variable for reading the seats' number to the ticket
 let seatsOnTicket = ' ';
 
-async function changeSeatsForTicket() {
+function changeSeatsForTicket() {
   for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
-    console.log(1);
     seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1); //store the seats nummber/id
+
   }
 }
 
@@ -131,7 +128,8 @@ let currentTickets;
 let movieTitle = localStorage.getItem('movieTitle');
 let movieDate = localStorage.getItem('date');
 
-async function checkTicketNumber() {//Creates a function that allows us to check ticket number  
+async function checkTicketNumber() {//Creates a function that allows us to check ticket number
+  changeSeatsForTicket();     //call the function that check all the selected seats' number     
   let newTicket;                               //Declare variable new ticket
   if (tickets.length == 0) {                   //If tickets array is empty, proceed
     newTicket = {                              //Gets id from json file and creates an object in the tickets array
@@ -166,33 +164,28 @@ async function checkTicketNumber() {//Creates a function that allows us to check
 
 async function addTicket(newTicket) {//Creates method addTicket that pushes the object/ticket item into the json file
   tickets.push(newTicket);
+  $('.modal-body').html( //Show the ticket information on the pop-window
+    `<h4>${newTicket.ticketNumber}</h4>
+    <h4>${newTicket.movieName}</h4>
+    <h4>${newTicket.date}</h4>
+    <h4>${newTicket.salong}</h4>
+    <h4>${newTicket.seat}</h4>`);
   localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
+  console.log(newTicket);
   await JSON._save('ticket', tickets);
-
 }
-//Function for button "Book" on seatBooking.html
-$('#book').on('click', function () {
-  console.log(listOfSeats);
-  if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
-    alert("Please choose your seats!"); // the program will alert the user to choose seats
-    $("#linkToBooking").attr("href", "seatBooking.html");
-  }
-  if (listOfSeats.length != 0) { //if there are seats are choose by the user
-    alert("Your tickets are ready!"); // this button will link the webpage to mybooking.html
-    $("#linkToBooking").attr("href", "myBookings.html");
-  }
-});
 
 async function checkIfSeatsAreTaken() {
   let rawData = await fetch('json/ticket.json');
   currentTickets = await rawData.json();
+  console.log(currentTickets);
   for (let i = 0; i < currentTickets.length; i++) {
     if (currentTickets[i].movieName == movieTitle && currentTickets[i].date == movieDate) {
       for (let j = 0; j < currentTickets[i].seatID.length; j++) {
         let takenSeat = currentTickets[i].seatID[j];
+        console.log(currentTickets[i].seatID[j]);
         document.getElementById(`${takenSeat}`).disabled = true;
       }
     }
   }
 }
-readTickets();
