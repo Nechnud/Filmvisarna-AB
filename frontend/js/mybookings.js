@@ -14,10 +14,10 @@ function checkTicketData() {
     if (thisTicketNumber == ' ') {
         ticketData = '';
         document.getElementById("ticketsinfo").innerHTML = ticketData;
-        $("#ticketsinfo").css("background-color") == 'rgb(0, 0, 0, 0)';
+        $("#ticketsinfo").css('background-color', 'rgba(0, 0, 0, 0)');
     }
     else {
-        $("#ticketsinfo").css("background-color") == 'rgb(0, 0, 0, 0.5)';
+        $("#ticketsinfo").css('background-color', 'rgba(0, 0, 0, 0.5)');
         renderTicketInfo();
 
     }
