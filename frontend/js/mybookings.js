@@ -8,7 +8,21 @@ async function readTicketJson() {
     renderTicketInfo();
 }
 
+
+
+function checkTicketData() {
+    if (ticketData == undefined) {
+        ticketData = '';
+        document.getElementById("ticketsinfo").innerHTML = ticketData;
+        document.getElementById("ticketsinfo").style.backgroundColor = rgba(0, 0, 0, 0);
+    }
+    else {
+        document.getElementById("ticketsinfo").style.backgroundColor = rgba(0, 0, 0, 0.5);
+
+    }
+}
 function renderTicketInfo() {
+    checkTicketData();
     for (let i = 0; i < myTickets.length; i++) {
         if (thisTicketNumber === myTickets[i].ticketNumber) {
             ticketData = `

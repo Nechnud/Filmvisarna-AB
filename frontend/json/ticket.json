@@ -20,5 +20,27 @@
       "15",
       "25"
     ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "0BXMS1S976",
+    "seat": "  Row 1 Seat 5 Row 1 Seat 6",
+    "seatID": [
+      "15",
+      "16"
+    ]
+  },
+  {
+    "movieName": "My Neighbour Totoro",
+    "date": "20-12-2021",
+    "salong": "Cozy",
+    "ticketNumber": "UBXM5WEVWC",
+    "seat": "  Row 2 Seat 2 Row 1 Seat 2",
+    "seatID": [
+      "22",
+      "12"
+    ]
   }
 ]
