@@ -1,91 +1,130 @@
+/* Font copied, not imported, as it is not found on google fonts.*/
 @font-face {
-    font-family: neon;
-    src: url("neon.ttf");
-  }
-  header {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding-top: 1%;
-    padding-bottom: 1%;
-  }
+  font-family: neon;
+  src: url("neon.ttf");
+}
+
+/* HEADER ELEMENTS */
+
+
+
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+/* BUTTOMS. Found in the header and other elements of the page. */
+
+.btn{
+  font-family: neon; 
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-color: transparent;  
+  size: auto;
+}
+
+.btn:hover{
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 70% #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+}
+
+.navbar-buttons {
+  padding: 0.5%;
+}
+
+
+
+/* FILMVISARNA LOGO*/
+
+.navbar-brand {
+  border-radius: 5%;  
+  font-family: neon;
+  background-color: rgba(0, 0, 0, 0.3);    
+  padding-left: 1%;
+  padding-right: 1%;  
+  position: absolute;    
+  left: 35%;
+  margin-left: -50px !important;
+  display: block;
+  font-size: 250%;
+  color: #fff;
+  text-shadow: 0 0 70% #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
   
-  /* BUTTOMS. Found in the header and other elements of the page. */
+}
+.navbar-brand:hover {
+  background-color: rgba(238, 30, 210, 0.2);
+}
+
+.navbar-brand:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  z-index: -1;
+  opacity: 60%;
+  color: #ff005b;
+  filter: blur(15px);
+}
+.navbar-brand::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -5;
+  opacity: 90%;
+  color: #155ffffd;
+  filter: blur(15px);
+}
+
+/* BODY ELEMENTS */
+
+body {
+  background-image: url("bgFilmvisarna.png");  
+}
   
-  .btn{
-    font-family: neon; 
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    border-color: transparent;
-  }
-  
-  .btn:hover{
-    border-color: transparent;
-    background-color: rgba(0, 0, 0, 0.7);
-    text-shadow: 0 0 70% #ff005b;
-    -webkit-text-stroke: initial;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
-  }
-  
-  .navbar-buttons {
-    padding: 0.5%;
-  }
-  
-  
-  
-  /* FILMVISARNA LOGO*/
-  
-  .navbar-brand {
-    border-radius: 5%;  
-    font-family: neon;
-    background-color: rgba(0, 0, 0, 0.3);    
-    padding-left: 1%;
-    padding-right: 1%;  
-    position: absolute;    
-    left: 35%;
-    margin-left: -50px !important;
-    display: block;
-    font-size: 250%;
-    color: #fff;
-    text-shadow: 0 0 70% #ff005b;
-    -webkit-text-stroke: initial;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
-  }
-  .navbar-brand:hover {
-    background-color: rgba(238, 30, 210, 0.2);
-  }
-  
-  .navbar-brand:after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 10px;
-    z-index: -1;
-    opacity: 60%;
-    color: #ff005b;
-    filter: blur(15px);
-  }
-  .navbar-brand::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 20px;
-    z-index: -5;
-    opacity: 90%;
-    color: #155ffffd;
-    filter: blur(15px);
-  }
-  
-  /* Footer */
-footer {
+
+
+
+.form-control {
+  font-family: neon; 
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-color: transparent;
+}
+
+.form-control:hover {
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 70% #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
+}
+
+
+
+
+
+/* FOOTER */
+footer {  
   background-color: rgba(0, 0, 0, 0.3);
 }
 /* Footers text color */
 .container-footer p {
   color: white;
 }
+
+
 /* This is for sticky - footer, 
 so that the footer always 
 stays at the bottom part of the webpage */
@@ -99,43 +138,24 @@ main {
   flex: 1;
 }
 
-body {
-  background-image: url("bgFilmvisarna.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-  
 
-  #ticketsinfo {
+
+#ticket-container {
   padding-top: 3%;
-  padding-bottom: 3%;
-  padding-left: 3%;
-  padding-right: 3%;     
-  color: white;  
-  position: absolute;    
-  left: 40%;
-}
+  padding-bottom: 10%;
+  padding-left: 28%;
+  padding-right: 28%;     
+    
+    
   
-
-
+}
+#ticketsinfo {
+  padding: 5% 5% 5% 5%;  
+  color: white;
+}
 
 #searchTicket{
   padding-top: 5%;
   padding-left: 28%;
   padding-right: 28%;
 }
-  
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
