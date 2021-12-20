@@ -163,7 +163,6 @@ async function checkTicketNumber() {//Creates a function that allows us to check
 }
 
 async function addTicket(newTicket) {//Creates method addTicket that pushes the object/ticket item into the json file
-  console.log(listOfSeats);
   if (listOfSeats.length == 0) {
     $('.modal-body').html(`
     <h4>No seats are choosen, please choose your seats!</h4>`);
@@ -177,7 +176,6 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
     <h4>${newTicket.salong}</h4>
     <h4>${newTicket.seat}</h4>`);
     localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
-    console.log(newTicket);
     await JSON._save('ticket', tickets);
   }
 }
@@ -194,12 +192,10 @@ $('#toMyBooking').on('click', function () {
 async function checkIfSeatsAreTaken() {
   let rawData = await fetch('json/ticket.json');
   currentTickets = await rawData.json();
-  console.log(currentTickets);
   for (let i = 0; i < currentTickets.length; i++) {
     if (currentTickets[i].movieName == movieTitle && currentTickets[i].date == movieDate) {
       for (let j = 0; j < currentTickets[i].seatID.length; j++) {
         let takenSeat = currentTickets[i].seatID[j];
-        console.log(currentTickets[i].seatID[j]);
         document.getElementById(`${takenSeat}`).disabled = true;
       }
     }

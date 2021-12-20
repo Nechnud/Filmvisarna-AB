@@ -1,7 +1,7 @@
 let myTickets;
 let ticketData;
 let thisTicketNumber = localStorage.getItem("myTicketNumber");
-console.log(thisTicketNumber);
+
 async function readTicketJson() {
     let rawData = await fetch('json/ticket.json');
     myTickets = await rawData.json();
@@ -19,7 +19,7 @@ function renderTicketInfo() {
     <p>Seat: ${myTickets[i].seat}</p>
     <p>Ticket Number: ${myTickets[i].ticketNumber}</p>
     `;
-        } console.log(ticketData);
+        }
     }
 
     document.getElementById("ticketsinfo").innerHTML = ticketData;
