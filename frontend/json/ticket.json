@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "TCRVBN7OND",
+    "seat": "  Row 1 Seat 4 Row 1 Seat 3",
+    "seatID": [
+      "14",
+      "13"
+    ]
+  },
+  {
+    "movieName": "My Neighbour Totoro",
+    "date": "20-12-2021",
+    "salong": "Cozy",
+    "ticketNumber": "MEUOXRWNVX",
+    "seat": "  Row 1 Seat 5 Row 2 Seat 5",
+    "seatID": [
+      "15",
+      "25"
+    ]
+  }
+]

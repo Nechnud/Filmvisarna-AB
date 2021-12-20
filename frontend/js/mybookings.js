@@ -24,5 +24,6 @@ function renderTicketInfo() {
 
     document.getElementById("ticketsinfo").innerHTML = ticketData;
 }
+
 readTicketJson();
 
