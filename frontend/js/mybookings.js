@@ -1,6 +1,7 @@
 let myTickets;
 let ticketData;
 let thisTicketNumber = localStorage.getItem("myTicketNumber");
+console.log(thisTicketNumber);
 async function readTicketJson() {
     let rawData = await fetch('json/ticket.json');
     myTickets = await rawData.json();

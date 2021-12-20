@@ -171,6 +171,7 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
 }
 //Function for button "Book" on seatBooking.html
 $('#book').on('click', function () {
+  addTicket();
   console.log(listOfSeats);
   if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
     alert("Please choose your seats!"); // the program will alert the user to choose seats
