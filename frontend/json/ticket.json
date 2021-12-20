@@ -40,5 +40,97 @@
     "seatID": [
       "13"
     ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "SIBGCLW79T",
+    "seat": " ",
+    "seatID": []
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "GCE5MNAIY0",
+    "seat": "  Row 1 Seat 1 Row 1 Seat 2",
+    "seatID": [
+      "11",
+      "12"
+    ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "RGCP6APB00",
+    "seat": "  Row 1 Seat 1 Row 1 Seat 2 Row 1 Seat 1 Row 1 Seat 2",
+    "seatID": [
+      "11",
+      "12"
+    ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "N0J4ACYFF7",
+    "seat": "  Row 1 Seat 5",
+    "seatID": [
+      "15"
+    ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "OIFJS88SA4",
+    "seat": "  Row 1 Seat 5 Row 1 Seat 5",
+    "seatID": [
+      "15"
+    ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "Q6C090CKPQ",
+    "seat": "  Row 1 Seat 6",
+    "seatID": [
+      "16"
+    ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "5F564MWQIU",
+    "seat": "  Row 2 Seat 1 Row 2 Seat 2",
+    "seatID": [
+      "21",
+      "22"
+    ]
+  },
+  {
+    "movieName": "Aladdin",
+    "date": "20-12-2021",
+    "salong": "Cozy",
+    "ticketNumber": "PFDJT5HHCI",
+    "seat": "  Row 1 Seat 1 Row 1 Seat 2",
+    "seatID": [
+      "11",
+      "12"
+    ]
+  },
+  {
+    "movieName": "The Day After Tomorrow",
+    "date": "20-12-2021",
+    "salong": "Grande",
+    "ticketNumber": "HL3MRKR2GI",
+    "seat": "  Row 2 Seat 6",
+    "seatID": [
+      "26"
+    ]
   }
 ]

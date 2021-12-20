@@ -163,17 +163,33 @@ async function checkTicketNumber() {//Creates a function that allows us to check
 }
 
 async function addTicket(newTicket) {//Creates method addTicket that pushes the object/ticket item into the json file
-  tickets.push(newTicket);
-  $('.modal-body').html( //Show the ticket information on the pop-window
-    `<h4>${newTicket.ticketNumber}</h4>
+  console.log(listOfSeats);
+  if (listOfSeats.length == 0) {
+    $('.modal-body').html(`
+    <h4>No seats are choosen, please choose your seats!</h4>`);
+  }
+  if (listOfSeats.length != 0) {
+    tickets.push(newTicket);
+    $('.modal-body').html( //Show the ticket information on the pop-window
+      `<h4>${newTicket.ticketNumber}</h4>
     <h4>${newTicket.movieName}</h4>
     <h4>${newTicket.date}</h4>
     <h4>${newTicket.salong}</h4>
     <h4>${newTicket.seat}</h4>`);
-  localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
-  console.log(newTicket);
-  await JSON._save('ticket', tickets);
+    localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
+    console.log(newTicket);
+    await JSON._save('ticket', tickets);
+  }
 }
+$('#toMyBooking').on('click', function () {
+  if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
+    // the program stays on the seatBooking page
+    $("#linkToBooking").attr("href", "seatBooking.html");
+  }
+  if (listOfSeats.length != 0) { //if there are seats are choose by the user
+    $("#linkToBooking").attr("href", "myBookings.html");// this button will link the webpage to mybooking.html
+  }
+});
 
 async function checkIfSeatsAreTaken() {
   let rawData = await fetch('json/ticket.json');
