@@ -49,6 +49,7 @@
         <div class="col">
           <!-- Movie info is rendered from the function renderMovieInfo in filminfo.js according to the chosen film -->
           <div id="movie-info"></div>
+          <!-- The right trailer loads from the modal with id="trailerModal"-->
           <button id="trailer-button" type="button" class="btn btn-dark" data-bs-toggle="modal"
             data-bs-target="#trailerModal">
             PLAY TRAILER
@@ -93,6 +94,8 @@
             </div>
           </div>
         </div>
+
+        <!-- The right trailer loads from screening.js via the function showTrailer and the id="movieTrailer" -->
 
         <div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
