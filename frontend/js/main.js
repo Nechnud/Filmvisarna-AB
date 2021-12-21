@@ -10,13 +10,14 @@ async function showMoviesOnScreen() { //Function for movie posters
   let i = 0;
   moviePosters += `<div class="row">`;
   for (let moviePicture of moviePictures) {
-
+    if (i == 3) { moviePosters += `</div><div class="row">`; }
     moviePosters += `
         <div class="col">
           <a href="filminfo.html"><img src="${moviePicture.image_portrait_s}" 
           class="movie" id="${moviePicture.id}"></a>
         </div>
   `;
+    i++;
   }
   moviePosters += `</div>`;
   $('#allFilms').html(moviePosters);
