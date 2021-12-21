@@ -59,9 +59,55 @@
 
         <!-- This is buttons to select the amount of tickets the customer wants-->
 
-        <div class="container">
-            <div class=row>
-                <div id="priceText" class="col align-items-start">
+        <div class="container ticket-buttons">
+
+            <div class="row mt-4">
+                <div class="col-6 offset-md-3 offset-lg-4 col-lg-2 col-md-3 label">
+                    <h5>Child: 3,5 $</h5>
+                </div>
+                <div class="col-2 col-md-1 text-end">
+                    <button type="button" class="amount rounded-circle child-price-Minus">-</button>
+                </div>
+                <div class="col-2 col-md-1 text-center counter-holder">
+                    <div class="child-counter mt-2" id='counterReplaceChild'>0</div>
+                </div>
+                <div class="col-2 col-md-1">
+                    <button type="button" class="amount rounded-circle child-price-Plus">+</button>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-6 offset-md-3 offset-lg-4 col-md-2 col-lg-2 col-md-3 label">
+                    <h5>adult: 8,5 $</h5>
+                </div>
+                <div class="col-2 col-md-1 text-end">
+                    <button type="button" class="amount rounded-circle adult-price-Minus">-</button>
+                </div>
+                <div class="col-2 col-md-1 text-center counter-holder">
+                    <div class="adult-counter"id='counterReplaceAdult'>0</div>
+                </div>
+                <div class="col-2 col-md-1">
+                    <button type="button" class="amount rounded-circle adult-price-Plus">+</button>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-6 offset-md-3 offset-lg-4 col-md-2 col-lg-2 col-md-3 label">
+                    <h5>pensioner: 7,5 $</h5>
+                </div>
+                <div class="col-2 col-md-1 text-end">
+                    <button type="button" class="amount rounded-circle pensioner-price-Minus">-</button>
+                </div>
+                <div class="col-2 col-md-1 text-center counter-holder">
+                    <div class="pensioner-counter mt-2"id='counterReplacePensioner'>0</div>
+                </div>
+                <div class="col-2 col-md-1">
+                    <button type="button" class="amount rounded-circle pensioner-price-Plus">+</button>
+                </div>
+            </div>
+
+
+                <!--<div id="priceText" class="col align-items-start">
                     <ul>
                         <li>
                             <h5>Child: 3,5 $</h5>
@@ -76,14 +122,20 @@
                     </ul>
                 </div>
                 <div class="col align-items-center">
+
+                    <p>
+
+                    </p>
+
+
                     <div class="minusButtons">
                         <ul>
-                            <li><button id='amount' type="button" class="rounded-circle child-price-Minus">-</button>
+                            <li><button type="button" class="amount rounded-circle child-price-Minus">-</button>
                             </li>
-                            <li><button id='amount' type="button" class="rounded-circle adult-price-Minus">-</button>
+                            <li><button type="button" class="amount rounded-circle adult-price-Minus">-</button>
                             </li>
-                            <li><button id='amount' type="button"
-                                    class="rounded-circle pensioner-price-Minus">-</button></li>
+                            <li><button type="button"
+                                    class="amount rounded-circle pensioner-price-Minus">-</button></li>
                         </ul>
                     </div>
                 </div>
@@ -91,19 +143,18 @@
                 <div class="col align-items-end">
                     <div class="plusButtons">
                         <ul>
-                            <li><button id='amount' type="button" class="rounded-circle child-price-Plus">+</button>
+                            <li>
                             </li>
-                            <li><button id='amount' type="button" class="rounded-circle adult-price-Plus">+</button>
+                            <li><button type="button" class="amount rounded-circle adult-price-Plus">+</button>
                             </li>
-                            <li><button id='amount' type="button" class="rounded-circle pensioner-price-Plus">+</button>
+                            <li><button type="button" class="amount rounded-circle pensioner-price-Plus">+</button>
                             </li>
                         </ul>
                     </div>
 
-                </div>
-            </div>
-
+                </div>-->
         </div>
+
 
 
 
@@ -133,7 +184,7 @@
         </ul>
 
 
-        <div class="container">
+        <div class="container seat-container">
             <div class="movie-screen">
                 <img src='images/screen-thumb.png' alt='screen' />
             </div>

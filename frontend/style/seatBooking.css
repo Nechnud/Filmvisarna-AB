@@ -119,12 +119,21 @@ main {
   background-color: #ff10f0;
   border: none;
   width: 50px;
+  height: 50px;
+}
+
+
+.rounded-circle:active {
+  transform: scale(0.8);
 }
 
 
 .rounded-circle:hover {
   background-color: #a7109c;
 }
+
+
+
 
 
 
@@ -144,6 +153,18 @@ main {
   margin-bottom: 28%;
 }
 
+.ticket-buttons .label {
+  padding-top: 17px;
+}
+
+.ticket-buttons .counter-holder {
+  padding: 5px;
+}
+
+.ticket-buttons h5 {
+  font-size: 120%;
+}
+
 
 
 
@@ -155,7 +176,7 @@ ul {
   margin: 100px 0;
 }
 
-.container {
+.seat-container {
   /* Sätes container */
   display: flex;
   flex-direction: column;
