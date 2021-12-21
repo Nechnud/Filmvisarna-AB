@@ -17,7 +17,7 @@ function renderMovieInfo() {
     `
     <p>${localStorage.getItem('movieTitle')}</p>
     <p>Date: ${localStorage.getItem('date')}</p>
-    <p>Salon: ${localStorage.getItem('salong')}</p>
+    <p>Salon: ${localStorage.getItem('salon')}</p>
     <img src="${movieImage}">
     
            

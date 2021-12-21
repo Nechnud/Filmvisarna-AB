@@ -31,7 +31,7 @@ async function showTodaysFilms() {
     //check which movie is clicked and get that movie's information
     if (rightOne == show.id) {
       let dataToday = today.getDate().toString() + "-" + (today.getMonth() + 1).toString() + "-" + today.getFullYear().toString();
-      localStorage.setItem('salong', show.showRoom);
+      localStorage.setItem('salon', show.showRoom);
       localStorage.setItem('date', dataToday);
       localStorage.setItem('movieTitle', show.title);
       html += `
@@ -55,7 +55,7 @@ $(function () {
       let rightID = localStorage.getItem('ID');
       //check which movie is clicked and get that movie's information
       if (rightID == show.id) {
-        localStorage.setItem('salong', show.showRoom);
+        localStorage.setItem('salon', show.showRoom);
         localStorage.setItem('date', date);
         localStorage.setItem('movieTitle', show.title);
         html = `
