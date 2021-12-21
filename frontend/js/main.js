@@ -25,16 +25,17 @@ async function showMoviesOnScreen() { //Function for movie posters
 
 
 //Codes for showing the movie information when the user click on the movie poster ---------
-$('.movie').on('click', function () {
-  //Get the id of the clicked html tag
-  movieID = $(this).attr('id');
-  //Store the movie id to localStorage so that when we change the webpage 
-  //we could still get the movie id from localStorage
-  localStorage.setItem('ID', movieID);
-  //Call the function readShowJson(movieID)
-  readShowJson(movieID);
-});
-
+function getMovieID() {
+  $('.movie').on('click', function () {
+    //Get the id of the clicked html tag
+    movieID = $(this).attr('id');
+    //Store the movie id to localStorage so that when we change the webpage 
+    //we could still get the movie id from localStorage
+    localStorage.setItem('ID', movieID);
+    //Call the function readShowJson(movieID)
+    readShowJson(movieID);
+  });
+}
 
 readAllMoives();
 
