@@ -25,12 +25,13 @@ function renderTicketInfo() { //Shows the newly booked ticket to the user
 
         if (thisTicketNumber === myTickets[i].ticketNumber) {
             ticketData = `
-            <p>MY TICKET: </p>
-            <p>Movie: ${myTickets[i].movieName}</p>
-            <p>Date: ${myTickets[i].date}</p>
-            <p>Salon: ${myTickets[i].salon}</p>
-            <p>Seat: ${myTickets[i].seat}</p>
-            <p>Ticket Number: ${myTickets[i].ticketNumber}</p>
+            <h5>MY TICKET</h5>
+            <h5>Movie: ${myTickets[i].movieName}</h5>
+            <h5>Date: ${myTickets[i].date}</h5>
+            <h5>Time: ${myTickets[i].time}</h5>
+            <h5>Salon: ${myTickets[i].salon}</h5>
+            <h5>Seat: ${myTickets[i].seat}</h5>
+            <h5>Ticket Number: ${myTickets[i].ticketNumber}</h5>
             `;
         }
     }
@@ -44,7 +45,7 @@ let ticketNumberToCheck;
 document.getElementById('search').addEventListener("click", (event) => { //Click event for button "search"
     ticketData = '';
     ticketNumberToCheck = document.getElementById('ticketNumber').value;
-    //myTickets.some()/Array.som() is a method in JavaScript for array , here is a arraw function which returns a boolean value
+    //myTickets.some()/Array.some() is a method in JavaScript for array , here is a arraw function which returns a boolean value
     let ticketNumRight = myTickets.some(({ ticketNumber }) => ticketNumber === ticketNumberToCheck);
     if (ticketNumRight == true) {                    //ticketNumRight returns a boolean value
         for (let i = 0; i < myTickets.length; i++) { //Loop through the tickets
@@ -53,6 +54,7 @@ document.getElementById('search').addEventListener("click", (event) => { //Click
             <h5>MY TICKET: </h5>
             <h5>Movie: ${myTickets[i].movieName}</h5>
             <h5>Date: ${myTickets[i].date}</h5>
+            <h5>Time: ${myTickets[i].time}</h5>
             <h5>Salon: ${myTickets[i].salon}</h5>
             <h5>Seat: ${myTickets[i].seat}</h5>
             <h5>Ticket Number: ${myTickets[i].ticketNumber}</h5>

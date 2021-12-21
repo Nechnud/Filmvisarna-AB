@@ -15,11 +15,11 @@ function renderMovieInfo() {
   }
   movieData =
     `
+    <img src="${movieImage}">
     <p>${localStorage.getItem('movieTitle')}</p>
     <p>Date: ${localStorage.getItem('date')}</p>
-    <p>Salon: ${localStorage.getItem('salon')}</p>
-    <img src="${movieImage}">
-    
+    <p>Time: ${localStorage.getItem('movieTime')}</p>
+    <p>Salon: ${localStorage.getItem('salon')}</p>    
            
   `;
   document.getElementById("film-info-booking").innerHTML = movieData;

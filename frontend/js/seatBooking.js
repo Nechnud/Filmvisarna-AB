@@ -1,6 +1,7 @@
 let moviehalls, salonID, salonSeats;
 let rightSalon = localStorage.getItem('salon'); //Get salon information from localStorage
 
+
 async function readMovieHall() { //Function that reads the json file
   let rawData = await fetch('json/moviehalls.json');
   moviehalls = await rawData.json();
@@ -125,6 +126,7 @@ async function checkTicketNumber() {//Creates a function that allows us to check
     newTicket = {                              //Gets id from json file and creates an object in the tickets array
       "movieName": localStorage.getItem('movieTitle'),
       "date": localStorage.getItem('date'),
+      "time": localStorage.getItem('movieTime'),
       "salon": localStorage.getItem('salon'),
       "ticketNumber": randomTicketNumber,
       "seat": seatsOnTicket,
@@ -141,6 +143,7 @@ async function checkTicketNumber() {//Creates a function that allows us to check
         newTicket = {
           "movieName": localStorage.getItem('movieTitle'),
           "date": localStorage.getItem('date'),
+          "time": localStorage.getItem('movieTime'),
           "salon": localStorage.getItem('salon'),
           "ticketNumber": randomTicketNumber,
           "seat": seatsOnTicket,
@@ -151,6 +154,7 @@ async function checkTicketNumber() {//Creates a function that allows us to check
   }
   addTicket(newTicket);
 }
+
 
 async function addTicket(newTicket) {//Creates method addTicket that pushes the object/ticket item into the json file
   if (listOfSeats.length == 0) {
@@ -163,6 +167,7 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
       `<h4>${newTicket.ticketNumber}</h4>
     <h4>${newTicket.movieName}</h4>
     <h4>${newTicket.date}</h4>
+    <h4>${newTicket.time}</h4>
     <h4>${newTicket.salon}</h4>
     <h4>${newTicket.seat}</h4>`);
     localStorage.setItem('myTicketNumber', newTicket.ticketNumber);

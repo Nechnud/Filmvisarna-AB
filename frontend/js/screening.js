@@ -1,5 +1,6 @@
 let today = new Date();
 let shows, html, date, address;
+let currentTime = today.getHours() + ':' + today.getMinutes();
 
 
 $(function () { //Function for datepicker 
@@ -34,6 +35,7 @@ async function showTodaysFilms() {
       localStorage.setItem('salon', show.showRoom);
       localStorage.setItem('date', dataToday);
       localStorage.setItem('movieTitle', show.title);
+      localStorage.setItem('movieTime', show.showTime);
       html += `
       <th>${show.title}</th>
       <th>${dataToday}</th>
@@ -58,6 +60,7 @@ $(function () {
         localStorage.setItem('salon', show.showRoom);
         localStorage.setItem('date', date);
         localStorage.setItem('movieTitle', show.title);
+        localStorage.setItem('movieTime', show.showTime);
         html = `
       <th>${show.title}</th>
       <th>${date}</th>
