@@ -43,9 +43,11 @@
     <div class="container-fluid" id="container-movie-info">
       <div class="row">
         <div class="col">
+          <!-- The scr value is empty here because its value will be assigned by the code in filminfo.js according to the chosen film -->
           <img class="img-fluid" id="movie-image" src="" alt="picture from the chosen movie">
         </div>
         <div class="col">
+          <!-- Movie info is rendered from the function renderMovieInfo in filminfo.js according to the chosen film -->
           <div id="movie-info"></div>
           <button id="trailer-button" type="button" class="btn btn-dark" data-bs-toggle="modal"
             data-bs-target="#trailerModal">
