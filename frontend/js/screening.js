@@ -45,7 +45,7 @@ async function showTodaysFilms() {
     }
     if (rightOne == show.id && currentTime > show.showTime) {
       html = `
-      <p>The movie screening has already started. Please check another date!</p>`;
+      <p>The movie screening has already started today. Please check another date!</p>`;
     }
   }
   $('.screening-result').html(html);
@@ -74,7 +74,7 @@ $(function () {
       }
       if (date == dateToday && currentTime > show.showTime) {
         html = `
-      <p>The movie screening has already started. Please check another date!</p>`;
+      <p>The movie screening has already started today. Please check another date!</p>`;
       }
     }
 
