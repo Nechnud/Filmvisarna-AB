@@ -1,7 +1,14 @@
 let today = new Date();
 let shows, html, date, address;
-let currentTime = today.getHours() + ':' + today.getMinutes();
 let dateToday = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+
+function addZero(i) { //Codes for adding "0" to the minute if the minute is smaller than 10
+  if (i < 10) { i = "0" + i }
+  return i;
+}
+let h = addZero(today.getHours());
+let m = addZero(today.getMinutes());
+let currentTime = h + ":" + m;
 
 $(function () { //Function for datepicker 
   $("#datepicker").datepicker({
