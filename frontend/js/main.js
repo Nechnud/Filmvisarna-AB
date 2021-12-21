@@ -36,5 +36,5 @@ $('.movie').on('click', function () {
 });
 
 
-
+readAllMoives();
 
