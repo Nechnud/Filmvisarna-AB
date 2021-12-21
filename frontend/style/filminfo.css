@@ -163,11 +163,13 @@ body {
 
 
 /* FOOTER */
-footer {  
+footer {
+  font-family: neon;   
   background-color: rgba(0, 0, 0, 0.3);
 }
 /* Footers text color */
 .container-footer p {
+  padding-left: 5%;
   color: white;
 }
 
