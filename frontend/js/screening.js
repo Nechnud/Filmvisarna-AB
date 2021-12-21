@@ -1,7 +1,7 @@
 let today = new Date();
 let shows, html, date, address;
 let currentTime = today.getHours() + ':' + today.getMinutes();
-
+let dateToday = today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
 
 $(function () { //Function for datepicker 
   $("#datepicker").datepicker({
@@ -30,18 +30,22 @@ async function showTodaysFilms() {
     //Fetch the movieID from localStorage with its key 'ID'
     let rightOne = localStorage.getItem('ID');
     //check which movie is clicked and get that movie's information
-    if (rightOne == show.id) {
-      let dataToday = today.getDate().toString() + "-" + (today.getMonth() + 1).toString() + "-" + today.getFullYear().toString();
+    if (rightOne == show.id && currentTime <= show.showTime) {
+
       localStorage.setItem('salon', show.showRoom);
-      localStorage.setItem('date', dataToday);
+      localStorage.setItem('date', dateToday);
       localStorage.setItem('movieTitle', show.title);
       localStorage.setItem('movieTime', show.showTime);
       html += `
       <th>${show.title}</th>
-      <th>${dataToday}</th>
+      <th>${dateToday}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
     `;
+    }
+    if (rightOne == show.id && currentTime > show.showTime) {
+      html = `
+      <p>The movie screening has already started. Please check another date!</p>`;
     }
   }
   $('.screening-result').html(html);
@@ -68,8 +72,13 @@ $(function () {
       <th>${show.showTime}</th>
     `;
       }
-      $('.screening-result').html(html);
+      if (date == dateToday && currentTime > show.showTime) {
+        html = `
+      <p>The movie screening has already started. Please check another date!</p>`;
+      }
     }
+
+    $('.screening-result').html(html);
   });
 });
 
