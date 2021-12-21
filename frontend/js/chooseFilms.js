@@ -2,22 +2,23 @@ let jsonMovies, jsonShows, movie, age;
 let trailerSRC, trialerID;
 let today = new Date();
 
+//Date always start with today's date
 let date = today.getDate().toString() + "-" + (today.getMonth() + 1).toString() + "-" + today.getFullYear().toString();
-$(function () {
+$(function () { //Function for datepicker 
   $("#datepicker").datepicker({
-    //maximum 30days 
-    maxDate: "+1m",
-    //Start date is always today, new Date() is current date object
-    minDate: new Date(),
+    maxDate: "+1m", //maximum 30days 
+    minDate: new Date(), //Start date is always today, new Date() is current date object
     dateFormat: "dd-mm-yy"
   });
 });
 
-async function readInfoJson() {
+async function readInfoJson() { //Read json files
   jsonMovies = await $.getJSON('json/movieinfo.json');
   jsonShows = await $.getJSON('json/shows.json');
   showAllMovies(jsonMovies);
 }
+
+//This function declare only html variable, this function will be used in several functions
 function readHTML() {
   html += `
     <div class="row">
@@ -40,9 +41,10 @@ function readHTML() {
           </div>
     `;
 }
-function checkOptions() {
-  if (age == 'allAge' || age == 'children17' && movie == 0) {
-    showAllMovies();
+
+function checkOptions() { //This function checks all the different combination of options from users
+  if (age == 'allAge' || age == 'children17' && movie == 0) { //Same as the former function
+    showAllMovies();                                          //This function will also be used several times in other functions
   }
   if (age == 'allAge' || age == 'children17' && movie != 0) {
     filterMovies();
@@ -80,16 +82,16 @@ function checkOptions() {
 }
 
 const moviesSelect = document.querySelector('#chooseMovies');
-moviesSelect.addEventListener('change', (event) => {
-  movie = $("#chooseMovies :selected").val();
+moviesSelect.addEventListener('change', (event) => { //eventListener for "movies select tag" in html
+  movie = $("#chooseMovies :selected").val();       //read the which movie is choosen by the user 
   age = $("#chooseAge :selected").val();
-  checkOptions();
+  checkOptions(); //Call two functions
   checkTrialer();
 });
 
-$(function () {
+$(function () { //Function for datepicker 
   $("#datepicker").on('change', function () {
-    date = $(this).val();
+    date = $(this).val(); //Read in the date that are choosen by the user 
     movie = $("#chooseMovies :selected").val();
     age = $("#chooseAge :selected").val();
     checkOptions();
@@ -99,18 +101,19 @@ $(function () {
 
 function getMovieID() {
   $('.movieAll').on('click', function () {
-    //Get the id of the clicked html tag
-    movieID = $(this).attr('id');
+    movieID = $(this).attr('id');//Get the id of the clicked html tag/movie posters
     console.log(movieID);
     //Store the movie id to localStorage so that when we change the webpage 
     //we could still get the movie id from localStorage
     localStorage.setItem('ID', movieID);
   });
 }
-function checkTrialer() {
+
+
+function checkTrialer() { //Function for the trialer for the different movies
   $('.trailer-button').on('click', function () {
-    trialerID = $(this).attr('id');
-    for (i = 0; i < jsonMovies.length; i++) {
+    trialerID = $(this).attr('id'); //Get the id of the clicked "play trailer button"
+    for (i = 0; i < jsonMovies.length; i++) { //Loop through and find the right trailer 
       if (jsonMovies[i].id == trialerID) {
         trailerSRC = `${jsonMovies[i].trailer}`;
       }
@@ -119,15 +122,16 @@ function checkTrialer() {
   });
 }
 
-let ageLimit = [];
+let ageLimit = []; //Array to store the different age standard movies 
 const ageSelect = document.querySelector('#chooseAge');
-ageSelect.addEventListener('change', (event) => {
+ageSelect.addEventListener('change', (event) => { //EventListener for "age group select tag"
   age = $("#chooseAge :selected").val();
   movie = $("#chooseMovies :selected").val();
   checkOptions();
   checkTrialer();
 });
-function showAllMovies() {
+
+function showAllMovies() { //Always show all movies in the beginning of the webpage 
   html = '';
   trailerSRC = '';
   for (i = 0; i < jsonMovies.length; i++) {
@@ -137,7 +141,9 @@ function showAllMovies() {
   checkTrialer();
   getMovieID();
 }
-function filterAges() {
+
+
+function filterAges() { //Function for filtering the age group
   html = '';
   for (j = 0; j < ageLimit.length; j++) {
     for (i = 0; i < jsonMovies.length; i++) {
@@ -152,7 +158,7 @@ function filterAges() {
   getMovieID();
 }
 
-function filterMovies() {
+function filterMovies() { //Function for filtering the movies 
   html = '';
   for (i = 0; i < jsonMovies.length; i++) {
     if (movie == jsonMovies[i].id) {
@@ -165,7 +171,7 @@ function filterMovies() {
   getMovieID();
 }
 
-function ageAndMovies() {
+function ageAndMovies() { //Function for filtering both movies and age groups
   html = '';
   for (j = 0; j < ageLimit.length; j++) {
     for (i = 0; i < jsonMovies.length; i++) {
@@ -174,7 +180,7 @@ function ageAndMovies() {
       }
       $('#screening-result').html(html);
     }
-    if (html == '') {
+    if (html == '') { //If the choosen movie doesn't match the choose age group
       html = `<p class="name">No Movie Match....</p>`;
       $('#screening-result').html(html);
       html = '';
@@ -184,5 +190,6 @@ function ageAndMovies() {
   getMovieID();
   checkTrialer();
 }
+
 readInfoJson();
 

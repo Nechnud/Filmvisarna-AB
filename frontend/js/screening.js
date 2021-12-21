@@ -1,7 +1,8 @@
-//All the codes here are for checking the screening of movies -----------------
+let today = new Date();
+let shows, html, date, address;
 
-//Date picker Jquery
-$(function () {
+
+$(function () { //Function for datepicker 
   $("#datepicker").datepicker({
     //maximum 30days 
     maxDate: "+1m",
@@ -10,25 +11,21 @@ $(function () {
     dateFormat: "dd-mm-yy"
   });
 });
-//Different variables
-let today = new Date();
-let shows, html, date, address;
 
-//Read the json file and store it into 'shows' variable
-async function readShowJson() {
+async function readShowJson() { //Read the json file and store it into 'shows' variable
   shows = await $.getJSON('json/shows.json');
   movies = await $.getJSON('json/movieinfo.json');
   showTodaysFilms();
+  showTrailer(movies);
 }
 
 //This is for the movie information
 //And I used localStorage to store the clicked movie poster's ID
 //When the browser loads filminfo.html it fetchs the clicked movie poster's ID from localStorge.
-//and shows the right information on the webpage.
+//and shows the information on the webpage.
 async function showTodaysFilms() {
   html = '';
-  //Loop through 'shows'(all six films are in 'shows')
-  for (let show of shows) {
+  for (let show of shows) { //Loop through 'shows'(all six films are in 'shows')
     //Fetch the movieID from localStorage with its key 'ID'
     let rightOne = localStorage.getItem('ID');
     //check which movie is clicked and get that movie's information
@@ -45,21 +42,19 @@ async function showTodaysFilms() {
     `;
     }
   }
-  //Tell the html tag to show the information of the movie
   $('.screening-result').html(html);
   showTrailer();
 }
-//Declare the function readShowJson();
-readShowJson();
+
+
 $(function () {
   html = '';
-  $("#datepicker").on('change', function () {
-    date = $(this).val();
+  $("#datepicker").on('change', function () { //Function for datepicker 
+    date = $(this).val();  //Read the date that are choosen by the user 
     for (let show of shows) {
-      let rightOne = localStorage.getItem('ID');
-
+      let rightID = localStorage.getItem('ID');
       //check which movie is clicked and get that movie's information
-      if (rightOne == show.id) {
+      if (rightID == show.id) {
         localStorage.setItem('salong', show.showRoom);
         localStorage.setItem('date', date);
         localStorage.setItem('movieTitle', show.title);
@@ -75,14 +70,7 @@ $(function () {
   });
 });
 
-//read movieinfo.json file to 'movies'
-async function readMovieJson() {
-  movies = await $.getJSON('json/movieinfo.json');
-  showTrailer(movies);
-}
-
-//Function for movie trailer pop-up window
-function showTrailer() {
+function showTrailer() { //Function for movie trailer pop-up window
   for (let movie of movies) {
     let rightOne = localStorage.getItem('ID');
     if (movie.id == rightOne) {
@@ -92,4 +80,4 @@ function showTrailer() {
   document.getElementById("movieTrailer").src = address;
 }
 
-
+readShowJson();
