@@ -17,11 +17,7 @@
     "sound_mix": "Surround, Dolby SR, DTS, SDDS",
     "trailer": "https://www.youtube.com/embed/Ku_IseK3xTc",
     "image_portrait_s": "images/dayAfterTomorrowS.jpg",
-    "image_portrait_m": "images/dayAfterTomorrowM.jpg",
-    "image_portrait_l": "images/dayAfterTomorrowL.jpg",
-    "image_landscape_s": "images/dayAfterTomorrowLandscapeS.jpg",
-    "image_landscape_m": "images/dayAfterTomorrowLandscapeM.jpg",
-    "image_landscape_l": "images/dayAfterTomorrowLandscapeL.jpg"
+    "image_portrait_m": "images/dayAfterTomorrowM.jpg"
   },
   {
     "id": 2,
@@ -41,11 +37,7 @@
     "sound_mix": "Dolby Atmos, Dolby Digital, SDDS, Datasat",
     "trailer": "https://www.youtube.com/embed/zAGVQLHvwOY",
     "image_portrait_s": "images/jokerS.jpg",
-    "image_portrait_m": "images/jokerM.jpg",
-    "image_portrait_l": "images/jokerL.jpg",
-    "image_landscape_s": "images/jokerLandscapeS.jpg",
-    "image_landscape_m": "images/jokerLandscapeM.jpg",
-    "image_landscape_l": "images/jokerLandscapeL.jpg"
+    "image_portrait_m": "images/jokerM.jpg"
   },
   {
     "id": 3,
@@ -65,11 +57,7 @@
     "sound_mix": "Dolby Stereo, Dolby Digital, Dolby A, Surround, Dolby SR",
     "trailer": "https://www.youtube.com/embed/eTjHiQKJUDY",
     "image_portrait_s": "images/aladdinS.jpg",
-    "image_portrait_m": "images/aladdinM.jpg",
-    "image_portrait_l": "images/aladdinL.jpg",
-    "image_landscape_s": "images/aladdinLandscapeS.jpg",
-    "image_landscape_m": "images/aladdinLandscapeM.jpg",
-    "image_landscape_l": "images/aladdinLandscapeL.jpg"
+    "image_portrait_m": "images/aladdinM.jpg"
   },
   {
     "id": 4,
@@ -89,11 +77,7 @@
     "sound_mix": "Dolby Stereo",
     "trailer": "https://www.youtube.com/embed/92a7Hj0ijLs",
     "image_portrait_s": "images/totoroS.jpg",
-    "image_portrait_m": "images/totoroM.jpg",
-    "image_portrait_l": "images/totoroL.jpg",
-    "image_landscape_s": "images/totoroLandscapeS.jpg",
-    "image_landscape_m": "images/totoroLandscapeM.jpg",
-    "image_landscape_l": "images/totoroLandscapeL.jpg"
+    "image_portrait_m": "images/totoroM.jpg"
   },
   {
     "id": 5,
@@ -113,11 +97,7 @@
     "sound_mix": "Datasat, Dolby Digital",
     "trailer": "https://www.youtube.com/embed/zSWdZVtXT7E",
     "image_portrait_s": "images/interstellarS.jpg",
-    "image_portrait_m": "images/interstellarM.jpg",
-    "image_portrait_l": "images/interstellarL.jpg",
-    "image_landscape_s": "images/interstellarLandscapeS.jpg",
-    "image_landscape_m": "images/interstellarLandscapeM.jpg",
-    "image_landscape_l": "images/interstellarLandscapeL.jpg"
+    "image_portrait_m": "images/interstellarM.jpg"
   },
   {
     "id": 6,
@@ -137,10 +117,6 @@
     "sound_mix": "Dolby Atmos, Dolby Digital, Dolby Surround 7.1, IMAX 6-Track",
     "trailer": "https://www.youtube.com/embed/JfVOs4VSpmA",
     "image_portrait_s": "images/spidermanS.jpg",
-    "image_portrait_m": "images/spidermanM.jpg",
-    "image_portrait_l": "images/spidermanL.jpg",
-    "image_landscape_s": "images/spidermanLandscapeS.jpg",
-    "image_landscape_m": "images/spidermanLandscapeM.jpg",
-    "image_landscape_l": "images/spidermanLandscapeL.jpg"
+    "image_portrait_m": "images/spidermanM.jpg"
   }
 ]
