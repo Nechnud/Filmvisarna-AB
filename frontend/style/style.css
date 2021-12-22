@@ -137,9 +137,21 @@ footer {
   background-color: rgba(0, 0, 0, 0.3);
 }
 /* Footers text color */
-.container-footer p {
+.container-footer {
   padding-left: 5%;
   color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;  
+}
+
+a:hover {
+ text-shadow: 0 0 70% #ff005b;
+  -webkit-text-stroke: initial;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
 }
 /* This is for sticky - footer, 
 so that the footer always 
