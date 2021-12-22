@@ -191,3 +191,14 @@ p.text span {
   padding-left: 37%;
   padding-right: 28%;
 }
+
+/* FOOTER */
+footer {
+  font-family: neon;   
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* Footers text color */
+.container-footer p {
+  padding-left: 5%;
+  color: white;
+}
