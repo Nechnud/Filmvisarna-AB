@@ -36,3 +36,4 @@ function renderMovieInfo() {
   document.getElementById("movie-info").innerHTML = movieData;
   document.getElementById("movie-image").src = movieToShow.image_portrait_m;
 }
+

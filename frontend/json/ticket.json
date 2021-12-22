@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "movieName": "Spider-Man: No way home",
+    "date": "22-12-2021",
+    "time": "23:30",
+    "salon": "Grande",
+    "ticketNumber": "WU5VTPX1RI",
+    "seat": "  Row 1 Seat 1 Row 1 Seat 4 Row 1 Seat 1 Row 1 Seat 4 Row 2 Seat 4 Row 2 Seat 1",
+    "price": 30,
+    "ticketAmount": 4,
+    "seatID": [
+      "11",
+      "14",
+      "24",
+      "21"
+    ]
+  }
+]

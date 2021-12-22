@@ -50,39 +50,35 @@ readMovieHall();
 
 //Create two variables
 let listOfSeats = []; //this array stores the selected seats
-let selectSeatNumber; //read the id number of the selected seats
-let selectedSeatsToShow; //variable for each selected seat
-let seatsToShowList = []; //array for all the selected seats
+let seatNum, seatRemove; //read the id number of the selected seats
+let seatsToShow; //variable for each selected seat
+let seatsLists = []; //array for all the selected seats
 
 async function checkSelectedSeats() {
-  selectedSeatsToShow = '';
+  listOfSeats = [];
+  seatsToShow = '';
   for (let salonSeat of salonSeats) { //Loop through all the seats
     await salonSeat.addEventListener('click', function () { //click function when the user clicks the seat
-      if (totalSeats == 0) {
-        alert("Please choose the ticket first!");
-        return;
-      }
-      if (listOfSeats.length < totalSeats && totalSeats != 0) {
-        selectSeatNumber = $(this).attr('id');                //get the id of the selected seat
+      if (listOfSeats.length < totalSeats && totalSeats > 0) {
+        //get the id of the selected seat
+        seatNum = $(this).attr('id');
         if ($(this).css("background-color") == 'rgb(1, 22, 62)') { //check the seat color
           $(this).css({ backgroundColor: "#31d7a9" });        //change the selected seat's color
-          listOfSeats.push(selectSeatNumber); //Make the seat number into HTML and show them on the webpage
-          seatsToShowList.push(selectedSeatsToShow = `
-        <p class="seat${selectSeatNumber}">
-       Row ${selectSeatNumber.charAt(0)} 
-       Chair ${selectSeatNumber.substring(1)}</p>`); //Selected seats are in Array
+          listOfSeats.push(seatNum);            //Make the seat number into HTML and show them on the webpage
+          seatsToShow = `<p class="seat${seatNum}"> Row ${seatNum.charAt(0)} Chair ${seatNum.substring(1)}</p>`
+          seatsLists.push(seatsToShow);
         }
-      }                                           //Which makes it easier to remove it again
-      if ($(this).css("background-color") == 'rgb(49, 215, 169)') { //if the user click again the same seat
-        $(this).css({ backgroundColor: "#01163e" });                //change back the seat color 
-        listOfSeats.pop(selectSeatNumber);               //remove selected seat from the seat array, screen
-        $('.seat' + `${selectSeatNumber}`).remove();
-
-        seatsToShowList.pop(`<p class="seat${selectSeatNumber}">    
-          Row ${selectSeatNumber.charAt(0)}
-          Chair ${selectSeatNumber.substring(1)}</p> `);
       }
-      $('.seatsNumber').html(seatsToShowList); //assign the seatsToShowList into HTML page
+      if ($(this).css("background-color") == 'rgb(49, 215, 169)') { //if the user click again the same seat
+        $(this).css({ backgroundColor: "#01163e" });
+        seatRemove = $(this).attr('id');
+        listOfSeats = listOfSeats.filter((lisOfSeat) => { return lisOfSeat !== seatRemove });
+        seatHTML = `<p class="seat${seatRemove}"> Row ${seatRemove.charAt(0)} Chair ${seatRemove.substring(1)}</p>`;
+        seatsLists = seatsLists.filter((seatsList) => {
+          return seatsList !== seatHTML;
+        });
+      }
+      $('.seatsNumber').html(seatsLists); //assign the seatsList into HTML page
     }); changeSeatsForTicket(listOfSeats);     //call the function
   }
 }
@@ -95,9 +91,9 @@ function changeSeatsForTicket() {
   }  //store the seats number/id
 }
 
-
 let movieTitle = localStorage.getItem('movieTitle');
 let movieDate = localStorage.getItem('date');
+let freeSeats, occupiedSeats, movieSeats;
 
 async function checkIfSeatsAreTaken() { //Loop and check the occupied seats
   let rawData = await fetch('json/ticket.json');
@@ -107,7 +103,27 @@ async function checkIfSeatsAreTaken() { //Loop and check the occupied seats
       for (let j = 0; j < currentTickets[i].seatID.length; j++) {
         let takenSeat = currentTickets[i].seatID[j];
         document.getElementById(`${takenSeat}`).disabled = true;
+        occupiedSeats = currentTickets[i].seatID.length;
+      }
+      if (rightSalon == 'Grande') {
+        movieSeats = 66;
+        freeSeats = movieSeats - occupiedSeats;
+      }
+      if (rightSalon == 'Cozy') {
+        movieSeats = 48;
+        freeSeats = movieSeats - occupiedSeats;
       }
     }
+    if (currentTickets[i].movieName != movieTitle || currentTickets[i].date != movieDate) {
+      if (rightSalon == 'Grande') {
+        freeSeats = 66;
+      }
+      if (rightSalon == 'Cozy') {
+        freeSeats = 48;
+      }
+    }
+  }
+  if (freeSeats < totalSeats) {
+    alert("Unfortunately, there is no more available seats!");
   }
 }
