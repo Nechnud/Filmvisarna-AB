@@ -34,10 +34,10 @@ function changeSeatsForTicket() {
 let currentTickets;
 let movieTitle = localStorage.getItem('movieTitle');
 let movieDate = localStorage.getItem('date');
-
+let newTicket;
 async function checkTicketNumber() {//Creates a function that allows us to check ticket number
   changeSeatsForTicket();     //call the function that check all the selected seats' number     
-  let newTicket;                               //Declare variable new ticket
+
   if (tickets.length == 0) {                   //If tickets array is empty, proceed
     newTicket = {                              //Gets id from json file and creates an object in the tickets array
       "movieName": localStorage.getItem('movieTitle'),
@@ -68,17 +68,24 @@ async function checkTicketNumber() {//Creates a function that allows us to check
       }
     }
   }
-  addTicket(newTicket);
+  localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
+  ticketPopUp();
+  bookOrNot(newTicket);
 }
 
+async function addTicket() {//Creates method addTicket that pushes the object/ticket item into the json file  
+  console.log(newTicket);
+  tickets.push(newTicket);
+  await JSON._save('ticket', tickets);
+}
 
-async function addTicket(newTicket) {//Creates method addTicket that pushes the object/ticket item into the json file
+function ticketPopUp() {
   if (listOfSeats.length == 0) {
     $('.modal-body').html(`
     <h4>No seats are choosen, please choose your seats!</h4>`);
   }
   if (listOfSeats.length != 0) {
-    tickets.push(newTicket);
+
     $('.modal-body').html( //Show the ticket information on the pop-window
       `<h4>${newTicket.ticketNumber}</h4>
     <h4>${newTicket.movieName}</h4>
@@ -86,17 +93,19 @@ async function addTicket(newTicket) {//Creates method addTicket that pushes the 
     <h4>${newTicket.time}</h4>
     <h4>${newTicket.salon}</h4>
     <h4>${newTicket.seat}</h4>`);
-    localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
-    await JSON._save('ticket', tickets);
   }
 }
 
-$('#toMyBooking').on('click', function () { //Confirm button function on pop-up window
-  if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
-    $("#linkToBooking").attr("href", "seatBooking.html");// the program stays on the seatBooking page
-  }
+async function bookOrNot() {
+  $('#toMyBooking').on('click', function () { //Confirm button function on pop-up window
+    if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
+      $("#linkToBooking").attr("href", "seatBooking.html");// the program stays on the seatBooking page
+    }
 
-  if (listOfSeats.length != 0) { //if there are seats are choose by the user
-    $("#linkToBooking").attr("href", "myBookings.html");// this button will link the webpage to mybooking.html
-  }
-});
+    if (listOfSeats.length != 0) { //if there are seats are choose by the user
+      await addTicket(newTicket);
+      $("#linkToBooking").attr("href", "myBookings.html");// this button will link the webpage to mybooking.html
+    }
+  });
+}
+
