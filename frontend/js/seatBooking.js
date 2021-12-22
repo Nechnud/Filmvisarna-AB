@@ -57,23 +57,22 @@ let seatsToShowList = []; //array for all the selected seats
 async function checkSelectedSeats() {
   selectedSeatsToShow = '';
   for (let salonSeat of salonSeats) { //Loop through all the seats
-    await salonSeat.addEventListener('click', function () {
+    await salonSeat.addEventListener('click', function () { //click function when the user clicks the seat
       if (totalSeats == 0) {
         alert("Please choose the ticket first!");
         return;
-      }                                                    //click function when the user clicks the seat
-      selectSeatNumber = $(this).attr('id');                //get the id of the selected seat
-      if ($(this).css("background-color") == 'rgb(1, 22, 62)') { //check the seat color
-        $(this).css({ backgroundColor: "#31d7a9" });        //change the selected seat's color
-        listOfSeats.push(selectSeatNumber);
-
-        //Make the seat number into HTML and show them on the webpage
-        seatsToShowList.push(selectedSeatsToShow = `
+      }
+      if (listOfSeats.length < totalSeats && totalSeats != 0) {
+        selectSeatNumber = $(this).attr('id');                //get the id of the selected seat
+        if ($(this).css("background-color") == 'rgb(1, 22, 62)') { //check the seat color
+          $(this).css({ backgroundColor: "#31d7a9" });        //change the selected seat's color
+          listOfSeats.push(selectSeatNumber); //Make the seat number into HTML and show them on the webpage
+          seatsToShowList.push(selectedSeatsToShow = `
         <p class="seat${selectSeatNumber}">
        Row ${selectSeatNumber.charAt(0)} 
        Chair ${selectSeatNumber.substring(1)}</p>`); //Selected seats are in Array
-      }                                              //Which makes it easier to remove it again
-
+        }
+      }                                           //Which makes it easier to remove it again
       if ($(this).css("background-color") == 'rgb(49, 215, 169)') { //if the user click again the same seat
         $(this).css({ backgroundColor: "#01163e" });                //change back the seat color 
         listOfSeats.pop(selectSeatNumber);               //remove selected seat from the seat array, screen
@@ -88,8 +87,6 @@ async function checkSelectedSeats() {
   }
 }
 
-
-
 //create a variable for reading the seats' number to the ticket
 let seatsOnTicket = ' ';
 function changeSeatsForTicket() {
@@ -97,8 +94,11 @@ function changeSeatsForTicket() {
     seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1);
   }  //store the seats number/id
 }
+
+
 let movieTitle = localStorage.getItem('movieTitle');
 let movieDate = localStorage.getItem('date');
+
 async function checkIfSeatsAreTaken() { //Loop and check the occupied seats
   let rawData = await fetch('json/ticket.json');
   currentTickets = await rawData.json();

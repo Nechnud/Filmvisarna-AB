@@ -71,7 +71,11 @@ async function ticketPopUp() {
     $('.modal-body').html(`
     <h4>Please choose the ticket and choose seats!</h4>`);
   }
-  if (listOfSeats.length != 0 && totalSeats != 0 && totalPrice != 0) {
+  if (listOfSeats.length < totalSeats && totalSeats != 0 && totalPrice != 0) {
+    $('.modal-body').html(`
+    <h4>Please choose all of your seats!</h4>`);
+  }
+  if (listOfSeats.length == totalSeats && totalSeats != 0 && totalPrice != 0) {
     $('.modal-body').html( //Show the ticket information on the pop-window
       `<h4>${newTicket.ticketNumber}</h4>
     <h4>${newTicket.movieName}</h4>
