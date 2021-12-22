@@ -1,74 +1,88 @@
-const Pprice = 7.5;
-const Aprice = 8.5;
-const Cprice = 3.5;
+const childPrice = 3.5;
+const adultPrice = 8.5;
+const pensionerPrice = 7.5;
 
-let counter = 0;
-let amount = 0;
-let Ptotal = 0;
-let ATotal = 0;
-let Ctotal = 0;
-// Not finnished yet with the pricing!
-let buttons = document.querySelectorAll('.amount');
-console.log(buttons)
-for (let button of buttons) {
-  button.addEventListener('click', function (event) {
-    let className = $(this).attr('class')
+let childTickets = 0;
+let adultTickets = 0;
+let pensionerTickets = 0;
+
+let childTotalPrice = 0;
+let adultTotalPrice = 0;
+let pensionerTotalPrice = 0;
+let totalSeats = 0;
+let totalPrice = 0;
+
+function chooseTicketAmount() {
 
 
-    if (className == "amount rounded-circle pensioner-price-Minus") {
-      amount -= Pprice;
-      
-      if (amount < 0) {
-        amount = 0;
-        Ptotal -= Ptotal
-      
-      }
+  let buttons = document.querySelectorAll('.amount');
 
-      if (Ptotal === 0) {
-        document.getElementsByClassName("amount rounded-circle pensioner-price-Minus").disabled = true;
-      }
-    
-    
-      if (className == "amount rounded-circle pensioner-price-Plus") {
-      
-        amount += Pprice;
-        Ptotal++; 
-      
-      }
-      if (className == "amount rounded-circle adult-price-Minus") {
-        amount -= Aprice;
-        if (amount < 0) {
-          amount = 0
-        }
-      }
+  for (let button of buttons) {
 
-    
+    button.addEventListener('click', function (event) {
+      let className = $(this).attr('class')
 
-      if (className == "amount rounded-circle adult-price-Plus") {
-        amount += Aprice;
-      }
 
       if (className == "amount rounded-circle child-price-Minus") {
-        amount -= Cprice;
-        if (amount < 0) {
-          amount = 0
+        if (childTickets > 0) {
+          childTickets--;
+          childTotalPrice = childTickets * childPrice;
+          document.getElementById('counterReplaceChild').innerHTML = childTickets;
         }
-      
-      }
-      if (className == "amount rounded-circle child-price-Plus") {
-        amount += Cprice;
       }
 
-      $('#amountReplace').html(amount)
-      $('#counterReplaceChild').html(counter)
-      $('#counterReplaceAdult').html(counter)
-      $('#counterReplacePensioner').html(counter)
-      console.log(amount);
-      console.log(className);
-    }
-  })
+
+      if (className == "amount rounded-circle child-price-Plus") {
+        childTickets++;
+        childTotalPrice = childTickets * childPrice;
+        document.getElementById('counterReplaceChild').innerHTML = childTickets;
+
+      }
+
+      if (className == "amount rounded-circle adult-price-Minus") {
+        if (adultTickets > 0) {
+          adultTickets--;
+          adultTotalPrice = adultTickets * adultPrice;
+          document.getElementById('counterReplaceAdult').innerHTML = adultTickets;
+        }
+
+      }
+
+      if (className == "amount rounded-circle adult-price-Plus") {
+        adultTickets++;
+        adultTotalPrice = adultTickets * adultPrice;
+        document.getElementById('counterReplaceAdult').innerHTML = adultTickets;
+      }
+
+      if (className == "amount rounded-circle pensioner-price-Minus") {
+        if (pensionerTickets > 0) {
+          pensionerTickets--;
+          pensionerTotalPrice = pensionerTickets * pensionerPrice;
+          document.getElementById('counterReplacePensioner').innerHTML = pensionerTickets;
+        }
+      }
+
+
+      if (className == "amount rounded-circle pensioner-price-Plus") {
+        pensionerTickets++;
+        pensionerTotalPrice = pensionerTickets * pensionerPrice;
+        document.getElementById('counterReplacePensioner').innerHTML = pensionerTickets;
+      }
+
+      totalSeats = childTickets + adultTickets + pensionerTickets;
+      totalPrice = childTotalPrice + adultTotalPrice + pensionerTotalPrice;
+      document.getElementById('count').innerHTML = totalSeats;
+      document.getElementById('amountReplace').innerHTML = totalPrice + " $";
+
+
+    });
+
+  }
+
 
 }
+
+chooseTicketAmount();
 
 
 
