@@ -345,6 +345,11 @@ p.text span {
   margin-top: 10px;
 }
 
+#movieBox{  
+  padding-left: 37%;
+  padding-right: 28%;
+}
+
 /*hur sidan anpassar sig om skärmen blir mindre än 576px.
 Jag lämnar koden här så länge.*/
 @media (max-width: 576px) {
