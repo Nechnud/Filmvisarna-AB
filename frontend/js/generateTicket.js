@@ -23,17 +23,7 @@ async function readTickets() {
   await ticketNumberGenerator();
 }
 
-//create a variable for reading the seats' number to the ticket
-let seatsOnTicket = ' ';
-function changeSeatsForTicket() {
-  for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
-    seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1);
-  }  //store the seats number/id
-}
-
 let currentTickets;
-let movieTitle = localStorage.getItem('movieTitle');
-let movieDate = localStorage.getItem('date');
 let newTicket;
 async function checkTicketNumber() {//Creates a function that allows us to check ticket number
   changeSeatsForTicket();     //call the function that check all the selected seats' number     
@@ -72,12 +62,13 @@ async function checkTicketNumber() {//Creates a function that allows us to check
   ticketPopUp();
   bookOrNot(newTicket);
 }
-
+/*
 async function addTicket() {//Creates method addTicket that pushes the object/ticket item into the json file  
   console.log(newTicket);
   tickets.push(newTicket);
   await JSON._save('ticket', tickets);
 }
+*/
 
 function ticketPopUp() {
   if (listOfSeats.length == 0) {
@@ -85,7 +76,6 @@ function ticketPopUp() {
     <h4>No seats are choosen, please choose your seats!</h4>`);
   }
   if (listOfSeats.length != 0) {
-
     $('.modal-body').html( //Show the ticket information on the pop-window
       `<h4>${newTicket.ticketNumber}</h4>
     <h4>${newTicket.movieName}</h4>
@@ -97,13 +87,14 @@ function ticketPopUp() {
 }
 
 async function bookOrNot() {
-  $('#toMyBooking').on('click', function () { //Confirm button function on pop-up window
+  $('#toMyBooking').on('click', async function () { //Confirm button function on pop-up window
     if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
       $("#linkToBooking").attr("href", "seatBooking.html");// the program stays on the seatBooking page
     }
 
     if (listOfSeats.length != 0) { //if there are seats are choose by the user
-      await addTicket(newTicket);
+      tickets.push(newTicket);
+      await JSON._save('ticket', tickets);
       $("#linkToBooking").attr("href", "myBookings.html");// this button will link the webpage to mybooking.html
     }
   });

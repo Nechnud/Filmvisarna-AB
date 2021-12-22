@@ -81,7 +81,15 @@ async function checkSelectedSeats() {
     }); changeSeatsForTicket(listOfSeats);     //call the function
   }
 }
-
+//create a variable for reading the seats' number to the ticket
+let seatsOnTicket = ' ';
+function changeSeatsForTicket() {
+  for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
+    seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1);
+  }  //store the seats number/id
+}
+let movieTitle = localStorage.getItem('movieTitle');
+let movieDate = localStorage.getItem('date');
 async function checkIfSeatsAreTaken() { //Loop and check the occupied seats
   let rawData = await fetch('json/ticket.json');
   currentTickets = await rawData.json();
