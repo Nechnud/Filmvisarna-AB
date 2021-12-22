@@ -24,7 +24,6 @@ async function readShowJson() { //Read the json file and store it into 'shows' v
   shows = await $.getJSON('json/shows.json');
   movies = await $.getJSON('json/movieinfo.json');
   currentMovie = await $.getJSON('json/ticket.json');
-  checkIfSeatsAreTaken();
   showTodaysFilms();
   showTrailer(movies);
 }
@@ -33,87 +32,42 @@ async function readShowJson() { //Read the json file and store it into 'shows' v
 //And I used localStorage to store the clicked movie poster's ID
 //When the browser loads filminfo.html it fetchs the clicked movie poster's ID from localStorge.
 //and shows the information on the webpage.
-function showTodaysFilms() {
+async function showTodaysFilms() {
   html = '';
   for (let show of shows) { //Loop through 'shows'(all six films are in 'shows')
     //Fetch the movieID from localStorage with its key 'ID'
     let rightOne = localStorage.getItem('ID');
     //check which movie is clicked and get that movie's information
     if (rightOne == show.id && currentTime <= show.showTime) {
-
+      $('#bookTickets').prop('disabled', false);
       localStorage.setItem('salon', show.showRoom);
       localStorage.setItem('date', dateToday);
       localStorage.setItem('movieTitle', show.title);
       localStorage.setItem('movieTime', show.showTime);
+      await checkIfSeatsAreTaken();
       html = `
       <th>${show.title}</th>
       <th>${dateToday}</th>
       <th>${show.showRoom}</th>
       <th>${show.showTime}</th>
+      <th>${freeSeats} free of ${movieSeats}</th>
     `;
     }
 
     if (rightOne == show.id && currentTime > show.showTime) {
       html = `
       <p>The movie screening has already started today. Please check another date!</p>`;
+      $('#bookTickets').prop('disabled', true);
     }
   }
   $('.screening-result').html(html);
-  checkIfSeatsAreTaken();
   showTrailer();
 }
-
-
-$(function () {
-  html = '';
-  $("#datepicker").on('change', function () {
-    console.log(freeSeats);  //Function for datepicker
-    date = $(this).val();  //Read the date that are choosen by the user 
-    for (let show of shows) {
-      let rightID = localStorage.getItem('ID');
-      //check which movie is clicked and get that movie's information
-      if (rightID == show.id) {
-        localStorage.setItem('salon', show.showRoom);
-        localStorage.setItem('date', date);
-        localStorage.setItem('movieTitle', show.title);
-        localStorage.setItem('movieTime', show.showTime);
-        html = `
-      <th>${show.title}</th>
-      <th>${date}</th>
-      <th>${show.showRoom}</th>
-      <th>${show.showTime}</th>
-
-    `;
-      }
-      if (date == dateToday && currentTime > show.showTime) {
-        html = `
-      <p>The movie screening has already started today. Please check another date!</p>`;
-      }
-    }
-    $('.screening-result').html(html);
-    checkIfSeatsAreTaken();
-  });
-
-});
-
-function showTrailer() { //Function for movie trailer pop-up window
-  for (let movie of movies) {
-    let rightOne = localStorage.getItem('ID');
-    if (movie.id == rightOne) {
-      address = `${movie.trailer}`;
-    }
-  }
-  document.getElementById("movieTrailer").src = address;
-}
-
-//let freeSeats, occupiedSeats, movieSeats;
-
-function checkIfSeatsAreTaken() { //Loop and check the occupied seats
-
-  for (let i = 0; i < currentMovie.length; i++) {
-
+async function checkIfSeatsAreTaken() { //Loop and check the occupied seats
+  for (let i = 0; i < currentMovie.length; i++) { //this function writes out the available seats
     if (currentMovie[i].movieName == localStorage.getItem('movieTitle')
       && currentMovie[i].date == localStorage.getItem('date')) {
+
       occupiedSeats = currentMovie[i].seatID.length;
       if (currentMovie[i].salon == 'Grande') {
         movieSeats = 66;
@@ -135,15 +89,48 @@ function checkIfSeatsAreTaken() { //Loop and check the occupied seats
         freeSeats = movieSeats;
       }
     }
-    if (date != dateToday || currentTime <= localStorage.getItem('movieTime')) {
-      html += `
-    <th>${freeSeats} free of ${movieSeats}</th>`;
-
-    }
-    if (date == dateToday && currentTime > localStorage.getItem('movieTime')) {
-      html = `
-      <p>The movie screening has already started today. Please check another date!</p>`;
-    } $('.screening-result').html(html);
   }
+}
+
+$(function () {//Function for datepicker
+  html = '';
+  $("#datepicker").on('change', function () {
+    date = $(this).val();  //Read the date that are choosen by the user 
+    for (let show of shows) {
+      let rightID = localStorage.getItem('ID');//check which movie is clicked and get that movie's information
+      if (rightID == show.id) {
+        $('#bookTickets').prop('disabled', false);
+        localStorage.setItem('salon', show.showRoom);
+        localStorage.setItem('date', date);
+        localStorage.setItem('movieTitle', show.title);
+        localStorage.setItem('movieTime', show.showTime);
+        checkIfSeatsAreTaken();
+        html = `
+      <th>${show.title}</th>
+      <th>${date}</th>
+      <th>${show.showRoom}</th>
+      <th>${show.showTime}</th>
+      <th>${freeSeats} free of ${movieSeats}</th>
+
+    `;
+      }
+      if (date == dateToday && currentTime > show.showTime) {
+        html = `
+      <p>The movie screening has already started today. Please check another date!</p>`;
+        $('#bookTickets').prop('disabled', true);
+      }
+    }
+    $('.screening-result').html(html);
+  });
+});
+
+function showTrailer() { //Function for movie trailer pop-up window
+  for (let movie of movies) {
+    let rightOne = localStorage.getItem('ID');
+    if (movie.id == rightOne) {
+      address = `${movie.trailer}`;
+    }
+  }
+  document.getElementById("movieTrailer").src = address;
 }
 readShowJson();

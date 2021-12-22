@@ -96,7 +96,7 @@ let movieDate = localStorage.getItem('date');
 let freeSeats, occupiedSeats, movieSeats;
 
 async function checkIfSeatsAreTaken() { //Loop and check the occupied seats
-  let rawData = await fetch('json/ticket.json');
+  let rawData = await fetch('json/ticket.json'); //This function checks the free seats and occupied seats
   currentTickets = await rawData.json();
   for (let i = 0; i < currentTickets.length; i++) {
     if (currentTickets[i].movieName == movieTitle && currentTickets[i].date == movieDate) {
