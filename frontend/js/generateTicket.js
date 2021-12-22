@@ -36,6 +36,8 @@ async function checkTicketNumber() {//Creates a function that allows us to check
       "salon": localStorage.getItem('salon'),
       "ticketNumber": randomTicketNumber,
       "seat": seatsOnTicket,
+      "price": totalPrice,
+      "ticketAmount": totalSeats,
       "seatID": listOfSeats
     }
 
@@ -53,6 +55,8 @@ async function checkTicketNumber() {//Creates a function that allows us to check
           "salon": localStorage.getItem('salon'),
           "ticketNumber": randomTicketNumber,
           "seat": seatsOnTicket,
+          "price": totalPrice,
+          "ticketAmount": totalSeats,
           "seatID": listOfSeats
         }
       }
@@ -63,18 +67,21 @@ async function checkTicketNumber() {//Creates a function that allows us to check
 }
 
 async function ticketPopUp() {
-  if (listOfSeats.length == 0) {
+  if (listOfSeats.length == 0 && totalSeats == 0 && totalPrice == 0) {
     $('.modal-body').html(`
-    <h4>No seats are choosen, please choose your seats!</h4>`);
+    <h4>Please choose the ticket and choose seats!</h4>`);
   }
-  if (listOfSeats.length != 0) {
+  if (listOfSeats.length != 0 && totalSeats != 0 && totalPrice != 0) {
     $('.modal-body').html( //Show the ticket information on the pop-window
       `<h4>${newTicket.ticketNumber}</h4>
     <h4>${newTicket.movieName}</h4>
     <h4>${newTicket.date}</h4>
     <h4>${newTicket.time}</h4>
     <h4>${newTicket.salon}</h4>
-    <h4>${newTicket.seat}</h4>`);
+    <h4>${newTicket.seat}</h4>
+    <h4>Price: ${totalPrice}</h4>
+    <h4>Tickets: ${totalSeats}</h4>
+    `);
     addTicket();
   }
 }
@@ -96,7 +103,7 @@ async function addTicket() {// Creates method addTicket that pushes the object /
 }
 
 $('#toMyBooking').on('click', function () { //Confirm button function on pop-up window
-  if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
+  if (listOfSeats.length == 0 && totalSeats == 0 && totalPrice == 0) { //if there is no seat are choosen by the user
     $("#linkToBooking").attr("href", "seatBooking.html");// the program stays on the seatBooking page
   }
   if (listOfSeats.length != 0) {//if there are seats are choose by the user

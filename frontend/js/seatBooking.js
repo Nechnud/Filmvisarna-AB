@@ -41,7 +41,9 @@ function showSeats() { //Function to show the cinema seats based on the salon
 
   salonSeats = document.querySelectorAll(".seat"); //Select all the seats
   checkIfSeatsAreTaken(); //This function checks the occupied seats
+
   checkSelectedSeats(salonSeats); //This function check the users' selected seats 
+
 }
 
 readMovieHall();
@@ -55,7 +57,11 @@ let seatsToShowList = []; //array for all the selected seats
 async function checkSelectedSeats() {
   selectedSeatsToShow = '';
   for (let salonSeat of salonSeats) { //Loop through all the seats
-    await salonSeat.addEventListener('click', function () { //click function when the user clicks the seat
+    await salonSeat.addEventListener('click', function () {
+      if (totalSeats == 0) {
+        alert("Please choose the ticket first!");
+        return;
+      }                                                    //click function when the user clicks the seat
       selectSeatNumber = $(this).attr('id');                //get the id of the selected seat
       if ($(this).css("background-color") == 'rgb(1, 22, 62)') { //check the seat color
         $(this).css({ backgroundColor: "#31d7a9" });        //change the selected seat's color
@@ -81,6 +87,9 @@ async function checkSelectedSeats() {
     }); changeSeatsForTicket(listOfSeats);     //call the function
   }
 }
+
+
+
 //create a variable for reading the seats' number to the ticket
 let seatsOnTicket = ' ';
 function changeSeatsForTicket() {

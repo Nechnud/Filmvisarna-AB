@@ -29,6 +29,8 @@ function renderTicketInfo() { //Shows the newly booked ticket to the user
             <h5>Movie: ${myTickets[i].movieName}</h5>
             <h5>Date: ${myTickets[i].date}</h5>
             <h5>Time: ${myTickets[i].time}</h5>
+            <h5>Price: ${myTickets[i].price} $</h5>
+            <h5>Ticket: ${myTickets[i].ticketAmount}</h5>
             <h5>Salon: ${myTickets[i].salon}</h5>
             <h5>Seat: ${myTickets[i].seat}</h5>
             <h5>Ticket Number: ${myTickets[i].ticketNumber}</h5>
@@ -55,6 +57,8 @@ document.getElementById('search').addEventListener("click", (event) => { //Click
             <h5>Movie: ${myTickets[i].movieName}</h5>
             <h5>Date: ${myTickets[i].date}</h5>
             <h5>Time: ${myTickets[i].time}</h5>
+            <h5>Price: ${myTickets[i].price} $</h5>
+            <h5>Ticket: ${myTickets[i].ticketAmount}</h5>
             <h5>Salon: ${myTickets[i].salon}</h5>
             <h5>Seat: ${myTickets[i].seat}</h5>
             <h5>Ticket Number: ${myTickets[i].ticketNumber}</h5>
