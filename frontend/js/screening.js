@@ -64,8 +64,6 @@ async function showTodaysFilms() {
     `;
     }
     if (rightOne == show.id && currentTime > show.showTime) {
-      html = `
-      <p>The movie screening has already started today. Please check another date!</p>`;
       $('#bookTickets').prop('disabled', true);
     } $('.screening-result').html(html);
   }
@@ -97,10 +95,7 @@ $("#datepicker").on('change', function () {
     `;
     }
     if (date == dateToday && currentTime > show.showTime) {
-      html = `
-      <p>The movie screening has already started today. Please check another date!</p>`;
       $('#bookTickets').prop('disabled', true);
-
     }
 
   } checkIfSeatsAreTaken();
@@ -124,7 +119,10 @@ function checkIfSeatsAreTaken() {
         }
       }
     }
-    html += `<th>${freeSeats} free of ${movieSeats}</th>`;
+    html += `<th> ${freeSeats} free of ${movieSeats}</th >`;
+    if ($('#bookTickets').attr('disabled') == 'disabled') {
+      html = `<th>The movie screening has already started today. Please check another date!</th>`;
+    }
     $('.screening-result').html(html);
   }
 }
@@ -133,7 +131,7 @@ function showTrailer() { //Function for movie trailer pop-up window
   for (let movie of movies) {
     let rightOne = localStorage.getItem('ID');
     if (movie.id == rightOne) {
-      address = `${movie.trailer}`;
+      address = `${movie.trailer} `;
     }
   }
   document.getElementById("movieTrailer").src = address;
