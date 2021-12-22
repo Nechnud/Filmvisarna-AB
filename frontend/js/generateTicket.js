@@ -60,17 +60,9 @@ async function checkTicketNumber() {//Creates a function that allows us to check
   }
   localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
   ticketPopUp();
-  bookOrNot(newTicket);
 }
-/*
-async function addTicket() {//Creates method addTicket that pushes the object/ticket item into the json file  
-  console.log(newTicket);
-  tickets.push(newTicket);
-  await JSON._save('ticket', tickets);
-}
-*/
 
-function ticketPopUp() {
+async function ticketPopUp() {
   if (listOfSeats.length == 0) {
     $('.modal-body').html(`
     <h4>No seats are choosen, please choose your seats!</h4>`);
@@ -83,20 +75,33 @@ function ticketPopUp() {
     <h4>${newTicket.time}</h4>
     <h4>${newTicket.salon}</h4>
     <h4>${newTicket.seat}</h4>`);
+    addTicket();
   }
 }
 
-async function bookOrNot() {
-  $('#toMyBooking').on('click', async function () { //Confirm button function on pop-up window
-    if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
-      $("#linkToBooking").attr("href", "seatBooking.html");// the program stays on the seatBooking page
-    }
+$('#cancel').click(function () {
+  console.log(newTicket);
+  if (listOfSeats.length != 0) {
+    cancelBooking();
+  }
+});
 
-    if (listOfSeats.length != 0) { //if there are seats are choose by the user
-      tickets.push(newTicket);
-      await JSON._save('ticket', tickets);
-      $("#linkToBooking").attr("href", "myBookings.html");// this button will link the webpage to mybooking.html
-    }
-  });
+async function cancelBooking() {// Creates method addTicket that pushes the object / ticket item into the json file 
+  tickets.pop(newTicket);
+  await JSON._save('ticket', tickets);
 }
+
+async function addTicket() {// Creates method addTicket that pushes the object / ticket item into the json file 
+  tickets.push(newTicket);
+  await JSON._save('ticket', tickets);
+}
+
+$('#toMyBooking').on('click', function () { //Confirm button function on pop-up window
+  if (listOfSeats.length == 0) { //if there is no seat are choosen by the user
+    $("#linkToBooking").attr("href", "seatBooking.html");// the program stays on the seatBooking page
+  }
+  if (listOfSeats.length != 0) {//if there are seats are choose by the user
+    $("#linkToBooking").attr("href", "myBookings.html");// this button will link the webpage to mybooking.html
+  }
+});
 
