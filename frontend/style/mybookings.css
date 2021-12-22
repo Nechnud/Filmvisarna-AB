@@ -91,9 +91,6 @@ header {
 body {
   background-image: url("bgFilmvisarna.png");  
 }
-  
-
-
 
 .form-control {
   font-family: neon; 
@@ -110,10 +107,6 @@ body {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgba(238, 30, 210, 0.514);
 }
-
-
-
-
 
 /* FOOTER */
 footer {
@@ -164,4 +157,9 @@ main {
 
 #cancelTicket{
   margin-left: 65%;
+}
+
+#ticketNumber{
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;  
 }
