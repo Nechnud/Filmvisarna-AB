@@ -44,7 +44,7 @@ async function showTodaysFilms() {
       localStorage.setItem('date', dateToday);
       localStorage.setItem('movieTitle', show.title);
       localStorage.setItem('movieTime', show.showTime);
-      await checkIfSeatsAreTaken();
+      checkIfSeatsAreTaken();
       html = `
       <th>${show.title}</th>
       <th>${dateToday}</th>
@@ -58,12 +58,12 @@ async function showTodaysFilms() {
       html = `
       <p>The movie screening has already started today. Please check another date!</p>`;
       $('#bookTickets').prop('disabled', true);
-    }
+    } $('.screening-result').html(html);
   }
-  $('.screening-result').html(html);
+
   showTrailer();
 }
-async function checkIfSeatsAreTaken() { //Loop and check the occupied seats
+function checkIfSeatsAreTaken() { //Loop and check the occupied seats
   for (let i = 0; i < currentMovie.length; i++) { //this function writes out the available seats
     if (currentMovie[i].movieName == localStorage.getItem('movieTitle')
       && currentMovie[i].date == localStorage.getItem('date')) {
@@ -118,9 +118,9 @@ $(function () {//Function for datepicker
         html = `
       <p>The movie screening has already started today. Please check another date!</p>`;
         $('#bookTickets').prop('disabled', true);
-      }
+      } $('.screening-result').html(html);
     }
-    $('.screening-result').html(html);
+
   });
 });
 

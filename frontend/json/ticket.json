@@ -4,15 +4,98 @@
     "date": "22-12-2021",
     "time": "23:30",
     "salon": "Grande",
-    "ticketNumber": "WU5VTPX1RI",
-    "seat": "  Row 1 Seat 1 Row 1 Seat 4 Row 1 Seat 1 Row 1 Seat 4 Row 2 Seat 4 Row 2 Seat 1",
-    "price": 30,
+    "ticketNumber": "E7CT1XRD50",
     "ticketAmount": 4,
+    "price": 24,
+    "seat": [
+      " Row 5 Seat 6",
+      " Row 5 Seat 5",
+      " Row 5 Seat 4",
+      " Row 5 Seat 3"
+    ],
     "seatID": [
-      "11",
-      "14",
-      "24",
-      "21"
+      "56",
+      "55",
+      "54",
+      "53"
+    ]
+  },
+  {
+    "movieName": "My Neighbour Totoro",
+    "date": "25-12-2021",
+    "time": "19:10",
+    "salon": "Cozy",
+    "ticketNumber": "LQ1KED50QB",
+    "ticketAmount": 3,
+    "price": 15.5,
+    "seat": [
+      " Row 3 Seat 6",
+      " Row 3 Seat 5",
+      " Row 3 Seat 4"
+    ],
+    "seatID": [
+      "36",
+      "35",
+      "34"
+    ]
+  },
+  {
+    "movieName": "Aladdin",
+    "date": "31-12-2021",
+    "time": "17:00",
+    "salon": "Cozy",
+    "ticketNumber": "0X7VOEHJJ8",
+    "ticketAmount": 4,
+    "price": 30,
+    "seat": [
+      " Row 3 Seat 6",
+      " Row 3 Seat 5",
+      " Row 3 Seat 4",
+      " Row 3 Seat 3"
+    ],
+    "seatID": [
+      "36",
+      "35",
+      "34",
+      "33"
+    ]
+  },
+  {
+    "movieName": "Joker",
+    "date": "30-12-2021",
+    "time": "21:35",
+    "salon": "Cozy",
+    "ticketNumber": "VXK1H1RYCE",
+    "ticketAmount": 2,
+    "price": 17,
+    "seat": [
+      " Row 3 Seat 2",
+      " Row 3 Seat 1"
+    ],
+    "seatID": [
+      "32",
+      "31"
+    ]
+  },
+  {
+    "movieName": "Joker",
+    "date": "30-12-2021",
+    "time": "21:35",
+    "salon": "Cozy",
+    "ticketNumber": "QAI4Q4FWAX",
+    "ticketAmount": 4,
+    "price": 34,
+    "seat": [
+      " Row 5 Seat 3",
+      " Row 5 Seat 4",
+      " Row 5 Seat 5",
+      " Row 5 Seat 6"
+    ],
+    "seatID": [
+      "53",
+      "54",
+      "55",
+      "56"
     ]
   }
 ]

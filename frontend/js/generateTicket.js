@@ -35,9 +35,9 @@ async function checkTicketNumber() {//Creates a function that allows us to check
       "time": localStorage.getItem('movieTime'),
       "salon": localStorage.getItem('salon'),
       "ticketNumber": randomTicketNumber,
-      "seat": seatsOnTicket,
-      "price": totalPrice,
       "ticketAmount": totalSeats,
+      "price": totalPrice,
+      "seat": seatsOnTicket,
       "seatID": listOfSeats
     }
 
@@ -54,9 +54,9 @@ async function checkTicketNumber() {//Creates a function that allows us to check
           "time": localStorage.getItem('movieTime'),
           "salon": localStorage.getItem('salon'),
           "ticketNumber": randomTicketNumber,
-          "seat": seatsOnTicket,
-          "price": totalPrice,
           "ticketAmount": totalSeats,
+          "price": totalPrice,
+          "seat": seatsOnTicket,
           "seatID": listOfSeats
         }
       }

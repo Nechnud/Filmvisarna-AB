@@ -84,10 +84,10 @@ async function checkSelectedSeats() {
 }
 
 //create a variable for reading the seats' number to the ticket
-let seatsOnTicket = ' ';
+let seatsOnTicket = [];
 function changeSeatsForTicket() {
   for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
-    seatsOnTicket += " Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1);
+    seatsOnTicket.push(" Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1));
   }  //store the seats number/id
 }
 
