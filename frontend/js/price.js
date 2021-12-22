@@ -12,6 +12,32 @@ let pensionerTotalPrice = 0;
 let totalSeats = 0;
 let totalPrice = 0;
 
+let moviesForRating;
+let movieRating;
+
+
+async function readRatingFromJson() {
+  let rawData = await fetch('json/movieinfo.json');
+  moviesForRating = await rawData.json();
+  checkMovieRating();
+}
+
+function checkMovieRating() {
+  for (let i = 0; i < moviesForRating.length; i++) {
+    if (moviesForRating[i].id == localStorage.getItem('ID')) {
+      movieRating = moviesForRating[i].rated;
+    }
+  }
+  if (movieRating == "R") {
+    alert('This movie\'s age limit is 17!');
+  }
+
+  if (movieRating == "PG-13") {
+    alert('This movie\'s age limit is 13!');
+  }
+
+}
+
 function chooseTicketAmount() {
 
 
@@ -83,6 +109,7 @@ function chooseTicketAmount() {
 }
 
 chooseTicketAmount();
+readRatingFromJson();
 
 
 
