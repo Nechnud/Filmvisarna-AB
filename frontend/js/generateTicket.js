@@ -80,7 +80,6 @@ async function ticketPopUp() {
 }
 
 $('#cancel').click(function () {
-  console.log(newTicket);
   if (listOfSeats.length != 0) {
     cancelBooking();
   }
