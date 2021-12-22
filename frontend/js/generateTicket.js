@@ -106,9 +106,12 @@ async function addTicket() {// Creates method addTicket that pushes the object /
   await JSON._save('ticket', tickets);
 }
 
-$('#toMyBooking').on('click', function () { //Confirm button function on pop-up window
-  if (listOfSeats.length == 0 && totalSeats == 0 && totalPrice == 0) { //if there is no seat are choosen by the user
-    $("#linkToBooking").attr("href", "seatBooking.html");// the program stays on the seatBooking page
+$('#toMyBooking').on('click', function (event) { //Confirm button function on pop-up window
+  if (listOfSeats.length == 0 && totalSeats == 0) { //if there is no seat are choosen by the user
+    event.preventDefault();// the program stays on the seatBooking page
+  }
+  if (listOfSeats.length < totalSeats && totalSeats != 0) {
+    event.preventDefault();
   }
   if (listOfSeats.length != 0) {//if there are seats are choose by the user
     $("#linkToBooking").attr("href", "myBookings.html");// this button will link the webpage to mybooking.html
