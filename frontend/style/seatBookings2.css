@@ -1,0 +1,199 @@
+.seat {
+  height: 22px;
+  width: 25px;
+  margin: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 40px;
+  width: 45px;
+  background: #01163e;
+  border: 2px solid #81316d;
+  transition: all 0.2s ease;
+}
+
+.seat:disabled {
+  background-color: #fff;
+  height: 22px;
+  width: 25px;
+  margin: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 40px;
+  width: 45px;
+  border: 2px solid #81316d;
+  transition: all 0.2s ease;
+}
+
+.seat-selected {
+  background-color: #31d7a9;
+  height: 22px;
+  width: 25px;
+  margin: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 40px;
+  width: 45px;
+  border: 2px solid #81316d;
+  transition: all 0.2s ease;
+}
+.seat-notOccupied {
+  height: 22px;
+  width: 25px;
+  margin: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+
+  height: 40px;
+  width: 45px;
+  background: #01163e;
+  border: 2px solid #81316d;
+  transition: all 0.2s ease;
+}
+.seat-occupied {
+  background-color: #fff;
+  height: 22px;
+  width: 25px;
+  margin: 5px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 40px;
+  width: 45px;
+  border: 2px solid #81316d;
+  transition: all 0.2s ease;
+}
+.seat:nth-of-type(2) {
+  /*Skapar margin mellan andra sätesraden (:nth) och den nya raden till höger*/
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  /*Skapar margin mellan andra raden till höger och raden innan*/
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  /* Selecting seats that do not have "occupied" class */
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  /* Available, selected, occupied.*/
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  /*Available selected occupied text position*/
+  display: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+/*Sätena i rows istället för column*/
+#row1 {
+  margin-left: 17%;
+}
+#row2 {
+  margin-left: 17%;
+}
+#row3 {
+  margin-left: 7%;
+}
+#row4 {
+  margin-left: 7%;
+}
+#row5 {
+  margin-left: 7%;
+}
+
+.screen {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.movie-screen {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.movie-screen img {
+  max-width: 85%;
+}
+
+.text {
+  font-size: 18px;
+}
+
+#count,
+#total {
+  font-size: 24px;
+  padding: 0 8px;
+}
+
+/*hur sidan anpassar sig om skärmen blir mindre än 576px.
+Jag lämnar koden här så länge.*/
+@media (max-width: 576px) {
+  body {
+    padding-top: 30px;
+  }
+
+  .movie-container select {
+    font-size: 14px;
+  }
+  .bookedSeats{
+    float: right;
+  }
+
+  .seat {
+    height: 21px;
+    width: 23px;
+  }
+
+  .movie-screen img {
+    max-width: 92%;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .seat:nth-of-type(2) {
+    margin-right: 12px;
+  }
+
+  .seat:nth-last-of-type(2) {
+    margin-left: 12px;
+  }
+
+  .movie-screen {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  #count,
+  #total {
+    font-size: 18px;
+  }
+}
