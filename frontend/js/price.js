@@ -96,9 +96,9 @@ function chooseTicketAmount() {
       }
 
       totalSeats = childTickets + adultTickets + pensionerTickets;
-      totalPrice = childTotalPrice + adultTotalPrice + pensionerTotalPrice;
+      totalPrice = (childTotalPrice + adultTotalPrice + pensionerTotalPrice).toFixed(2);
       document.getElementById('count').innerHTML = totalSeats;
-      document.getElementById('amountReplace').innerHTML = totalPrice + " $";
+      document.getElementById('amountReplace').innerHTML = " $" + totalPrice;
 
 
     });
