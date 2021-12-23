@@ -97,5 +97,26 @@
       "55",
       "56"
     ]
+  },
+  {
+    "movieName": "Interstellar",
+    "date": "27-12-2021",
+    "time": "20:15",
+    "salon": "Grande",
+    "ticketNumber": "6WEKDXEUFJ",
+    "ticketAmount": 4,
+    "price": 32,
+    "seat": [
+      " Row 2 Seat 3",
+      " Row 2 Seat 4",
+      " Row 2 Seat 5",
+      " Row 2 Seat 6"
+    ],
+    "seatID": [
+      "23",
+      "24",
+      "25",
+      "26"
+    ]
   }
 ]
