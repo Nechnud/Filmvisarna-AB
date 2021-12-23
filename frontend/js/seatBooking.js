@@ -78,17 +78,10 @@ async function checkSelectedSeats() {
           return seatsList !== seatHTML;
         });
       }
-      $('.seatsNumber').html(seatsLists); //assign the seatsList into HTML page
-    }); changeSeatsForTicket(listOfSeats);     //call the function
+      $('.seatsNumber').html(seatsLists);
+      console.log(seatsLists) //assign the seatsList into HTML page
+    });    //call the function
   }
-}
-
-//create a variable for reading the seats' number to the ticket
-let seatsOnTicket = [];
-function changeSeatsForTicket() {
-  for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
-    seatsOnTicket.push(" Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1));
-  }  //store the seats number/id
 }
 
 let movieTitle = localStorage.getItem('movieTitle');

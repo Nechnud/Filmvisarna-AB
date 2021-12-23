@@ -23,6 +23,17 @@ async function readTickets() {
   await ticketNumberGenerator();
 }
 
+//create a variable for reading the seats' number to the ticket
+let seatsOnTicket = [];
+function changeSeatsForTicket() {
+  for (let i = 0; i < listOfSeats.length; i++) { //loop through all the selected seats and their id
+    seatsOnTicket.push(" Row " + listOfSeats[i].charAt(0) + " Seat " + listOfSeats[i].substring(1));
+  }
+
+  console.log(seatsOnTicket)  //store the seats number/id
+}
+
+
 let currentTickets;
 let newTicket;
 async function checkTicketNumber() {//Creates a function that allows us to check ticket number
@@ -64,6 +75,7 @@ async function checkTicketNumber() {//Creates a function that allows us to check
   }
   localStorage.setItem('myTicketNumber', newTicket.ticketNumber);
   ticketPopUp();
+  seatsOnTicket = [];
 }
 
 async function ticketPopUp() {
